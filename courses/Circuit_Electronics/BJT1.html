@@ -1,0 +1,1137 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Bipolar junction transistor &#8212; Dr.Hadi Sadoghi Yazdi</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=87e54e7c" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=3ee479438cf8b5e0d341"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'courses/Circuit_Electronics/BJT1';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Field Effect Transistor" href="FET.html" />
+    <link rel="prev" title="Diode Application" href="DiodeApplication.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../../Home_Page.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/Hadi_Sadoghi_Yazdi.png" class="logo__image only-light" alt="Dr.Hadi Sadoghi Yazdi - Home"/>
+    <script>document.write(`<img src="../../_static/Hadi_Sadoghi_Yazdi.png" class="logo__image only-dark" alt="Dr.Hadi Sadoghi Yazdi - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../Home_Page.html">
+                    Welcome to my personal Website!
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../../Courses.html">Courses</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 has-children"><a class="reference internal" href="../pattern_recognition.html">Pattern Recognition</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../PR/Introduction/PR_intro.html">Introduction</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="../PR/Introduction/DataSet.html">Dataset</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PR/Introduction/Model.html">Model</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PR/Introduction/Cost.html">Cost_Function</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PR/Introduction/LearningRule.html">Learning_Rule</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3"><a class="reference internal" href="../PR/Visualization/PR_intro_Visualization.html">Visualization</a></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../PR/Clustering/PR_intro_Clustering.html">Clustering Concept</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="../PR/Clustering/Clustering_1.html">Clustering</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PR/Clustering/FCM_1.html">k-means and fuzzy-c-means clustering</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PR/Clustering/FCM_Saghi_Project.html">Complementary of FCM</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PR/Clustering/LinkageClustering_1.html">Project Linkage clustering</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PR/Clustering/e_insensitive_linkage.html">Project <span class="math notranslate nohighlight">\( \epsilon \)</span> -insensitive Linkage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PR/Clustering/SOFM_Project.html">Project Title: Self-Organizing Feature Map (SOFM)</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../PR/Regression/Introduction_Regression.html">Regression</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="../PR/Regression/Regression_1.html">Linear Regression</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PR/Regression/NonLinearRegression.html">Non-linear Regression: The starting point</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PR/Regression/Linearization.html">Linearization</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PR/Regression/Kernel_for_Regression.html">Kernel method</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PR/Regression/EvaluationModelSelection.html">Project : Evaluation and Model Selection</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PR/Regression/Solution_for_Regression.html">Solution Method</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PR/Regression/TheoryRegression.html">Theoretical Aspects of Regression</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PR/Regression/ApplicationsPatternRecognition.html">Applications in Pattern Recognition</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../PR/Classification/PR_intro_Classification.html">Classification</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="../PR/Classification/SVDD.html">Support Vector Data Description (SVDD)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PR/Classification/SVM1.html">Support Vector Machine (SVM)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PR/Classification/Fisherclassifier.html">Fihser Classifier</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PR/Classification/KernelFisherDiscriminantAnalysis.html">Kernel Fisher Discriminant Analysis</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PR/Classification/DecisionTree1.html">Project Induction in Decision Trees</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../PR/BayesEstimation/BayesEstimation.html">Bayes Estimation</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="../PR/BayesEstimation/KDE_1.html">kernel-based density estimation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PR/BayesEstimation/MeanShift.html">Mean Shift Algorithm</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PR/BayesEstimation/ParametricDensityEstimation1.html">Parametric Density Estimation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PR/BayesEstimation/GMM.html">Gaussian Mixture Model</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../machine_learning.html">Machine Learning</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../ML/Regression/NonParamRegression.html">Regression Review</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ML/Regression/KernelRegression.html">Kernel Regression</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ML/Regression/GP_Regression.html">Gaussian Process</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ML/FeatureReduction/FR_Intro.html">Introduction of Feature Reduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ML/FeatureReduction/PCA.html">Principal Component Analysis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ML/FeatureReduction/Autoencoders1.html">Autoencoders</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../Supplementary1.html">Supplementary Documents</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../SupplementaryDocuments/EVD.html">Eigen Value Decomposition</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../SupplementaryDocuments/twin_svm.html">Twin SVM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../SupplementaryDocuments/Covariance1.html">Covariance</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="../CircuitElectronicAnalysis.html">Circuit and Electronics</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Introduction_CircuitElectronics.html">Introduction to Circuit and Electronics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BasicElements.html">Basic component</a></li>
+<li class="toctree-l3"><a class="reference internal" href="KVL_KCL.html">Voltage , Current</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NodalMeshAnalysis.html">Basic Nodal and Mesh Analysis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RC_RL_RLC.html">R-C, R-L circuits</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Diode_chapter.html">Diode</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DiodeApplication.html">Diode Application</a></li>
+
+
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">Bipolar junction transistor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="FET.html">Field Effect Transistor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="OpAmp.html">Operational Amplifier</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="../signal_processing.html">Signal Processing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../image_processing.html">Image Processing</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../PRLabProduction.html">Pattern Lab Production</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../../ProposalPhD_Develop.html">Proposal PhD Develope</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Students.html">Students Projects</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../StudentProjects/BsC/Teymoori/chat_with_doc.html">Author Information</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Contact_Me.html">Contact Me</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../About_Me.html">About Me</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/h-sadoghi/dr-sadoghi.git" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/h-sadoghi/dr-sadoghi.git/issues/new?title=Issue%20on%20page%20%2Fcourses/Circuit_Electronics/BJT1.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/courses/Circuit_Electronics/BJT1.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Bipolar junction transistor</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#npn-transistor">NPN transistor</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pnp-transistor">PNP transistor</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#electronic-laboratory-bjt-saturation-region">Electronic Laboratory: BJT Saturation Region</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#electronic-labratory-bjt-active-region">Electronic Labratory : BJT Active region</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion-of-our-experiments">Conclusion of our experiments</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#biasing-bjt">Biasing BJT</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#important-algorithm-for-bias-analysis">Important Algorithm for Bias analysis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fixed-bias-circuit-and-dc-analysis">Fixed-Bias Circuit and DC Analysis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#collector-emitter-loop-and-voltage-measurements">Collector-Emitter Loop and Voltage Measurements</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#load-line-analysis">Load-Line Analysis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#emitter-bias-configuration">Emitter Bias Configuration</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#voltage-divider-bias-configuration">Voltage Divider Bias Configuration</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#homework-controlled-feedback-configuration">Homework: Controlled Feedback Configuration</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-collecter-emitter-follower-configuration">Common-collecter (emitter-follower) configuration</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-bjt">Multiple BJT</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rc-coupling">RC coupling</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#darlington">Darlington</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bjt-ac-analysis">BJT AC analysis</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ac-analysis-in-fixed-bias-configuration">AC analysis in Fixed-Bias Configuration</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ac-analysis-in-voltage-divider-bias-configuration">AC analysis in Voltage-Divider Bias Configuration</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ac-analysis-in-unbypassed-emitter-bias-configuration">AC analysis in Unbypassed Emitter-Bias Configuration</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ac-analysis-in-emitter-follower-configuration">AC analysis in Emitter Follower Configuration</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ac-analysis-in-collector-feedback-configuration">AC analysis in Collector Feedback Configuration</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ac-analysis-in-fixed-bias-configuration-with-load">AC analysis in Fixed-Bias Configuration with Load</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ac-analysis-voltage-divider-bias-configuration-with-load">AC Analysis Voltage-Divider Bias Configuration with Load</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#miniproject-select-the-desired-configuration-and-complete-the-following-tasks">Miniproject: Select the desired configuration and complete the following tasks:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resistor-transistor-logic-rtl">Resistor-transistor logic (RTL)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#not-gate-in-rtl">NOT Gate in RTL</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nor-gate-in-rtl">NOR Gate in RTL</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nand-gate-in-rtl">NAND Gate in RTL</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="bipolar-junction-transistor">
+<h1>Bipolar junction transistor<a class="headerlink" href="#bipolar-junction-transistor" title="Link to this heading">#</a></h1>
+<p>The term “transistor” originated in 1951 at Bell Laboratories by Dr. Shockley and associates. A Bipolar Junction Transistor (BJT) is a type of transistor that uses both electron and hole charge carriers. It consists of three parts: the emitter (heavily doped with N-type), the base (narrow and slightly doped), and the collector (similar semiconductor as the emitter). BJTs operate in three regions: the active region (used as an amplifier with IC = βIB), the saturation region (both junctions forward-biased with IC = I(saturation)), and the cut-off region (both junctions reverse-biased with no current flow, IC = 0).</p>
+<p><img alt="BJT_npn" src="../../_images/BJT1_1.PNG" /></p>
+<p>There are two types of BJTs, NPN and PNP, which differ in the arrangement of these layers. BJTs are widely used for amplification and switching applications due to their ability to control a large current with a smaller base current.</p>
+<p><img alt="HowitsworkBJT" src="../../_images/Transistor_animation.gif" /></p>
+<p>BJTs are classified into PNP and NPN types based on the arrangement of p-type and n-type semiconductor materials.</p>
+<section id="npn-transistor">
+<h2>NPN transistor<a class="headerlink" href="#npn-transistor" title="Link to this heading">#</a></h2>
+<p>In an NPN transistor, a p-type material is between two n-type semiconductors acting as emitter and collector, with the emitter-base junction forward-biased and the collector-base junction reverse-biased during the forward active state. The emitter-base junction is forward biased if the voltage exceeds the barrier potential (0.3V for germanium, 0.7V for silicon), causing electrons to move from the emitter to the base and creating emitter current. Most electrons do not recombine in the base due to its small width, resulting in a majority of electrons diffusing to the collector and forming the collector current.</p>
+<p><img alt="BJT_Bias_NPN" src="../../_images/BJT_DC_NPN.PNG" /></p>
+</section>
+<section id="pnp-transistor">
+<h2>PNP transistor<a class="headerlink" href="#pnp-transistor" title="Link to this heading">#</a></h2>
+<p>In a PNP transistor, current is primarily due to the movement of holes. The emitter-base junction is forward biased, causing holes from the emitter to flow into the base, where a small portion combines with electrons, forming the base current. Most holes diffuse to the collector, generating the collector current, with a minor component due to reverse saturation current.</p>
+<p><img alt="PNP1" src="../../_images/PNP1.PNG" /></p>
+<section id="electronic-laboratory-bjt-saturation-region">
+<h3>Electronic Laboratory: BJT Saturation Region<a class="headerlink" href="#electronic-laboratory-bjt-saturation-region" title="Link to this heading">#</a></h3>
+<p>To obtain the saturation region, we need to bias the input diode (BE) at voltages below 0.6V and use a small VCE.</p>
+<p>First, let’s determine how to obtain the output characteristics of a transistor. Follow these steps:</p>
+<ul class="simple">
+<li><p><strong>Set Up the Circuit:</strong> Configure your transistor circuit with the base, collector, and emitter. Ensure you have a method to vary the base current.</p></li>
+<li><p><strong>Perform DC Analysis:</strong> For each base current, conduct a DC analysis by sweeping the collector voltage and recording the collector current.</p></li>
+<li><p><strong>Save and Plot Results:</strong> Save the results for each base current and plot the collector current versus collector voltage.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="kn">import</span> <span class="nn">PySpice.Logging.Logging</span> <span class="k">as</span> <span class="nn">Logging</span>
+<span class="n">logger</span> <span class="o">=</span> <span class="n">Logging</span><span class="o">.</span><span class="n">setup_logging</span><span class="p">()</span>
+<span class="kn">from</span> <span class="nn">PySpice.Spice.Netlist</span> <span class="kn">import</span> <span class="n">Circuit</span>
+<span class="kn">from</span> <span class="nn">PySpice.Unit</span> <span class="kn">import</span> <span class="o">*</span>
+
+
+
+
+<span class="n">circuit</span> <span class="o">=</span> <span class="n">Circuit</span><span class="p">(</span><span class="s1">&#39;IV_2n2222&#39;</span><span class="p">)</span>
+
+<span class="n">circuit</span><span class="o">.</span><span class="n">BJT</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="s1">&#39;collector&#39;</span><span class="p">,</span> <span class="s1">&#39;base&#39;</span><span class="p">,</span> <span class="n">circuit</span><span class="o">.</span><span class="n">gnd</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="s1">&#39;2n2222a&#39;</span><span class="p">)</span>
+
+<span class="c1"># .MODEL 2n2222a npn</span>
+<span class="n">circuit</span><span class="o">.</span><span class="n">model</span><span class="p">(</span><span class="s1">&#39;2n2222a&#39;</span><span class="p">,</span> <span class="s1">&#39;BJT&#39;</span><span class="p">,</span> <span class="n">IS</span><span class="o">=</span><span class="mf">3.88184e-14</span><span class="p">,</span> <span class="n">BF</span><span class="o">=</span><span class="mf">929.846</span><span class="p">,</span> <span class="n">NF</span><span class="o">=</span><span class="mf">1.10496</span><span class="p">,</span> <span class="n">VAF</span><span class="o">=</span><span class="mf">16.5003</span><span class="p">,</span>
+<span class="n">IKF</span><span class="o">=</span><span class="mf">0.019539</span><span class="p">,</span> <span class="n">ISE</span><span class="o">=</span><span class="mf">1.0168e-11</span><span class="p">,</span> <span class="n">NE</span><span class="o">=</span><span class="mf">1.94752</span><span class="p">,</span> <span class="n">BR</span><span class="o">=</span><span class="mf">48.4545</span><span class="p">,</span>
+<span class="n">NR</span><span class="o">=</span><span class="mf">1.07004</span><span class="p">,</span> <span class="n">VAR</span><span class="o">=</span><span class="mf">40.538</span><span class="p">,</span> <span class="n">IKR</span><span class="o">=</span><span class="mf">0.19539</span><span class="p">,</span> <span class="n">ISC</span><span class="o">=</span><span class="mf">1.0168e-11</span><span class="p">,</span>
+<span class="n">NC</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">RB</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">IRB</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">RBM</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span>
+<span class="n">RE</span><span class="o">=</span><span class="mf">0.0001</span><span class="p">,</span> <span class="n">RC</span><span class="o">=</span><span class="mf">0.426673</span><span class="p">,</span> <span class="n">XTB</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">XTI</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+<span class="n">EG</span><span class="o">=</span><span class="mf">1.05</span><span class="p">,</span> <span class="n">CJE</span><span class="o">=</span><span class="mf">2.23677e-11</span><span class="p">,</span> <span class="n">VJE</span><span class="o">=</span><span class="mf">0.582701</span><span class="p">,</span> <span class="n">MJE</span><span class="o">=</span><span class="mf">0.63466</span><span class="p">,</span>
+<span class="n">TF</span><span class="o">=</span><span class="mf">4.06711e-10</span><span class="p">,</span> <span class="n">XTF</span><span class="o">=</span><span class="mf">3.92912</span><span class="p">,</span> <span class="n">VTF</span><span class="o">=</span><span class="mf">17712.6</span><span class="p">,</span> <span class="n">ITF</span><span class="o">=</span><span class="mf">0.4334</span><span class="p">,</span>
+<span class="n">CJC</span><span class="o">=</span><span class="mf">2.23943e-11</span><span class="p">,</span> <span class="n">VJC</span><span class="o">=</span><span class="mf">0.576146</span><span class="p">,</span> <span class="n">MJC</span><span class="o">=</span><span class="mf">0.632796</span><span class="p">,</span> <span class="n">XCJC</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+<span class="n">FC</span><span class="o">=</span><span class="mf">0.170253</span><span class="p">,</span> <span class="n">CJS</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">VJS</span><span class="o">=</span><span class="mf">0.75</span><span class="p">,</span> <span class="n">MJS</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
+<span class="n">TR</span><span class="o">=</span><span class="mf">1e-07</span><span class="p">,</span> <span class="n">PTF</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">KF</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">AF</span><span class="o">=</span><span class="mi">1</span>
+                   <span class="p">)</span>
+
+<span class="c1"># Define sweep parameters</span>
+<span class="n">VAF</span><span class="o">=</span><span class="mf">16.5003</span>
+<span class="n">Vinput_start</span> <span class="o">=</span> <span class="mf">0.0</span>
+<span class="n">Vinput_stop</span> <span class="o">=</span> <span class="n">VAF</span><span class="o">*</span><span class="mf">0.004</span>
+<span class="n">Vinput_step</span> <span class="o">=</span> <span class="mf">0.0001</span>
+
+<span class="n">Vbase</span><span class="o">=</span><span class="n">circuit</span><span class="o">.</span><span class="n">V</span><span class="p">(</span><span class="s1">&#39;input&#39;</span><span class="p">,</span> <span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="n">circuit</span><span class="o">.</span><span class="n">gnd</span><span class="p">,</span> <span class="mf">0.45</span><span class="p">)</span>
+<span class="n">circuit</span><span class="o">.</span><span class="n">V</span><span class="p">(</span><span class="s1">&#39;measin&#39;</span><span class="p">,</span> <span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="s1">&#39;base&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">circuit</span><span class="o">.</span><span class="n">V</span><span class="p">(</span><span class="s1">&#39;output&#39;</span><span class="p">,</span> <span class="s1">&#39;3&#39;</span><span class="p">,</span> <span class="n">circuit</span><span class="o">.</span><span class="n">gnd</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">circuit</span><span class="o">.</span><span class="n">V</span><span class="p">(</span><span class="s1">&#39;measout&#39;</span><span class="p">,</span> <span class="s1">&#39;3&#39;</span><span class="p">,</span> <span class="s1">&#39;collector&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+<span class="c1"># Base voltage values to iterate through</span>
+<span class="c1"># Generate base voltages with exponential steps for the first part and linear steps for the second part</span>
+<span class="c1"># exp_start = 0.01</span>
+<span class="c1"># exp_stop = 0.41</span>
+<span class="n">lin_start</span> <span class="o">=</span> <span class="mf">0.01</span>
+<span class="n">lin_stop</span> <span class="o">=</span> <span class="mf">0.45</span>
+
+<span class="c1"># Number of steps</span>
+<span class="c1">#exp_steps = 20</span>
+<span class="n">lin_steps</span> <span class="o">=</span> <span class="mi">10</span>
+
+<span class="c1"># Exponential part</span>
+<span class="c1">#exp_base_voltages = np.geomspace(exp_start, exp_stop, num=exp_steps)</span>
+
+<span class="c1"># Linear part</span>
+<span class="n">lin_base_voltages</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">lin_start</span><span class="p">,</span> <span class="n">lin_stop</span><span class="p">,</span> <span class="n">num</span><span class="o">=</span><span class="n">lin_steps</span><span class="p">)</span>
+
+<span class="c1"># Combine both parts</span>
+<span class="c1">#base_voltages = np.concatenate((exp_base_voltages, lin_base_voltages))</span>
+<span class="n">base_voltages</span> <span class="o">=</span> <span class="n">lin_base_voltages</span>
+
+
+<span class="c1">#base_voltages = np.linspace(0.1, 0.5, num=20)  # Adjust &#39;num&#39; as needed</span>
+
+<span class="c1"># Store results for plotting</span>
+<span class="n">collector_voltages</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">collector_currents</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">labels</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="c1"># Loop through base voltage values</span>
+<span class="k">for</span> <span class="n">Vbase_value</span> <span class="ow">in</span> <span class="n">base_voltages</span><span class="p">:</span>
+    <span class="n">Vbase</span><span class="o">.</span><span class="n">dc_value</span> <span class="o">=</span> <span class="n">Vbase_value</span>
+    <span class="n">simulator</span> <span class="o">=</span> <span class="n">circuit</span><span class="o">.</span><span class="n">simulator</span><span class="p">(</span><span class="n">temperature</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span> <span class="n">nominal_temperature</span><span class="o">=</span><span class="mi">25</span><span class="p">)</span>
+    <span class="n">analysis</span> <span class="o">=</span> <span class="n">simulator</span><span class="o">.</span><span class="n">dc</span><span class="p">(</span><span class="n">Voutput</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="n">Vinput_start</span><span class="p">,</span> <span class="n">Vinput_stop</span><span class="p">,</span> <span class="n">Vinput_step</span><span class="p">))</span>
+    <span class="n">waveform</span> <span class="o">=</span> <span class="n">analysis</span><span class="p">[</span><span class="s1">&#39;collector&#39;</span><span class="p">]</span>
+    <span class="n">InputCurrentMeasurement</span> <span class="o">=</span> <span class="n">analysis</span><span class="p">[</span><span class="s1">&#39;vmeasout&#39;</span><span class="p">]</span>
+    
+    <span class="c1"># Store results</span>
+    <span class="n">collector_voltages</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">waveform</span><span class="p">))</span>
+    <span class="n">collector_currents</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">InputCurrentMeasurement</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">)</span>  <span class="c1"># Convert to mA</span>
+    <span class="n">labels</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">Vbase_value</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>  <span class="c1"># Format to two decimal places for clarity</span>
+
+
+<span class="c1"># Plot the results</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xscale</span><span class="p">(</span><span class="s1">&#39;symlog&#39;</span><span class="p">,</span> <span class="n">linthresh</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">yscale</span><span class="p">(</span><span class="s1">&#39;symlog&#39;</span><span class="p">,</span> <span class="n">linthresh</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">base_voltages</span><span class="p">)):</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">collector_voltages</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">collector_currents</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="n">labels</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="c1"># Annotate each curve with its label</span>
+    <span class="n">midpoint_index</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">collector_voltages</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">//</span> <span class="mi">2</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="n">labels</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="n">collector_voltages</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">midpoint_index</span><span class="p">],</span> <span class="n">collector_currents</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">midpoint_index</span><span class="p">]),</span> 
+                 <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="n">textcoords</span><span class="o">=</span><span class="s1">&#39;offset points&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">9</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Vcollector (V)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Collector current (mA)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;DC Sweep Analysis for Output-Characteristics of NPN Transistor&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="c1">#plt.legend()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">4</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="ne">----&gt; </span><span class="mi">4</span> <span class="kn">import</span> <span class="nn">PySpice.Logging.Logging</span> <span class="k">as</span> <span class="nn">Logging</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">logger</span> <span class="o">=</span> <span class="n">Logging</span><span class="o">.</span><span class="n">setup_logging</span><span class="p">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="kn">from</span> <span class="nn">PySpice.Spice.Netlist</span> <span class="kn">import</span> <span class="n">Circuit</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;PySpice&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="electronic-labratory-bjt-active-region">
+<h3>Electronic Labratory : BJT Active region<a class="headerlink" href="#electronic-labratory-bjt-active-region" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="kn">import</span> <span class="nn">PySpice.Logging.Logging</span> <span class="k">as</span> <span class="nn">Logging</span>
+<span class="n">logger</span> <span class="o">=</span> <span class="n">Logging</span><span class="o">.</span><span class="n">setup_logging</span><span class="p">()</span>
+<span class="kn">from</span> <span class="nn">PySpice.Spice.Netlist</span> <span class="kn">import</span> <span class="n">Circuit</span>
+<span class="kn">from</span> <span class="nn">PySpice.Unit</span> <span class="kn">import</span> <span class="o">*</span>
+
+
+
+
+<span class="n">circuit</span> <span class="o">=</span> <span class="n">Circuit</span><span class="p">(</span><span class="s1">&#39;IV_2n2222&#39;</span><span class="p">)</span>
+
+<span class="n">circuit</span><span class="o">.</span><span class="n">BJT</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="s1">&#39;collector&#39;</span><span class="p">,</span> <span class="s1">&#39;base&#39;</span><span class="p">,</span> <span class="n">circuit</span><span class="o">.</span><span class="n">gnd</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="s1">&#39;2n2222a&#39;</span><span class="p">)</span>
+
+<span class="c1"># .MODEL 2n2222a npn</span>
+<span class="n">circuit</span><span class="o">.</span><span class="n">model</span><span class="p">(</span><span class="s1">&#39;2n2222a&#39;</span><span class="p">,</span> <span class="s1">&#39;BJT&#39;</span><span class="p">,</span> <span class="n">IS</span><span class="o">=</span><span class="mf">3.88184e-14</span><span class="p">,</span> <span class="n">BF</span><span class="o">=</span><span class="mf">929.846</span><span class="p">,</span> <span class="n">NF</span><span class="o">=</span><span class="mf">1.10496</span><span class="p">,</span> <span class="n">VAF</span><span class="o">=</span><span class="mf">16.5003</span><span class="p">,</span>
+<span class="n">IKF</span><span class="o">=</span><span class="mf">0.019539</span><span class="p">,</span> <span class="n">ISE</span><span class="o">=</span><span class="mf">1.0168e-11</span><span class="p">,</span> <span class="n">NE</span><span class="o">=</span><span class="mf">1.94752</span><span class="p">,</span> <span class="n">BR</span><span class="o">=</span><span class="mf">48.4545</span><span class="p">,</span>
+<span class="n">NR</span><span class="o">=</span><span class="mf">1.07004</span><span class="p">,</span> <span class="n">VAR</span><span class="o">=</span><span class="mf">40.538</span><span class="p">,</span> <span class="n">IKR</span><span class="o">=</span><span class="mf">0.19539</span><span class="p">,</span> <span class="n">ISC</span><span class="o">=</span><span class="mf">1.0168e-11</span><span class="p">,</span>
+<span class="n">NC</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">RB</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">IRB</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">RBM</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span>
+<span class="n">RE</span><span class="o">=</span><span class="mf">0.0001</span><span class="p">,</span> <span class="n">RC</span><span class="o">=</span><span class="mf">0.426673</span><span class="p">,</span> <span class="n">XTB</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">XTI</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+<span class="n">EG</span><span class="o">=</span><span class="mf">1.05</span><span class="p">,</span> <span class="n">CJE</span><span class="o">=</span><span class="mf">2.23677e-11</span><span class="p">,</span> <span class="n">VJE</span><span class="o">=</span><span class="mf">0.582701</span><span class="p">,</span> <span class="n">MJE</span><span class="o">=</span><span class="mf">0.63466</span><span class="p">,</span>
+<span class="n">TF</span><span class="o">=</span><span class="mf">4.06711e-10</span><span class="p">,</span> <span class="n">XTF</span><span class="o">=</span><span class="mf">3.92912</span><span class="p">,</span> <span class="n">VTF</span><span class="o">=</span><span class="mf">17712.6</span><span class="p">,</span> <span class="n">ITF</span><span class="o">=</span><span class="mf">0.4334</span><span class="p">,</span>
+<span class="n">CJC</span><span class="o">=</span><span class="mf">2.23943e-11</span><span class="p">,</span> <span class="n">VJC</span><span class="o">=</span><span class="mf">0.576146</span><span class="p">,</span> <span class="n">MJC</span><span class="o">=</span><span class="mf">0.632796</span><span class="p">,</span> <span class="n">XCJC</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+<span class="n">FC</span><span class="o">=</span><span class="mf">0.170253</span><span class="p">,</span> <span class="n">CJS</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">VJS</span><span class="o">=</span><span class="mf">0.75</span><span class="p">,</span> <span class="n">MJS</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
+<span class="n">TR</span><span class="o">=</span><span class="mf">1e-07</span><span class="p">,</span> <span class="n">PTF</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">KF</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">AF</span><span class="o">=</span><span class="mi">1</span>
+                   <span class="p">)</span>
+
+<span class="c1"># Define sweep parameters</span>
+<span class="n">VAF</span><span class="o">=</span><span class="mf">16.5003</span>
+<span class="n">Vinput_start</span> <span class="o">=</span> <span class="mf">0.01</span>
+<span class="n">Vinput_stop</span> <span class="o">=</span> <span class="n">VAF</span><span class="o">*</span><span class="mf">0.5</span>
+<span class="n">Vinput_step</span> <span class="o">=</span> <span class="mf">0.0001</span>
+
+
+<span class="n">circuit</span><span class="o">.</span><span class="n">V</span><span class="p">(</span><span class="s1">&#39;measin&#39;</span><span class="p">,</span> <span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="s1">&#39;base&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">circuit</span><span class="o">.</span><span class="n">V</span><span class="p">(</span><span class="s1">&#39;output&#39;</span><span class="p">,</span> <span class="s1">&#39;3&#39;</span><span class="p">,</span> <span class="n">circuit</span><span class="o">.</span><span class="n">gnd</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">circuit</span><span class="o">.</span><span class="n">V</span><span class="p">(</span><span class="s1">&#39;measout&#39;</span><span class="p">,</span> <span class="s1">&#39;3&#39;</span><span class="p">,</span> <span class="s1">&#39;collector&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">Vbase</span><span class="o">=</span><span class="n">circuit</span><span class="o">.</span><span class="n">V</span><span class="p">(</span><span class="s1">&#39;input&#39;</span><span class="p">,</span> <span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="n">circuit</span><span class="o">.</span><span class="n">gnd</span><span class="p">,</span> <span class="mf">0.45</span><span class="p">)</span>
+
+
+<span class="c1"># Base voltage values to iterate through</span>
+<span class="c1"># Generate base voltages with exponential steps for the first part and linear steps for the second part</span>
+<span class="c1"># exp_start = 0.01</span>
+<span class="c1"># exp_stop = 0.41</span>
+<span class="n">lin_start</span> <span class="o">=</span> <span class="mf">0.01</span>
+<span class="n">lin_stop</span> <span class="o">=</span> <span class="mf">0.45</span>
+
+<span class="c1"># Number of steps</span>
+<span class="c1">#exp_steps = 20</span>
+<span class="n">lin_steps</span> <span class="o">=</span> <span class="mi">10</span>
+
+<span class="c1"># Exponential part</span>
+<span class="c1">#exp_base_voltages = np.geomspace(exp_start, exp_stop, num=exp_steps)</span>
+
+<span class="c1"># Linear part</span>
+<span class="n">lin_base_voltages</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">lin_start</span><span class="p">,</span> <span class="n">lin_stop</span><span class="p">,</span> <span class="n">num</span><span class="o">=</span><span class="n">lin_steps</span><span class="p">)</span>
+
+<span class="c1"># Combine both parts</span>
+<span class="c1">#base_voltages = np.concatenate((exp_base_voltages, lin_base_voltages))</span>
+<span class="n">base_voltages</span> <span class="o">=</span> <span class="n">lin_base_voltages</span>
+
+
+<span class="c1">#base_voltages = np.linspace(0.1, 0.5, num=20)  # Adjust &#39;num&#39; as needed</span>
+
+<span class="c1"># Store results for plotting</span>
+<span class="n">collector_voltages</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">collector_currents</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">labels</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="c1"># Loop through base voltage values</span>
+<span class="k">for</span> <span class="n">Vbase_value</span> <span class="ow">in</span> <span class="n">base_voltages</span><span class="p">:</span>
+    <span class="n">Vbase</span><span class="o">.</span><span class="n">dc_value</span> <span class="o">=</span> <span class="n">Vbase_value</span>
+    <span class="n">simulator</span> <span class="o">=</span> <span class="n">circuit</span><span class="o">.</span><span class="n">simulator</span><span class="p">(</span><span class="n">temperature</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span> <span class="n">nominal_temperature</span><span class="o">=</span><span class="mi">25</span><span class="p">)</span>
+    <span class="n">analysis</span> <span class="o">=</span> <span class="n">simulator</span><span class="o">.</span><span class="n">dc</span><span class="p">(</span><span class="n">Voutput</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="n">Vinput_start</span><span class="p">,</span> <span class="n">Vinput_stop</span><span class="p">,</span> <span class="n">Vinput_step</span><span class="p">))</span>
+    <span class="n">waveform</span> <span class="o">=</span> <span class="n">analysis</span><span class="p">[</span><span class="s1">&#39;collector&#39;</span><span class="p">]</span>
+    <span class="n">InputCurrentMeasurement</span> <span class="o">=</span> <span class="n">analysis</span><span class="p">[</span><span class="s1">&#39;vmeasout&#39;</span><span class="p">]</span>
+    
+    <span class="c1"># Store results</span>
+    <span class="n">collector_voltages</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">waveform</span><span class="p">))</span>
+    <span class="n">collector_currents</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">InputCurrentMeasurement</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">)</span>  <span class="c1"># Convert to mA</span>
+    <span class="n">labels</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">Vbase_value</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>  <span class="c1"># Format to two decimal places for clarity</span>
+
+
+<span class="c1"># Plot the results</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xscale</span><span class="p">(</span><span class="s1">&#39;symlog&#39;</span><span class="p">,</span> <span class="n">linthresh</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">yscale</span><span class="p">(</span><span class="s1">&#39;symlog&#39;</span><span class="p">,</span> <span class="n">linthresh</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">base_voltages</span><span class="p">)):</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">collector_voltages</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">collector_currents</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="n">labels</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="c1"># Annotate each curve with its label</span>
+    <span class="n">midpoint_index</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">collector_voltages</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">//</span> <span class="mi">2</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="n">labels</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="n">collector_voltages</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">midpoint_index</span><span class="p">],</span> <span class="n">collector_currents</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">midpoint_index</span><span class="p">]),</span> 
+                 <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="n">textcoords</span><span class="o">=</span><span class="s1">&#39;offset points&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">9</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Vcollector (V)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Collector current (mA)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;DC Sweep Analysis for Output-Characteristics of NPN Transistor&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="c1">#plt.legend()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/26925377a6f3fa5653d1df0ca7c7da9ec468ec4c5db6a299d2ae1ad97e882d74.png" src="../../_images/26925377a6f3fa5653d1df0ca7c7da9ec468ec4c5db6a299d2ae1ad97e882d74.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="conclusion-of-our-experiments">
+<h2>Conclusion of our experiments<a class="headerlink" href="#conclusion-of-our-experiments" title="Link to this heading">#</a></h2>
+<p>In our experiments in the electronics laboratory using Python and SPICE (PySpice), we understood the following concepts:</p>
+<ul class="simple">
+<li><p>The bias of the <span class="math notranslate nohighlight">\( V_\text{BE} \)</span> input junction is crucial for transistor conduction. When <span class="math notranslate nohighlight">\(  V_\text{BE} \)</span> is high, it results in a larger <span class="math notranslate nohighlight">\( I_\text{Base} \)</span> , which increases <span class="math notranslate nohighlight">\( I_\text{Collector} \)</span>. As a result, the voltage drop across other elements decreases, and <span class="math notranslate nohighlight">\( V_\text{CE} \)</span> becomes small, leading to transistor saturation.</p></li>
+<li><p>When the <span class="math notranslate nohighlight">\( V_\text{BE} \)</span> bias is lower, such as 0.5V, the I_Base is smaller, and <span class="math notranslate nohighlight">\( I_\text{Emitter} \)</span> or <span class="math notranslate nohighlight">\( I_\text{Collector} \)</span> remains normal. In this case, <span class="math notranslate nohighlight">\( V_\text{BE} \)</span> is approximately <span class="math notranslate nohighlight">\( V_\text{CC}}{2} \)</span>. This configuration yields suitable operating points for the output transistor and ensures that the transistor operates in the active region for optimal performance.</p></li>
+</ul>
+</section>
+<section id="biasing-bjt">
+<h2>Biasing BJT<a class="headerlink" href="#biasing-bjt" title="Link to this heading">#</a></h2>
+<section id="important-algorithm-for-bias-analysis">
+<h3>Important Algorithm for Bias analysis<a class="headerlink" href="#important-algorithm-for-bias-analysis" title="Link to this heading">#</a></h3>
+<p><strong>Step 1: Assumption and Calculation</strong></p>
+<ul class="simple">
+<li><p><strong>Assumption</strong>: Assume the operating point is in the Active region.</p></li>
+<li><p><strong>Calculation</strong>: Use the formula <span class="math notranslate nohighlight">\( I_C = \beta I_B \)</span> to solve the problem.</p></li>
+</ul>
+<p><strong>Step 2: Verification and Adjustment</strong></p>
+<ul class="simple">
+<li><p><strong>Check</strong>: Verify if <span class="math notranslate nohighlight">\( V_\text{CE} \)</span> is greater than 1 volt.</p>
+<ul>
+<li><p><strong>If True</strong>: The assumption of the Active region is correct; proceed with DC analysis.</p></li>
+<li><p><strong>If False</strong>: The operating point might be in the Saturation region. In this case, use <span class="math notranslate nohighlight">\( I_E = I_C + I_B \)</span> instead of <span class="math notranslate nohighlight">\( I_C = \beta I_B \)</span> and complete the DC analysis with this adjustment.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="fixed-bias-circuit-and-dc-analysis">
+<h3>Fixed-Bias Circuit and DC Analysis<a class="headerlink" href="#fixed-bias-circuit-and-dc-analysis" title="Link to this heading">#</a></h3>
+<p>The fixed-bias circuit described is a basic configuration for transistor DC biasing, applicable to both NPN and PNP transistors by adjusting current directions and voltage polarities. For DC analysis, capacitors are replaced with <strong>open circuits</strong> because their reactance depends on frequency.</p>
+<p>The DC supply, <span class="math notranslate nohighlight">\( V_{CC} \)</span>, can be split into two supplies to analyze input and output circuits separately, reducing interaction between them to the base current <span class="math notranslate nohighlight">\( I_B \)</span>. The base-emitter loop is analyzed using Kirchhoff’s voltage law, yielding:</p>
+<div class="math notranslate nohighlight">
+\[
+V_{CC} - I_B R_B - V_{BE} = 0
+\]</div>
+<p>Solving for <span class="math notranslate nohighlight">\( I_B \)</span> gives:</p>
+<div class="math notranslate nohighlight">
+\[
+I_B = \frac{V_{CC} - V_{BE}}{R_B}
+\]</div>
+<p>where <span class="math notranslate nohighlight">\( V_{CC} \)</span> and <span class="math notranslate nohighlight">\( V_{BE} \)</span> are constants, and <span class="math notranslate nohighlight">\( R_B \)</span> determines <span class="math notranslate nohighlight">\( I_B \)</span>.</p>
+</section>
+<section id="collector-emitter-loop-and-voltage-measurements">
+<h3>Collector-Emitter Loop and Voltage Measurements<a class="headerlink" href="#collector-emitter-loop-and-voltage-measurements" title="Link to this heading">#</a></h3>
+<p>In the collector-emitter loop, the collector current <span class="math notranslate nohighlight">\( I_C \)</span> is related to <span class="math notranslate nohighlight">\( I_B \)</span> by:</p>
+<div class="math notranslate nohighlight">
+\[
+I_C = \beta I_B
+\]</div>
+<p>where <span class="math notranslate nohighlight">\( \beta \)</span> is the current gain. The voltage across the collector-emitter junction, <span class="math notranslate nohighlight">\( V_{CE} \)</span>, is given by:</p>
+<div class="math notranslate nohighlight">
+\[
+V_{CE} = V_{CC} - I_C R_C
+\]</div>
+<p>Here, <span class="math notranslate nohighlight">\( V_{CE} \)</span> represents the voltage from collector to emitter. Voltage measurements are taken by placing the positive lead of the voltmeter at the collector terminal and the negative lead at the emitter terminal. The difference between <span class="math notranslate nohighlight">\( V_C \)</span> (voltage from collector to ground) and <span class="math notranslate nohighlight">\( V_{CE} \)</span> is significant for troubleshooting transistor circuits.</p>
+<p><img alt="Fix_Bias_Circuit1" src="../../_images/Fix_Bias_Circuit.PNG" /></p>
+</section>
+</section>
+<section id="load-line-analysis">
+<h2>Load-Line Analysis<a class="headerlink" href="#load-line-analysis" title="Link to this heading">#</a></h2>
+<p>As we know Load-Line Analysis for Diode Networks Involves plotting the diode’s actual characteristics along with the network equation. The intersection of these plots defines the network’s operating conditions.</p>
+<p><strong>Load-Line Analysis for BJT Networks</strong>:
+Similar approach as with diodes, using the BJT’s characteristics. For a fixed-bias configuration, the load resistor <span class="math notranslate nohighlight">\( R_C \)</span> determines the slope of the network equation.A smaller load resistance results in a steeper slope. The network equation is <span class="math notranslate nohighlight">\( V_{CE} = V_{CC} - I_C R_C \)</span>. The output characteristics of the transistor plot <span class="math notranslate nohighlight">\( I_C \)</span> versus <span class="math notranslate nohighlight">\( V_{CE} \)</span>. Using two points to plot the straight line defined by the network equation, such as when <span class="math notranslate nohighlight">\( I_C = 0 \)</span> mA, <span class="math notranslate nohighlight">\( V_{CE} = V_{CC} \)</span>. This method allows for determining the operating point by finding where the network equation intersects with the device characteristics.</p>
+<p><img alt="Fix_Bias_Circuit_Load_Line" src="../../_images/Fix_Bias_Circuit_Load_Line.PNG" /></p>
+<p>Following figures shows Effect of Network over Operating Point in Fix Bias circuit.
+By joining the two points defined by above Equations, we can draw the straight line established by  <span class="math notranslate nohighlight">\( V_{CE} = V_{CC} - I_C R_C \)</span>. The resulting line on the graph is called the load line because it is defined by the load resistor <span class="math notranslate nohighlight">\( R_C \)</span>. By solving for the resulting level of <span class="math notranslate nohighlight">\( I_B \)</span>, we can establish the actual Q-point.</p>
+<p>If the level of <span class="math notranslate nohighlight">\( I_B \)</span> is changed by varying the value of <span class="math notranslate nohighlight">\( R_B \)</span>, the Q-point moves up or down the load line for increasing values of <span class="math notranslate nohighlight">\( I_B \)</span>. If <span class="math notranslate nohighlight">\( V_{CC} \)</span> is held fixed and <span class="math notranslate nohighlight">\( R_C \)</span> is increased, the load line will shift. If <span class="math notranslate nohighlight">\( I_B \)</span> is held fixed, the Q-point will move accordingly. If <span class="math notranslate nohighlight">\( R_C \)</span> is fixed and <span class="math notranslate nohighlight">\( V_{CC} \)</span> decreased, the load line shifts again.</p>
+<p><img alt="EffectofNetwork_FixBias_OperatingPoint" src="../../_images/EffectofNetwork_FixBias_OperatingPoint.png" /></p>
+</section>
+<section id="emitter-bias-configuration">
+<h2>Emitter Bias Configuration<a class="headerlink" href="#emitter-bias-configuration" title="Link to this heading">#</a></h2>
+<p>Writing Kirchhoff’s voltage law around the base–emitter loop of the network in the following Figure.</p>
+<div class="math notranslate nohighlight">
+\[
++V_{CC} - I_B R_B - V_{BE} - I_E R_E = 0
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+I_E = (\beta + 1) I_B
+\]</div>
+<p>Substituting for <span class="math notranslate nohighlight">\( I_E \)</span> in Eq. (4.15) results in:</p>
+<div class="math notranslate nohighlight">
+\[
+V_{CC} - I_B R_B - V_{BE} - (\beta + 1) I_B R_E = 0
+\]</div>
+<p>Grouping terms then provides the following:</p>
+<div class="math notranslate nohighlight">
+\[
+-I_B (R_B + (\beta + 1) R_E) + V_{CC} - V_{BE} = 0
+\]</div>
+<p>Multiplying through by <span class="math notranslate nohighlight">\(-1\)</span>, we have:</p>
+<div class="math notranslate nohighlight">
+\[ I_B (R_B + (\beta + 1) R_E) - V_{CC} + V_{BE} = 0 \]</div>
+<p>Therefore:</p>
+<div class="math notranslate nohighlight">
+\[ I_B (R_B + (\beta + 1) R_E) = V_{CC} - V_{BE} \]</div>
+<p>Solving for <span class="math notranslate nohighlight">\( I_B \)</span> gives:</p>
+<div class="math notranslate nohighlight">
+\[ I_B = \frac{V_{CC} - V_{BE}}{R_B + (\beta + 1) R_E} \]</div>
+<p>Note that the only difference between this equation for <span class="math notranslate nohighlight">\( I_B \)</span> and that obtained for the fixed bias configuration is the term <span class="math notranslate nohighlight">\((\beta + 1) R_E\)</span>.</p>
+<p>Note that aside from the base-to-emitter voltage <span class="math notranslate nohighlight">\( V_{BE} \)</span>, the resistor <span class="math notranslate nohighlight">\( R_E \)</span> is reflected back to the input base circuit by a factor <span class="math notranslate nohighlight">\((\beta + 1)\)</span>. In other words, the emitter resistor, which is part of the collector–emitter loop, “appears as” <span class="math notranslate nohighlight">\((\beta + 1) R_E\)</span> in the base–emitter loop. Because <span class="math notranslate nohighlight">\(\beta\)</span> is typically 50 or more, the emitter resistor appears to be a great deal larger in the base circuit.</p>
+<div class="math notranslate nohighlight">
+\[
+R_i = (\beta + 1) R_E
+\]</div>
+<p><img alt="EmitterBiasConfiguration" src="../../_images/EmitterBiasConfiguration1.PNG" /></p>
+</section>
+<section id="voltage-divider-bias-configuration">
+<h2>Voltage Divider Bias Configuration<a class="headerlink" href="#voltage-divider-bias-configuration" title="Link to this heading">#</a></h2>
+<p>The voltage-divider bias configuration is designed to minimize dependence on the transistor’s beta, making the operating point <span class="math notranslate nohighlight">\( I_{CQ} \)</span> and <span class="math notranslate nohighlight">\( V_{CEQ} \)</span> almost independent of beta if circuit parameters are properly chosen.</p>
+<p><img alt="SelfBias_VoltageDeviderBias" src="../../_images/SelfBias_VoltageDeviderBias.png" /></p>
+<section id="homework-controlled-feedback-configuration">
+<h3>Homework: Controlled Feedback Configuration<a class="headerlink" href="#homework-controlled-feedback-configuration" title="Link to this heading">#</a></h3>
+<p>Solve following example.</p>
+<p><img alt="Controlled Feedback Configuration" src="../../_images/ControlledFeedback.png" /></p>
+</section>
+</section>
+<section id="common-collecter-emitter-follower-configuration">
+<h2>Common-collecter (emitter-follower) configuration<a class="headerlink" href="#common-collecter-emitter-follower-configuration" title="Link to this heading">#</a></h2>
+<p><img alt="emitter-follower" src="../../_images/emitter_follower.PNG" /></p>
+</section>
+<section id="multiple-bjt">
+<h2>Multiple BJT<a class="headerlink" href="#multiple-bjt" title="Link to this heading">#</a></h2>
+<section id="rc-coupling">
+<h3>RC coupling<a class="headerlink" href="#rc-coupling" title="Link to this heading">#</a></h3>
+<p>This section covers multi-stage BJT networks, demonstrating how previous methods can be applied to more complex configurations. The R–C coupling method, commonly used, involves feeding the collector output of one stage into the base of the next stage using a coupling capacitor to block DC and pass AC signals. By substituting open-circuit equivalents for capacitors, each stage can be analyzed separately without affecting the others.</p>
+<p><img alt="MultiStageCoupling_RC" src="../../_images/MultiStageCoupling_RC.PNG" /></p>
+</section>
+<section id="darlington">
+<h3>Darlington<a class="headerlink" href="#darlington" title="Link to this heading">#</a></h3>
+<p>The Darlington configuration in the following Figure, feeds the output of one stage directly into the input of the next, resulting in an AC gain close to 1 with high input impedance, making it suitable for amplifiers with high internal resistance sources. Adding a load resistor to the collector leg and taking the output from the collector terminal would provide very high gain.</p>
+<p><img alt="Darligton1_1" src="../../_images/Darligton1.PNG" /></p>
+</section>
+</section>
+<section id="bjt-ac-analysis">
+<h2>BJT AC analysis<a class="headerlink" href="#bjt-ac-analysis" title="Link to this heading">#</a></h2>
+<section id="ac-analysis-in-fixed-bias-configuration">
+<h3>AC analysis in Fixed-Bias Configuration<a class="headerlink" href="#ac-analysis-in-fixed-bias-configuration" title="Link to this heading">#</a></h3>
+<p><img alt="AC_FixBias" src="../../_images/AC_FixBias.PNG" /></p>
+<p><img alt="Table_AC_FixBias" src="../../_images/ACFix_Table.PNG" /></p>
+</section>
+<section id="ac-analysis-in-voltage-divider-bias-configuration">
+<h3>AC analysis in Voltage-Divider Bias Configuration<a class="headerlink" href="#ac-analysis-in-voltage-divider-bias-configuration" title="Link to this heading">#</a></h3>
+<p><img alt="AC_SelfBias1" src="../../_images/AC_SelfBias.PNG" /></p>
+<p><img alt="Table_ACSelfBias" src="../../_images/AC_SelfBias_Table.PNG" /></p>
+</section>
+<section id="ac-analysis-in-unbypassed-emitter-bias-configuration">
+<h3>AC analysis in Unbypassed Emitter-Bias Configuration<a class="headerlink" href="#ac-analysis-in-unbypassed-emitter-bias-configuration" title="Link to this heading">#</a></h3>
+<p><img alt="AC_UnbypassedEmitterBias" src="../../_images/UnbypassedEmitterBias.PNG" /></p>
+<p><img alt="Table_AC_UnbypassedEmitterBias" src="../../_images/Table_UnbypassedEmitterBias.PNG" /></p>
+</section>
+<section id="ac-analysis-in-emitter-follower-configuration">
+<h3>AC analysis in Emitter Follower Configuration<a class="headerlink" href="#ac-analysis-in-emitter-follower-configuration" title="Link to this heading">#</a></h3>
+<p><img alt="AC_EmitterFollower" src="../../_images/AC_EmitterFollower.png" /></p>
+</section>
+<section id="ac-analysis-in-collector-feedback-configuration">
+<h3>AC analysis in Collector Feedback Configuration<a class="headerlink" href="#ac-analysis-in-collector-feedback-configuration" title="Link to this heading">#</a></h3>
+<p><img alt="AC_FeedBack_CollectorBase1" src="../../_images/AC_FeedBack_CollectorBase.PNG" /></p>
+</section>
+<section id="ac-analysis-in-fixed-bias-configuration-with-load">
+<h3>AC analysis in Fixed-Bias Configuration with Load<a class="headerlink" href="#ac-analysis-in-fixed-bias-configuration-with-load" title="Link to this heading">#</a></h3>
+<p><img alt="AC_FixBiasWithLoad1" src="../../_images/AC_FixBiasWithLoad.PNG" /></p>
+<section id="ac-analysis-voltage-divider-bias-configuration-with-load">
+<h4>AC Analysis Voltage-Divider Bias Configuration with Load<a class="headerlink" href="#ac-analysis-voltage-divider-bias-configuration-with-load" title="Link to this heading">#</a></h4>
+<p><img alt="ACAnalysisVoltageDividerBiasConfigurationwithLoad1" src="../../_images/ACAnalysisVoltageDividerBiasConfigurationwithLoad.PNG" /></p>
+</section>
+</section>
+</section>
+<section id="miniproject-select-the-desired-configuration-and-complete-the-following-tasks">
+<h2>Miniproject: Select the desired configuration and complete the following tasks:<a class="headerlink" href="#miniproject-select-the-desired-configuration-and-complete-the-following-tasks" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Add the necessary text and relationships for DC and AC solutions.</p></li>
+<li><p>Use Schemdraw.</p></li>
+<li><p>Use Pyspice.</p></li>
+</ul>
+</section>
+<section id="resistor-transistor-logic-rtl">
+<h2>Resistor-transistor logic (RTL)<a class="headerlink" href="#resistor-transistor-logic-rtl" title="Link to this heading">#</a></h2>
+<section id="not-gate-in-rtl">
+<h3>NOT Gate in RTL<a class="headerlink" href="#not-gate-in-rtl" title="Link to this heading">#</a></h3>
+<p><img alt="NOTGateRTL1" src="../../_images/NOTGateRTL.PNG" /></p>
+</section>
+<section id="nor-gate-in-rtl">
+<h3>NOR Gate in RTL<a class="headerlink" href="#nor-gate-in-rtl" title="Link to this heading">#</a></h3>
+<p><img alt="NORGateRTL1" src="../../_images/NORGateRTL.PNG" /></p>
+</section>
+<section id="nand-gate-in-rtl">
+<h3>NAND Gate in RTL<a class="headerlink" href="#nand-gate-in-rtl" title="Link to this heading">#</a></h3>
+<p><img alt="NANDGateRTL" src="../../_images/NANDGateRTL1.PNG" /></p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./courses\Circuit_Electronics"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="DiodeApplication.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Diode Application</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="FET.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Field Effect Transistor</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#npn-transistor">NPN transistor</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pnp-transistor">PNP transistor</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#electronic-laboratory-bjt-saturation-region">Electronic Laboratory: BJT Saturation Region</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#electronic-labratory-bjt-active-region">Electronic Labratory : BJT Active region</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion-of-our-experiments">Conclusion of our experiments</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#biasing-bjt">Biasing BJT</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#important-algorithm-for-bias-analysis">Important Algorithm for Bias analysis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fixed-bias-circuit-and-dc-analysis">Fixed-Bias Circuit and DC Analysis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#collector-emitter-loop-and-voltage-measurements">Collector-Emitter Loop and Voltage Measurements</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#load-line-analysis">Load-Line Analysis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#emitter-bias-configuration">Emitter Bias Configuration</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#voltage-divider-bias-configuration">Voltage Divider Bias Configuration</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#homework-controlled-feedback-configuration">Homework: Controlled Feedback Configuration</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-collecter-emitter-follower-configuration">Common-collecter (emitter-follower) configuration</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-bjt">Multiple BJT</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rc-coupling">RC coupling</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#darlington">Darlington</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bjt-ac-analysis">BJT AC analysis</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ac-analysis-in-fixed-bias-configuration">AC analysis in Fixed-Bias Configuration</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ac-analysis-in-voltage-divider-bias-configuration">AC analysis in Voltage-Divider Bias Configuration</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ac-analysis-in-unbypassed-emitter-bias-configuration">AC analysis in Unbypassed Emitter-Bias Configuration</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ac-analysis-in-emitter-follower-configuration">AC analysis in Emitter Follower Configuration</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ac-analysis-in-collector-feedback-configuration">AC analysis in Collector Feedback Configuration</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ac-analysis-in-fixed-bias-configuration-with-load">AC analysis in Fixed-Bias Configuration with Load</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ac-analysis-voltage-divider-bias-configuration-with-load">AC Analysis Voltage-Divider Bias Configuration with Load</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#miniproject-select-the-desired-configuration-and-complete-the-following-tasks">Miniproject: Select the desired configuration and complete the following tasks:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resistor-transistor-logic-rtl">Resistor-transistor logic (RTL)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#not-gate-in-rtl">NOT Gate in RTL</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nor-gate-in-rtl">NOR Gate in RTL</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nand-gate-in-rtl">NAND Gate in RTL</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Dr.Hadi Sadoghi Yazdi
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024 Pattern Recognition Lab.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

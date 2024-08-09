@@ -1,0 +1,1274 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Basic component &#8212; Dr.Hadi Sadoghi Yazdi</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=87e54e7c" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=3ee479438cf8b5e0d341"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'courses/Circuit_Electronics/BasicElements';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Voltage , Current" href="KVL_KCL.html" />
+    <link rel="prev" title="Introduction to Circuit and Electronics" href="Introduction_CircuitElectronics.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../../Home_Page.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/Hadi_Sadoghi_Yazdi.png" class="logo__image only-light" alt="Dr.Hadi Sadoghi Yazdi - Home"/>
+    <script>document.write(`<img src="../../_static/Hadi_Sadoghi_Yazdi.png" class="logo__image only-dark" alt="Dr.Hadi Sadoghi Yazdi - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../Home_Page.html">
+                    Welcome to my personal Website!
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../../Courses.html">Courses</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 has-children"><a class="reference internal" href="../pattern_recognition.html">Pattern Recognition</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../PR/Introduction/PR_intro.html">Introduction</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="../PR/Introduction/DataSet.html">Dataset</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PR/Introduction/Model.html">Model</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PR/Introduction/Cost.html">Cost_Function</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PR/Introduction/LearningRule.html">Learning_Rule</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3"><a class="reference internal" href="../PR/Visualization/PR_intro_Visualization.html">Visualization</a></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../PR/Clustering/PR_intro_Clustering.html">Clustering Concept</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="../PR/Clustering/Clustering_1.html">Clustering</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PR/Clustering/FCM_1.html">k-means and fuzzy-c-means clustering</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PR/Clustering/FCM_Saghi_Project.html">Complementary of FCM</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PR/Clustering/LinkageClustering_1.html">Project Linkage clustering</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PR/Clustering/e_insensitive_linkage.html">Project <span class="math notranslate nohighlight">\( \epsilon \)</span> -insensitive Linkage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PR/Clustering/SOFM_Project.html">Project Title: Self-Organizing Feature Map (SOFM)</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../PR/Regression/Introduction_Regression.html">Regression</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="../PR/Regression/Regression_1.html">Linear Regression</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PR/Regression/NonLinearRegression.html">Non-linear Regression: The starting point</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PR/Regression/Linearization.html">Linearization</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PR/Regression/Kernel_for_Regression.html">Kernel method</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PR/Regression/EvaluationModelSelection.html">Project : Evaluation and Model Selection</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PR/Regression/Solution_for_Regression.html">Solution Method</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PR/Regression/TheoryRegression.html">Theoretical Aspects of Regression</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PR/Regression/ApplicationsPatternRecognition.html">Applications in Pattern Recognition</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../PR/Classification/PR_intro_Classification.html">Classification</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="../PR/Classification/SVDD.html">Support Vector Data Description (SVDD)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PR/Classification/SVM1.html">Support Vector Machine (SVM)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PR/Classification/Fisherclassifier.html">Fihser Classifier</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PR/Classification/KernelFisherDiscriminantAnalysis.html">Kernel Fisher Discriminant Analysis</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PR/Classification/DecisionTree1.html">Project Induction in Decision Trees</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../PR/BayesEstimation/BayesEstimation.html">Bayes Estimation</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="../PR/BayesEstimation/KDE_1.html">kernel-based density estimation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PR/BayesEstimation/MeanShift.html">Mean Shift Algorithm</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PR/BayesEstimation/ParametricDensityEstimation1.html">Parametric Density Estimation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PR/BayesEstimation/GMM.html">Gaussian Mixture Model</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../machine_learning.html">Machine Learning</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../ML/Regression/NonParamRegression.html">Regression Review</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ML/Regression/KernelRegression.html">Kernel Regression</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ML/Regression/GP_Regression.html">Gaussian Process</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ML/FeatureReduction/FR_Intro.html">Introduction of Feature Reduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ML/FeatureReduction/PCA.html">Principal Component Analysis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ML/FeatureReduction/Autoencoders1.html">Autoencoders</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../Supplementary1.html">Supplementary Documents</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../SupplementaryDocuments/EVD.html">Eigen Value Decomposition</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../SupplementaryDocuments/twin_svm.html">Twin SVM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../SupplementaryDocuments/Covariance1.html">Covariance</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="../CircuitElectronicAnalysis.html">Circuit and Electronics</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Introduction_CircuitElectronics.html">Introduction to Circuit and Electronics</a></li>
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">Basic component</a></li>
+<li class="toctree-l3"><a class="reference internal" href="KVL_KCL.html">Voltage , Current</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NodalMeshAnalysis.html">Basic Nodal and Mesh Analysis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RC_RL_RLC.html">R-C, R-L circuits</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Diode_chapter.html">Diode</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DiodeApplication.html">Diode Application</a></li>
+
+
+<li class="toctree-l3"><a class="reference internal" href="BJT1.html">Bipolar junction transistor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="FET.html">Field Effect Transistor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="OpAmp.html">Operational Amplifier</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="../signal_processing.html">Signal Processing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../image_processing.html">Image Processing</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../PRLabProduction.html">Pattern Lab Production</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../../ProposalPhD_Develop.html">Proposal PhD Develope</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Students.html">Students Projects</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../StudentProjects/BsC/Teymoori/chat_with_doc.html">Author Information</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Contact_Me.html">Contact Me</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../About_Me.html">About Me</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/h-sadoghi/dr-sadoghi.git" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/h-sadoghi/dr-sadoghi.git/issues/new?title=Issue%20on%20page%20%2Fcourses/Circuit_Electronics/BasicElements.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/courses/Circuit_Electronics/BasicElements.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Basic component</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resistors">Resistors</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#symbols-in-circuit-diagrams">Symbols in Circuit Diagrams</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#key-characteristics-of-resistors">Key Characteristics of Resistors:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#applications-of-resistors">Applications of Resistors:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-and-non-linear-resistor">Linear and Non-Linear Resistor</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-resistors">Linear Resistors:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#non-linear-resistors">Non-Linear Resistors:</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#thermistor">Thermistor</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#charactristic-of-ptc">Charactristic of PTC</a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#varistors">Varistors</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#light-dependent-resistor-ldr">Light Dependent Resistor (LDR)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#diode">Diode</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#for-the-mini-project-conduct-a-dc-sweep-analysis-of-the-characteristic-curve-of-a-diode-complete-and-execute-the-following-code-or-a-similar-version">For the mini-project, conduct a DC sweep analysis of the characteristic curve of a diode. Complete and execute the following code or a similar version.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#capacitors">Capacitors</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#key-characteristics-of-capacitors">Key Characteristics of Capacitors:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#applications-of-capacitors">Applications of Capacitors:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-and-non-linear-capacitors">Linear and Non-Linear Capacitors</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-capacitors">Linear Capacitors:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#i-v-charactristic">I-V Charactristic</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-with-capacitor">Example with capacitor</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solution">Solution:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#non-linear-capacitors">Non-Linear Capacitors:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#miniproject-nonlinear-capacitor-varactor-diode">Miniproject: Nonlinear Capacitor - Varactor Diode</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-varactor-diode">What is a Varactor Diode?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyspice-code-example">PySpice Code Example</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inductors">Inductors</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#key-characteristics-of-inductors">Key Characteristics of Inductors:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#applications-of-inductors">Applications of Inductors:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-and-non-linear-inductors">Linear and Non-Linear Inductors</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-inductors">Linear Inductors:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#non-linear-inductors">Non-Linear Inductors:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizing-an-inductor-in-a-circuit">Visualizing an Inductor in a Circuit</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#complete-the-mini-project-on-inductors">Complete the mini-project on inductors</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-capacior-and-inductor">Example Capacior and Inductor</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="basic-component">
+<h1>Basic component<a class="headerlink" href="#basic-component" title="Link to this heading">#</a></h1>
+<section id="resistors">
+<h2>Resistors<a class="headerlink" href="#resistors" title="Link to this heading">#</a></h2>
+<p>Resistors are passive electrical components used in circuits to control the flow of electric current by providing resistance. The resistance is measured in ohms (Ω) and is symbolized by the Greek letter omega (Ω).</p>
+<section id="symbols-in-circuit-diagrams">
+<h3>Symbols in Circuit Diagrams<a class="headerlink" href="#symbols-in-circuit-diagrams" title="Link to this heading">#</a></h3>
+<p><img alt="R1" src="../../_images/R.PNG" /></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">schemdraw</span>
+<span class="kn">import</span> <span class="nn">schemdraw.elements</span> <span class="k">as</span> <span class="nn">elm</span>
+
+<span class="n">d</span> <span class="o">=</span> <span class="n">schemdraw</span><span class="o">.</span><span class="n">Drawing</span><span class="p">()</span>
+<span class="n">R</span> <span class="o">=</span> <span class="n">d</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">elm</span><span class="o">.</span><span class="n">Resistor</span><span class="p">()</span><span class="o">.</span><span class="n">right</span><span class="p">())</span>
+<span class="n">d</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">schemdraw</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">schemdraw.elements</span> <span class="k">as</span> <span class="nn">elm</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">d</span> <span class="o">=</span> <span class="n">schemdraw</span><span class="o">.</span><span class="n">Drawing</span><span class="p">()</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;schemdraw&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="key-characteristics-of-resistors">
+<h3>Key Characteristics of Resistors:<a class="headerlink" href="#key-characteristics-of-resistors" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Resistance Value</strong>: This is the amount of resistance the resistor provides, typically marked on the component using color codes or numerical values.</p></li>
+<li><p><strong>Power Rating</strong>: Indicates the maximum power the resistor can dissipate without being damaged, usually specified in watts (W).</p></li>
+<li><p><strong>Tolerance</strong>: The precision of the resistor’s resistance value, often given as a percentage (e.g., ±5%).</p></li>
+</ul>
+</section>
+<section id="applications-of-resistors">
+<h3>Applications of Resistors:<a class="headerlink" href="#applications-of-resistors" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Voltage Division</strong>: Using a resistor network to create a specific voltage output from a higher voltage source.</p></li>
+<li><p><strong>Current Limiting</strong>: Protecting components by limiting the current flowing through a circuit.</p></li>
+<li><p><strong>Biasing</strong>: Setting operating points for active devices like transistors.</p></li>
+<li><p><strong>Pull-up/Pull-down</strong>: Ensuring a known state for digital circuits by connecting to a voltage supply or ground.</p></li>
+</ul>
+</section>
+<section id="linear-and-non-linear-resistor">
+<h3>Linear and Non-Linear Resistor<a class="headerlink" href="#linear-and-non-linear-resistor" title="Link to this heading">#</a></h3>
+<p>Resistors can be classified into linear and non-linear types based on how their resistance changes with the applied voltage and current.</p>
+</section>
+<section id="linear-resistors">
+<h3>Linear Resistors:<a class="headerlink" href="#linear-resistors" title="Link to this heading">#</a></h3>
+<p>Linear resistors have a constant resistance value regardless of the voltage or current passing through them. The current-voltage (I-V) relationship for a linear resistor follows Ohm’s Law, which states:</p>
+<p><span class="math notranslate nohighlight">\( V = IR \)</span></p>
+<p>where:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\( V \)</span> is the voltage across the resistor.</p></li>
+<li><p><span class="math notranslate nohighlight">\( I \)</span> is the current through the resistor.</p></li>
+<li><p><span class="math notranslate nohighlight">\( R \)</span> is the resistance.</p></li>
+</ul>
+<p>In a graph of voltage versus current, linear resistors produce a straight line with a slope equal to the resistance, passing through the origin.</p>
+</section>
+<section id="non-linear-resistors">
+<h3>Non-Linear Resistors:<a class="headerlink" href="#non-linear-resistors" title="Link to this heading">#</a></h3>
+<p>Non-linear resistors have a resistance that changes with the applied voltage or current. The I-V relationship for non-linear resistors does not follow a straight line, meaning the resistance varies under different conditions. Examples of non-linear resistors include:</p>
+<ul class="simple">
+<li><p><strong>Thermistors</strong>:</p>
+<ul>
+<li><p><strong>Negative Temperature Coefficient (NTC) Thermistors</strong>: Resistance decreases as temperature increases.</p></li>
+<li><p><strong>Positive Temperature Coefficient (PTC) Thermistors</strong>: Resistance increases as temperature increases.</p></li>
+</ul>
+</li>
+<li><p><strong>Varistors</strong> (Voltage-Dependent Resistors, VDRs):</p>
+<ul>
+<li><p>Resistance decreases as the voltage increases, commonly used for voltage surge protection.</p></li>
+</ul>
+</li>
+<li><p><strong>Diodes</strong>:</p>
+<ul>
+<li><p>Although primarily used for directing current, they have a non-linear resistance characteristic in their forward and reverse bias conditions.</p></li>
+</ul>
+</li>
+<li><p><strong>Light-Dependent Resistors (LDRs)</strong>:</p>
+<ul>
+<li><p>Resistance decreases as the intensity of incident light increases, used in light-sensing applications.</p></li>
+</ul>
+</li>
+</ul>
+<section id="thermistor">
+<h4>Thermistor<a class="headerlink" href="#thermistor" title="Link to this heading">#</a></h4>
+<p><strong>Symbols in Circuit Diagrams</strong></p>
+<p><img alt="Symbols in Circuit Diagrams" src="../../_images/ThermistorSymbol.PNG" /></p>
+<p>and the real world</p>
+<p><img alt="Pic_Thermistor" src="../../_images/Thermistor.PNG" /></p>
+<section id="charactristic-of-ptc">
+<h5>Charactristic of PTC<a class="headerlink" href="#charactristic-of-ptc" title="Link to this heading">#</a></h5>
+<p>Positive Temperature Coefficient (PTC) resistors have the characteristic that their resistance increases as the temperature increases.</p>
+<p><img alt="CharactristicPTC" src="../../_images/PTC_Curve.PNG" /></p>
+</section>
+</section>
+<section id="varistors">
+<h4>Varistors<a class="headerlink" href="#varistors" title="Link to this heading">#</a></h4>
+<p>Varistors are nonlinear electronic component designed to protect electrical circuits from excessive voltage surges or transients.</p>
+<p><img alt="Symbol Varistor" src="../../_images/Varistor.PNG" /></p>
+<p>They are voltage-dependent resistors with the following characteristics:</p>
+<p><strong>Voltage Clamping</strong>: They protect circuits by clamping voltage spikes and surges, thus preventing damage to electronic components.
+<strong>Non-linear Resistance</strong>: The resistance of a varistor decreases significantly as the voltage across it increases.</p>
+<p><img alt="ProtectionCircuitVaristor" src="../../_images/VaristorProtectionCircuit.PNG" /></p>
+<p>It protects because of the following characteristic of the varistor: if the voltage exceeds the threshold, the resistance of the varistor decreases, causing the circuit to be protected. This happens because the current exceeds a safe level, operate the fuse, or it prevents the current cannot pass through the main circuit.</p>
+</section>
+<section id="light-dependent-resistor-ldr">
+<h4>Light Dependent Resistor (LDR)<a class="headerlink" href="#light-dependent-resistor-ldr" title="Link to this heading">#</a></h4>
+<p>The Light-dependent resistors made with photosensitive. They are placed in a Zig-Zag shape as you can see in the pic below. A transparent coating is applied on the top so that the zig-zag-shaped photosensitive material gets protected and as the coating is transparent the LDR will be able to capture light from the outer environment for its working. Their resistance decreases as the light intensity increases.</p>
+<p><img alt="LDR_Pic" src="../../_images/LDR.PNG" /></p>
+<p><strong>Difference Between Photodiode and LDR</strong>
+The photodiodes are semiconductor devices and work on PN junctions and have quick response.</p>
+<p><strong>Example Circuit</strong></p>
+<p><img alt="LLDR_Application" src="../../_images/LDR_App.png" /></p>
+</section>
+<section id="diode">
+<h4>Diode<a class="headerlink" href="#diode" title="Link to this heading">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">schemdraw</span>
+<span class="kn">import</span> <span class="nn">schemdraw.elements</span> <span class="k">as</span> <span class="nn">elm</span>
+
+<span class="n">d</span> <span class="o">=</span> <span class="n">schemdraw</span><span class="o">.</span><span class="n">Drawing</span><span class="p">()</span>
+<span class="n">R</span> <span class="o">=</span> <span class="n">d</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">elm</span><span class="o">.</span><span class="n">Resistor</span><span class="p">()</span><span class="o">.</span><span class="n">right</span><span class="p">())</span>
+<span class="n">Q</span> <span class="o">=</span> <span class="n">d</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">elm</span><span class="o">.</span><span class="n">Diode</span><span class="p">()</span><span class="o">.</span><span class="n">down</span><span class="p">()</span><span class="o">.</span><span class="n">length</span><span class="p">(</span><span class="mi">6</span><span class="p">))</span>
+<span class="n">d</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">elm</span><span class="o">.</span><span class="n">SourceV</span><span class="p">()</span><span class="o">.</span><span class="n">endpoints</span><span class="p">(</span><span class="n">Q</span><span class="o">.</span><span class="n">end</span><span class="p">,</span> <span class="n">R</span><span class="o">.</span><span class="n">start</span><span class="p">))</span>
+<span class="n">d</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/2e8d2991879e2f428dff17ca894731fbf3cc8f169ef8925a31f1ee628d0c072a.svg" src="../../_images/2e8d2991879e2f428dff17ca894731fbf3cc8f169ef8925a31f1ee628d0c072a.svg" /></div>
+</div>
+</section>
+</section>
+</section>
+<section id="for-the-mini-project-conduct-a-dc-sweep-analysis-of-the-characteristic-curve-of-a-diode-complete-and-execute-the-following-code-or-a-similar-version">
+<h2>For the mini-project, conduct a DC sweep analysis of the characteristic curve of a diode. Complete and execute the following code or a similar version.<a class="headerlink" href="#for-the-mini-project-conduct-a-dc-sweep-analysis-of-the-characteristic-curve-of-a-diode-complete-and-execute-the-following-code-or-a-similar-version" title="Link to this heading">#</a></h2>
+<p><a class="reference external" href="https://pyspice.fabrice-salvaire.fr/releases/v1.4/examples/diode/diode-characteristic-curve.html?highlight=simulator%20dc">Charatristic Curve of Diode</a></p>
+</section>
+<section id="capacitors">
+<h2>Capacitors<a class="headerlink" href="#capacitors" title="Link to this heading">#</a></h2>
+<p>Capacitors are passive electrical components used in circuits to store and release electrical energy. They consist of two conductive plates separated by an insulating material called a dielectric. The ability of a capacitor to store charge is measured in farads (F), symbolized by the letter “F”.</p>
+<p><img alt="RealCapacitor" src="../../_images/RealCapacitor.PNG" /></p>
+<p>A conventional capacitor stores electric energy by charge separation between two plates. The charge stored depends on the plate size, dielectric properties, and separation distance. The capacitance <span class="math notranslate nohighlight">\(C\)</span> is given by:</p>
+<div class="math notranslate nohighlight">
+\[
+C = \frac{\varepsilon A}{d}
+\]</div>
+<p>where:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\( \varepsilon \)</span> is the dielectric permittivity.</p></li>
+<li><p><span class="math notranslate nohighlight">\( A \)</span> is the plate area.</p></li>
+<li><p><span class="math notranslate nohighlight">\( d \)</span> is the plate separation.</p></li>
+</ul>
+<p>Capacitance increases with larger plates and higher permittivity, and decreases with greater separation. Most industrial capacitors use this plate design.</p>
+<p><img alt="CapStruct" src="../../_images/CapStructure.PNG" /></p>
+<section id="key-characteristics-of-capacitors">
+<h3>Key Characteristics of Capacitors:<a class="headerlink" href="#key-characteristics-of-capacitors" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Capacitance Value</strong>: This is the amount of charge a capacitor can store per unit voltage, typically marked on the component using numerical values or color codes.</p></li>
+<li><p><strong>Voltage Rating</strong>: Indicates the maximum voltage the capacitor can handle without breaking down.</p></li>
+<li><p><strong>Tolerance</strong>: The precision of the capacitor’s capacitance value, often given as a percentage (e.g., ±10%).</p></li>
+<li><p><strong>Dielectric Material</strong>: The insulating material between the plates, which affects the capacitor’s properties and performance.</p></li>
+</ul>
+</section>
+<section id="applications-of-capacitors">
+<h3>Applications of Capacitors:<a class="headerlink" href="#applications-of-capacitors" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Energy Storage</strong>: Storing electrical energy for later use, such as in power supplies or flash cameras.</p></li>
+<li><p><strong>Filtering</strong>: Smoothing out voltage fluctuations in power supplies and signal processing.</p></li>
+<li><p><strong>Timing Circuits</strong>: Creating delays or setting the timing in oscillators and pulse generators.</p></li>
+<li><p><strong>Coupling and Decoupling</strong>: Blocking DC components while allowing AC signals to pass in signal processing circuits.</p></li>
+<li><p><strong>Tuning Circuits</strong>: Adjusting the frequency response in radios and other communication devices.</p></li>
+</ul>
+</section>
+<section id="linear-and-non-linear-capacitors">
+<h3>Linear and Non-Linear Capacitors<a class="headerlink" href="#linear-and-non-linear-capacitors" title="Link to this heading">#</a></h3>
+<p>Capacitors can be classified into linear and non-linear types based on how their capacitance changes with the applied voltage and frequency.</p>
+</section>
+<section id="linear-capacitors">
+<h3>Linear Capacitors:<a class="headerlink" href="#linear-capacitors" title="Link to this heading">#</a></h3>
+<p>Linear capacitors have a constant capacitance value regardless of the voltage or frequency applied to them. The charge-voltage (Q-V) relationship for a linear capacitor follows the equation:</p>
+<div class="math notranslate nohighlight">
+\[ Q = CV \]</div>
+<p>where:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\( Q \)</span> is the charge stored in the capacitor.</p></li>
+<li><p><span class="math notranslate nohighlight">\( V \)</span> is the voltage across the capacitor.</p></li>
+<li><p><span class="math notranslate nohighlight">\( C \)</span> is the capacitance.</p></li>
+</ul>
+<p>In a graph of charge versus voltage, linear capacitors produce a straight line with a slope equal to the capacitance.</p>
+</section>
+<section id="i-v-charactristic">
+<h3>I-V Charactristic<a class="headerlink" href="#i-v-charactristic" title="Link to this heading">#</a></h3>
+<p>To derive the relationship for voltage across a capacitor in terms of current, starting from the basic capacitor equations:</p>
+<ol class="arabic">
+<li><p>The charge stored in a capacitor is given by:</p>
+<div class="math notranslate nohighlight">
+\[
+   Q = CV
+   \]</div>
+<p>where <span class="math notranslate nohighlight">\( Q \)</span> is the charge, <span class="math notranslate nohighlight">\( C \)</span> is the capacitance, and <span class="math notranslate nohighlight">\( V \)</span> is the voltage across the capacitor.</p>
+</li>
+<li><p>The current <span class="math notranslate nohighlight">\( i \)</span> through the capacitor is the rate of change of charge with respect to time:</p>
+<div class="math notranslate nohighlight">
+\[
+   i = \frac{dQ}{dt}
+   \]</div>
+</li>
+</ol>
+<p>Substitute <span class="math notranslate nohighlight">\( Q = CV \)</span> into the current equation:</p>
+<ol class="arabic" start="3">
+<li><p>Since <span class="math notranslate nohighlight">\( Q = CV \)</span>, we get:</p>
+<div class="math notranslate nohighlight">
+\[
+   i = \frac{d}{dt} (CV)
+   \]</div>
+</li>
+<li><p>Assuming capacitance <span class="math notranslate nohighlight">\( C \)</span> is constant (not changing with time), we can take it out of the derivative:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[
+i(t) = C \frac{dV(t)}{dt}
+\]</div>
+<p>So, the voltage across a capacitor in terms of the current is:</p>
+<div class="math notranslate nohighlight">
+\[
+V(t) = \frac{1}{C} \int i(t) \, dt
+\]</div>
+<section id="example-with-capacitor">
+<h4>Example with capacitor<a class="headerlink" href="#example-with-capacitor" title="Link to this heading">#</a></h4>
+<p>Calculate the voltage across a capacitor if the initial voltage is 2 volts and the current flowing through the capacitor is given by <span class="math notranslate nohighlight">\( i(t) = 5 \sin(t) \)</span> A. The capacitance <span class="math notranslate nohighlight">\( C \)</span> is <span class="math notranslate nohighlight">\( 1 \, \text{F} \)</span>.</p>
+</section>
+</section>
+<section id="solution">
+<h3>Solution:<a class="headerlink" href="#solution" title="Link to this heading">#</a></h3>
+<ol class="arabic">
+<li><p>Start with the relationship:</p>
+<div class="math notranslate nohighlight">
+\[
+   i(t) = C \frac{dV(t)}{dt}
+   \]</div>
+</li>
+<li><p>Given:</p>
+<div class="math notranslate nohighlight">
+\[
+   i(t) = 5 \sin(t) \quad \text{and} \quad C = 1 \, \text{F}
+   \]</div>
+</li>
+<li><p>Substitute <span class="math notranslate nohighlight">\( C \)</span> and <span class="math notranslate nohighlight">\( i(t) \)</span> into the equation:</p>
+<div class="math notranslate nohighlight">
+\[
+   5 \sin(t) = 1 \cdot \frac{dV(t)}{dt}
+   \]</div>
+</li>
+<li><p>This simplifies to:</p>
+<div class="math notranslate nohighlight">
+\[
+   \frac{dV(t)}{dt} = 5 \sin(t)
+   \]</div>
+</li>
+<li><p>Integrate both sides with respect to <span class="math notranslate nohighlight">\( t \)</span> to find <span class="math notranslate nohighlight">\( V(t) \)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+   V(t) = \int 5 \sin(t) \, dt
+   \]</div>
+</li>
+<li><p>The integral of <span class="math notranslate nohighlight">\( \sin(t) \)</span> is <span class="math notranslate nohighlight">\( -\cos(t) \)</span>, so:</p>
+<div class="math notranslate nohighlight">
+\[
+   V(t) = -5 \cos(t) + C_1
+   \]</div>
+</li>
+<li><p>Use the initial condition to find the constant <span class="math notranslate nohighlight">\( C_1 \)</span>. Given <span class="math notranslate nohighlight">\( V(0) = 2 \)</span> volts:</p>
+<div class="math notranslate nohighlight">
+\[
+   2 = -5 \cos(0) + C_1
+   \]</div>
+<p>Since <span class="math notranslate nohighlight">\( \cos(0) = 1 \)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+   2 = -5 + C_1 \implies C_1 = 7
+   \]</div>
+</li>
+<li><p>Therefore, the voltage across the capacitor as a function of time is:</p>
+<div class="math notranslate nohighlight">
+\[
+   V(t) = -5 \cos(t) + 7
+   \]</div>
+</li>
+</ol>
+</section>
+<section id="non-linear-capacitors">
+<h3>Non-Linear Capacitors:<a class="headerlink" href="#non-linear-capacitors" title="Link to this heading">#</a></h3>
+<p>Non-linear capacitors have a capacitance that changes with the applied voltage or frequency. The Q-V relationship for non-linear capacitors does not follow a straight line, meaning the capacitance varies under different conditions. Examples of non-linear capacitors include:</p>
+<ul class="simple">
+<li><p><strong>Varactor Diodes</strong>: Capacitance varies with the reverse-bias voltage, commonly used in tuning circuits.</p></li>
+<li><p><strong>Ceramic Capacitors (Class II and III)</strong>: Capacitance changes with the applied voltage and temperature, used in various filtering and bypass applications.</p></li>
+</ul>
+</section>
+</section>
+<section id="miniproject-nonlinear-capacitor-varactor-diode">
+<h2>Miniproject: Nonlinear Capacitor - Varactor Diode<a class="headerlink" href="#miniproject-nonlinear-capacitor-varactor-diode" title="Link to this heading">#</a></h2>
+<p><strong>Complete and correct the text and excecute the following code after debuging</strong></p>
+<section id="what-is-a-varactor-diode">
+<h3>What is a Varactor Diode?<a class="headerlink" href="#what-is-a-varactor-diode" title="Link to this heading">#</a></h3>
+<p>A varactor diode, also known as a varicap diode or tuning diode, is a type of diode designed to exploit the voltage-dependent capacitance of a reverse-biased p-n junction. This unique characteristic makes varactor diodes invaluable in applications requiring voltage-controlled tuning, such as in RF design, voltage-controlled oscillators (VCOs), and frequency modulators.</p>
+<p><strong>Operating Principle:</strong></p>
+<ul>
+<li><p><strong>Reverse Bias:</strong> When a varactor diode is reverse-biased, no current flows through the diode, and the depletion region width changes with the applied voltage.</p></li>
+<li><p><strong>Capacitance Variation:</strong> The capacitance <span class="math notranslate nohighlight">\( C \)</span> of the diode varies inversely with the depletion region width, which in turn varies with the reverse voltage <span class="math notranslate nohighlight">\( V \)</span>. Mathematically, the relationship can be expressed as:</p>
+<div class="math notranslate nohighlight">
+\[
+  C(V) = \frac{C_0}{(1 + \frac{V}{V_j})^n}
+  \]</div>
+<p>where <span class="math notranslate nohighlight">\( C_0 \)</span> is the capacitance at zero bias, <span class="math notranslate nohighlight">\( V_j \)</span> is the junction potential, and <span class="math notranslate nohighlight">\( n \)</span> is a constant typically between 0.5 and 0.7.</p>
+</li>
+</ul>
+</section>
+<section id="pyspice-code-example">
+<h3>PySpice Code Example<a class="headerlink" href="#pyspice-code-example" title="Link to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">PySpice.Probe.Plot</span> <span class="kn">import</span> <span class="n">plot</span>
+<span class="kn">from</span> <span class="nn">PySpice.Spice.Library</span> <span class="kn">import</span> <span class="n">SpiceLibrary</span>
+<span class="kn">from</span> <span class="nn">PySpice.Spice.Netlist</span> <span class="kn">import</span> <span class="n">Circuit</span>
+<span class="kn">from</span> <span class="nn">PySpice.Unit</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="c1"># Load the spice library and create a circuit</span>
+<span class="n">spice_library</span> <span class="o">=</span> <span class="n">SpiceLibrary</span><span class="p">(</span><span class="s1">&#39;path_to_spice_library&#39;</span><span class="p">)</span>
+<span class="n">circuit</span> <span class="o">=</span> <span class="n">Circuit</span><span class="p">(</span><span class="s1">&#39;Varactor Diode Example&#39;</span><span class="p">)</span>
+
+<span class="c1"># Define circuit components</span>
+<span class="n">circuit</span><span class="o">.</span><span class="n">include</span><span class="p">(</span><span class="n">spice_library</span><span class="p">[</span><span class="s1">&#39;1N4007&#39;</span><span class="p">])</span>  <span class="c1"># Example diode model, replace with actual varactor model</span>
+<span class="n">circuit</span><span class="o">.</span><span class="n">V</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;Vbias&#39;</span><span class="p">,</span> <span class="n">circuit</span><span class="o">.</span><span class="n">gnd</span><span class="p">,</span> <span class="mi">0</span> <span class="o">@</span> <span class="n">u_V</span><span class="p">)</span>
+<span class="n">circuit</span><span class="o">.</span><span class="n">R</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;Vbias&#39;</span><span class="p">,</span> <span class="s1">&#39;N1&#39;</span><span class="p">,</span> <span class="mi">1</span> <span class="o">@</span> <span class="n">u_kΩ</span><span class="p">)</span>
+<span class="n">circuit</span><span class="o">.</span><span class="n">D</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;N1&#39;</span><span class="p">,</span> <span class="n">circuit</span><span class="o">.</span><span class="n">gnd</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="s1">&#39;1N4007&#39;</span><span class="p">)</span>
+
+<span class="c1"># DC sweep analysis</span>
+<span class="n">simulator</span> <span class="o">=</span> <span class="n">circuit</span><span class="o">.</span><span class="n">simulator</span><span class="p">(</span><span class="n">temperature</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span> <span class="n">nominal_temperature</span><span class="o">=</span><span class="mi">25</span><span class="p">)</span>
+<span class="n">analysis</span> <span class="o">=</span> <span class="n">simulator</span><span class="o">.</span><span class="n">dc</span><span class="p">(</span><span class="n">Vbias</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">))</span>
+
+<span class="c1"># Extract data for plotting</span>
+<span class="n">voltages</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">capacitances</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">point</span> <span class="ow">in</span> <span class="n">analysis</span><span class="p">[</span><span class="s1">&#39;Vbias&#39;</span><span class="p">]:</span>
+    <span class="n">voltage</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">point</span><span class="p">)</span>
+    <span class="n">capacitance</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="mf">3.14159</span> <span class="o">*</span> <span class="mi">1</span> <span class="o">*</span> <span class="nb">float</span><span class="p">(</span><span class="n">analysis</span><span class="p">[</span><span class="s1">&#39;Vbias&#39;</span><span class="p">][</span><span class="n">point</span><span class="p">]))</span>
+    <span class="n">voltages</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">voltage</span><span class="p">)</span>
+    <span class="n">capacitances</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">capacitance</span><span class="p">)</span>
+
+<span class="c1"># Plot the results</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">voltages</span><span class="p">,</span> <span class="n">capacitances</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Reverse Voltage (V)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Capacitance (F)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Varactor Diode Capacitance vs. Reverse Voltage&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">schemdraw</span>
+<span class="kn">import</span> <span class="nn">schemdraw.elements</span> <span class="k">as</span> <span class="nn">elm</span>
+
+<span class="n">d</span> <span class="o">=</span> <span class="n">schemdraw</span><span class="o">.</span><span class="n">Drawing</span><span class="p">()</span>
+<span class="n">C</span> <span class="o">=</span> <span class="n">d</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">elm</span><span class="o">.</span><span class="n">Capacitor</span><span class="p">()</span><span class="o">.</span><span class="n">right</span><span class="p">())</span>
+<span class="n">d</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/7103097f2f686b76fc89a51744fb8a7fa0996fdbe8041350c81b6918cacc9834.svg" src="../../_images/7103097f2f686b76fc89a51744fb8a7fa0996fdbe8041350c81b6918cacc9834.svg" /></div>
+</div>
+</section>
+</section>
+<section id="inductors">
+<h2>Inductors<a class="headerlink" href="#inductors" title="Link to this heading">#</a></h2>
+<p>Inductors are passive electrical components used in circuits to store energy in a magnetic field when electric current flows through them. They consist of a coil of wire and their ability to store energy is measured in henrys (H), symbolized by the letter “H”.</p>
+<section id="key-characteristics-of-inductors">
+<h3>Key Characteristics of Inductors:<a class="headerlink" href="#key-characteristics-of-inductors" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Inductance Value</strong>: This is the amount of inductance the inductor provides, typically marked on the component using numerical values or color codes.</p></li>
+<li><p><strong>Current Rating</strong>: Indicates the maximum current the inductor can handle without saturating or being damaged.</p></li>
+<li><p><strong>Core Material</strong>: The material around which the coil is wound, which affects the inductor’s properties and performance.</p></li>
+<li><p><strong>Q Factor</strong>: Represents the quality of the inductor, indicating how efficiently it stores energy.</p></li>
+</ul>
+</section>
+<section id="applications-of-inductors">
+<h3>Applications of Inductors:<a class="headerlink" href="#applications-of-inductors" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Energy Storage</strong>: Storing energy in power supplies and DC-DC converters.</p></li>
+<li><p><strong>Filtering</strong>: Smoothing out current and voltage fluctuations in power supplies and signal processing.</p></li>
+<li><p><strong>Inductive Reactance</strong>: Creating impedance in AC circuits to limit current or shift phase.</p></li>
+<li><p><strong>Transformers</strong>: Transferring energy between circuits through electromagnetic induction.</p></li>
+<li><p><strong>Tuning Circuits</strong>: Adjusting the frequency response in radios and communication devices.</p></li>
+</ul>
+</section>
+<section id="linear-and-non-linear-inductors">
+<h3>Linear and Non-Linear Inductors<a class="headerlink" href="#linear-and-non-linear-inductors" title="Link to this heading">#</a></h3>
+<p>Inductors can be classified into linear and non-linear types based on how their inductance changes with the applied current and frequency.</p>
+</section>
+<section id="linear-inductors">
+<h3>Linear Inductors:<a class="headerlink" href="#linear-inductors" title="Link to this heading">#</a></h3>
+<p>Linear inductors have a constant inductance value regardless of the current or frequency applied to them. The voltage-current (V-I) relationship for a linear inductor follows the equation:</p>
+<div class="math notranslate nohighlight">
+\[ V = L \frac{dI}{dt} \]</div>
+<p>where:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\( V \)</span> is the voltage across the inductor.</p></li>
+<li><p><span class="math notranslate nohighlight">\( I \)</span> is the current through the inductor.</p></li>
+<li><p><span class="math notranslate nohighlight">\( L \)</span> is the inductance.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\frac{dI}{dt}\)</span> is the rate of change of current.</p></li>
+</ul>
+<p>In a graph of voltage versus the rate of change of current, linear inductors produce a straight line with a slope equal to the inductance.</p>
+</section>
+<section id="non-linear-inductors">
+<h3>Non-Linear Inductors:<a class="headerlink" href="#non-linear-inductors" title="Link to this heading">#</a></h3>
+<p>Non-linear inductors have an inductance that changes with the applied current or frequency. The V-I relationship for non-linear inductors does not follow a straight line, meaning the inductance varies under different conditions. Examples of non-linear inductors include:</p>
+<ul class="simple">
+<li><p><strong>Ferrite Core Inductors</strong>: Inductance changes with the level of current due to the magnetic properties of the ferrite core.</p></li>
+<li><p><strong>Saturable Reactors</strong>: Inductance decreases as the core material saturates with high levels of current, used in voltage regulation and power control.</p></li>
+</ul>
+</section>
+<section id="visualizing-an-inductor-in-a-circuit">
+<h3>Visualizing an Inductor in a Circuit<a class="headerlink" href="#visualizing-an-inductor-in-a-circuit" title="Link to this heading">#</a></h3>
+<p>This diagram shows an inductor connected to a voltage source, illustrating its role in storing and releasing energy within the circuit.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">schemdraw</span>
+<span class="kn">import</span> <span class="nn">schemdraw.elements</span> <span class="k">as</span> <span class="nn">elm</span>
+
+<span class="n">d</span> <span class="o">=</span> <span class="n">schemdraw</span><span class="o">.</span><span class="n">Drawing</span><span class="p">()</span>
+<span class="n">L</span> <span class="o">=</span> <span class="n">d</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">elm</span><span class="o">.</span><span class="n">Inductor</span><span class="p">()</span><span class="o">.</span><span class="n">right</span><span class="p">())</span>
+<span class="n">d</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/b87b78834e3202cd22c03642adb5ba303033c257f6792ab4851c102906ab4842.svg" src="../../_images/b87b78834e3202cd22c03642adb5ba303033c257f6792ab4851c102906ab4842.svg" /></div>
+</div>
+</section>
+</section>
+<section id="complete-the-mini-project-on-inductors">
+<h2>Complete the mini-project on inductors<a class="headerlink" href="#complete-the-mini-project-on-inductors" title="Link to this heading">#</a></h2>
+<p>Including</p>
+<ul class="simple">
+<li><p>both linear and nonlinear inductors with detailed explanations.</p></li>
+<li><p>provide code examples using PySpice.</p></li>
+</ul>
+<section id="example-capacior-and-inductor">
+<h3>Example Capacior and Inductor<a class="headerlink" href="#example-capacior-and-inductor" title="Link to this heading">#</a></h3>
+<p>We will use a simple circuit where both capacitor and inductor are driven by a pulse source through a limiting current resistor.</p>
+<p><img alt="Capacior and Inductor" src="../../_images/Capacitor_Inducor.PNG" /></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+
+<span class="kn">import</span> <span class="nn">PySpice.Logging.Logging</span> <span class="k">as</span> <span class="nn">Logging</span>
+<span class="n">logger</span> <span class="o">=</span> <span class="n">Logging</span><span class="o">.</span><span class="n">setup_logging</span><span class="p">()</span>
+
+
+<span class="kn">from</span> <span class="nn">PySpice.Probe.Plot</span> <span class="kn">import</span> <span class="n">plot</span>
+<span class="kn">from</span> <span class="nn">PySpice.Spice.Netlist</span> <span class="kn">import</span> <span class="n">Circuit</span>
+<span class="kn">from</span> <span class="nn">PySpice.Unit</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">curve_fit</span>
+
+
+<span class="c1"># Warning: the capacitor/inductor return current in the generator</span>
+<span class="c1">#  could use switches instead</span>
+
+<span class="c1"># Fixme: for loop makes difficult to intermix code and text !</span>
+<span class="n">figure</span><span class="p">,</span> <span class="p">(</span><span class="n">ax1</span><span class="p">,</span> <span class="n">ax2</span><span class="p">)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+
+<span class="n">element_types</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;capacitor&#39;</span><span class="p">,</span> <span class="s1">&#39;inductor&#39;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">element_type</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;capacitor&#39;</span><span class="p">,</span> <span class="s1">&#39;inductor&#39;</span><span class="p">):</span>
+
+    <span class="n">circuit</span> <span class="o">=</span> <span class="n">Circuit</span><span class="p">(</span><span class="n">element_type</span><span class="o">.</span><span class="n">title</span><span class="p">())</span>
+    <span class="c1"># Fixme: compute value</span>
+    <span class="n">source</span> <span class="o">=</span> <span class="n">circuit</span><span class="o">.</span><span class="n">PulseVoltageSource</span><span class="p">(</span><span class="s1">&#39;input&#39;</span><span class="p">,</span> <span class="s1">&#39;in&#39;</span><span class="p">,</span> <span class="n">circuit</span><span class="o">.</span><span class="n">gnd</span><span class="p">,</span>
+                           <span class="n">initial_value</span><span class="o">=</span><span class="mi">0</span><span class="nd">@u_V</span><span class="p">,</span> <span class="n">pulsed_value</span><span class="o">=</span><span class="mi">10</span><span class="nd">@u_V</span><span class="p">,</span>
+                           <span class="n">pulse_width</span><span class="o">=</span><span class="mi">10</span><span class="nd">@u_ms</span><span class="p">,</span> <span class="n">period</span><span class="o">=</span><span class="mi">20</span><span class="nd">@u_ms</span><span class="p">)</span>
+    <span class="n">circuit</span><span class="o">.</span><span class="n">R</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;in&#39;</span><span class="p">,</span> <span class="s1">&#39;out&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="nd">@u_kΩ</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">element_type</span> <span class="o">==</span> <span class="s1">&#39;capacitor&#39;</span><span class="p">:</span>
+        <span class="n">element</span> <span class="o">=</span> <span class="n">circuit</span><span class="o">.</span><span class="n">C</span>
+        <span class="n">value</span> <span class="o">=</span> <span class="mi">1</span><span class="nd">@u_uF</span>
+        <span class="c1"># tau = RC = 1 ms</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">element</span> <span class="o">=</span> <span class="n">circuit</span><span class="o">.</span><span class="n">L</span>
+        <span class="c1"># Fixme: force component value to an Unit instance ?</span>
+        <span class="n">value</span> <span class="o">=</span> <span class="mi">1</span><span class="nd">@u_H</span>
+        <span class="c1"># tau = L/R = 1 ms</span>
+    <span class="n">element</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;out&#39;</span><span class="p">,</span> <span class="n">circuit</span><span class="o">.</span><span class="n">gnd</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+    <span class="c1"># circuit.R(2, &#39;out&#39;, circuit.gnd, kilo(1)) # for debug</span>
+
+    <span class="k">if</span> <span class="n">element_type</span> <span class="o">==</span> <span class="s1">&#39;capacitor&#39;</span><span class="p">:</span>
+        <span class="n">tau</span> <span class="o">=</span> <span class="n">circuit</span><span class="p">[</span><span class="s1">&#39;R1&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">resistance</span> <span class="o">*</span> <span class="n">circuit</span><span class="p">[</span><span class="s1">&#39;C1&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">capacitance</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">tau</span> <span class="o">=</span> <span class="n">circuit</span><span class="p">[</span><span class="s1">&#39;L1&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">inductance</span> <span class="o">/</span> <span class="n">circuit</span><span class="p">[</span><span class="s1">&#39;R1&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">resistance</span>
+
+    <span class="n">simulator</span> <span class="o">=</span> <span class="n">circuit</span><span class="o">.</span><span class="n">simulator</span><span class="p">(</span><span class="n">temperature</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span> <span class="n">nominal_temperature</span><span class="o">=</span><span class="mi">25</span><span class="p">)</span>
+    <span class="n">step_time</span> <span class="o">=</span> <span class="mi">10</span><span class="nd">@u_us</span>
+    <span class="n">analysis</span> <span class="o">=</span> <span class="n">simulator</span><span class="o">.</span><span class="n">transient</span><span class="p">(</span><span class="n">step_time</span><span class="o">=</span><span class="n">step_time</span><span class="p">,</span> <span class="n">end_time</span><span class="o">=</span><span class="n">source</span><span class="o">.</span><span class="n">period</span><span class="o">*</span><span class="mi">3</span><span class="p">)</span>
+
+    <span class="c1"># Let define the theoretical output voltage.</span>
+    <span class="k">if</span> <span class="n">element_type</span> <span class="o">==</span> <span class="s1">&#39;capacitor&#39;</span><span class="p">:</span>
+        <span class="k">def</span> <span class="nf">out_voltage</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">tau</span><span class="p">):</span>
+            <span class="c1"># Fixme: TypeError: only length-1 arrays can be converted to Python scalars</span>
+            <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">source</span><span class="o">.</span><span class="n">pulsed_value</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span>  <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">t</span> <span class="o">/</span> <span class="n">tau</span><span class="p">))</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">def</span> <span class="nf">out_voltage</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">tau</span><span class="p">):</span>
+            <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">source</span><span class="o">.</span><span class="n">pulsed_value</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">t</span> <span class="o">/</span> <span class="n">tau</span><span class="p">)</span>
+    <span class="c1"># Fixme: get step_time from analysis</span>
+    <span class="c1"># At t = 5 tau, each circuit has nearly reached it steady state.</span>
+    <span class="n">i_max</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="mi">5</span> <span class="o">*</span> <span class="n">tau</span> <span class="o">/</span> <span class="nb">float</span><span class="p">(</span><span class="n">step_time</span><span class="p">))</span>
+    <span class="n">popt</span><span class="p">,</span> <span class="n">pcov</span> <span class="o">=</span> <span class="n">curve_fit</span><span class="p">(</span><span class="n">out_voltage</span><span class="p">,</span> <span class="n">analysis</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">abscissa</span><span class="p">[:</span><span class="n">i_max</span><span class="p">],</span> <span class="n">analysis</span><span class="o">.</span><span class="n">out</span><span class="p">[:</span><span class="n">i_max</span><span class="p">])</span>
+    <span class="n">tau_measured</span> <span class="o">=</span> <span class="n">popt</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+    <span class="c1"># Fixme: use Unit().canonise()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;tau </span><span class="si">{0}</span><span class="s1"> = </span><span class="si">{1}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">element_type</span><span class="p">,</span> <span class="n">tau</span><span class="o">.</span><span class="n">canonise</span><span class="p">()</span><span class="o">.</span><span class="n">str_space</span><span class="p">()))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;tau measured </span><span class="si">{0}</span><span class="s1"> = </span><span class="si">{1:.1f}</span><span class="s1"> ms&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">element_type</span><span class="p">,</span> <span class="n">tau_measured</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">))</span>
+
+    <span class="k">if</span> <span class="n">element_type</span> <span class="o">==</span> <span class="s1">&#39;capacitor&#39;</span><span class="p">:</span>
+        <span class="n">ax</span> <span class="o">=</span> <span class="n">ax1</span>
+        <span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;Capacitor: voltage is constant&quot;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">ax</span> <span class="o">=</span> <span class="n">ax2</span>
+        <span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;Inductor: current is constant&quot;</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">title</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+    <span class="n">current_scale</span> <span class="o">=</span> <span class="mi">1000</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">analysis</span><span class="p">[</span><span class="s1">&#39;in&#39;</span><span class="p">])</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">analysis</span><span class="p">[</span><span class="s1">&#39;out&#39;</span><span class="p">])</span>
+    <span class="c1"># Fixme: resistor current, scale</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(((</span><span class="n">analysis</span><span class="p">[</span><span class="s1">&#39;in&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">analysis</span><span class="o">.</span><span class="n">out</span><span class="p">)</span><span class="o">/</span><span class="n">circuit</span><span class="p">[</span><span class="s1">&#39;R1&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">resistance</span><span class="p">)</span> <span class="o">*</span> <span class="n">current_scale</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="nb">float</span><span class="p">(</span><span class="n">tau</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="o">-</span><span class="mi">11</span><span class="p">,</span> <span class="mi">11</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;t [s]&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;[V]&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">((</span><span class="s1">&#39;Vin [V]&#39;</span><span class="p">,</span> <span class="s1">&#39;Vout [V]&#39;</span><span class="p">,</span> <span class="s1">&#39;I&#39;</span><span class="p">),</span> <span class="n">loc</span><span class="o">=</span><span class="p">(</span><span class="mf">.8</span><span class="p">,</span><span class="mf">.8</span><span class="p">))</span>
+    <span class="c1">#plt.tight_layout()</span>
+    <span class="c1">#plt.show()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2024-08-06 13:54:23,893 - PySpice.Spice.Netlist.Node - Netlist.WARNING - Node name &#39;in&#39; is a Python keyword
+tau capacitor = 1.0 ms
+tau measured capacitor = 1.0 ms
+2024-08-06 13:54:25,390 - PySpice.Spice.Netlist.Node - Netlist.WARNING - Node name &#39;in&#39; is a Python keyword
+tau inductor = 1.0 ms
+tau measured inductor = 1.0 ms
+</pre></div>
+</div>
+<img alt="../../_images/b8f00bdfca9dd02f7b07b574f334122df6f635211d8dc52b584c74f12065308a.png" src="../../_images/b8f00bdfca9dd02f7b07b574f334122df6f635211d8dc52b584c74f12065308a.png" />
+</div>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./courses\Circuit_Electronics"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Introduction_CircuitElectronics.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Introduction to Circuit and Electronics</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="KVL_KCL.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Voltage , Current</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resistors">Resistors</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#symbols-in-circuit-diagrams">Symbols in Circuit Diagrams</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#key-characteristics-of-resistors">Key Characteristics of Resistors:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#applications-of-resistors">Applications of Resistors:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-and-non-linear-resistor">Linear and Non-Linear Resistor</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-resistors">Linear Resistors:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#non-linear-resistors">Non-Linear Resistors:</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#thermistor">Thermistor</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#charactristic-of-ptc">Charactristic of PTC</a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#varistors">Varistors</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#light-dependent-resistor-ldr">Light Dependent Resistor (LDR)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#diode">Diode</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#for-the-mini-project-conduct-a-dc-sweep-analysis-of-the-characteristic-curve-of-a-diode-complete-and-execute-the-following-code-or-a-similar-version">For the mini-project, conduct a DC sweep analysis of the characteristic curve of a diode. Complete and execute the following code or a similar version.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#capacitors">Capacitors</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#key-characteristics-of-capacitors">Key Characteristics of Capacitors:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#applications-of-capacitors">Applications of Capacitors:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-and-non-linear-capacitors">Linear and Non-Linear Capacitors</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-capacitors">Linear Capacitors:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#i-v-charactristic">I-V Charactristic</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-with-capacitor">Example with capacitor</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solution">Solution:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#non-linear-capacitors">Non-Linear Capacitors:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#miniproject-nonlinear-capacitor-varactor-diode">Miniproject: Nonlinear Capacitor - Varactor Diode</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-varactor-diode">What is a Varactor Diode?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyspice-code-example">PySpice Code Example</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inductors">Inductors</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#key-characteristics-of-inductors">Key Characteristics of Inductors:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#applications-of-inductors">Applications of Inductors:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-and-non-linear-inductors">Linear and Non-Linear Inductors</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-inductors">Linear Inductors:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#non-linear-inductors">Non-Linear Inductors:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizing-an-inductor-in-a-circuit">Visualizing an Inductor in a Circuit</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#complete-the-mini-project-on-inductors">Complete the mini-project on inductors</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-capacior-and-inductor">Example Capacior and Inductor</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Dr.Hadi Sadoghi Yazdi
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024 Pattern Recognition Lab.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

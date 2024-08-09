@@ -1,0 +1,787 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Operational Amplifier &#8212; Dr.Hadi Sadoghi Yazdi</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=87e54e7c" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=3ee479438cf8b5e0d341"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'courses/Circuit_Electronics/OpAmp';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Signal Processing" href="../signal_processing.html" />
+    <link rel="prev" title="Field Effect Transistor" href="FET.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../../Home_Page.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/Hadi_Sadoghi_Yazdi.png" class="logo__image only-light" alt="Dr.Hadi Sadoghi Yazdi - Home"/>
+    <script>document.write(`<img src="../../_static/Hadi_Sadoghi_Yazdi.png" class="logo__image only-dark" alt="Dr.Hadi Sadoghi Yazdi - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../Home_Page.html">
+                    Welcome to my personal Website!
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../../Courses.html">Courses</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 has-children"><a class="reference internal" href="../pattern_recognition.html">Pattern Recognition</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../PR/Introduction/PR_intro.html">Introduction</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="../PR/Introduction/DataSet.html">Dataset</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PR/Introduction/Model.html">Model</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PR/Introduction/Cost.html">Cost_Function</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PR/Introduction/LearningRule.html">Learning_Rule</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3"><a class="reference internal" href="../PR/Visualization/PR_intro_Visualization.html">Visualization</a></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../PR/Clustering/PR_intro_Clustering.html">Clustering Concept</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="../PR/Clustering/Clustering_1.html">Clustering</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PR/Clustering/FCM_1.html">k-means and fuzzy-c-means clustering</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PR/Clustering/FCM_Saghi_Project.html">Complementary of FCM</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PR/Clustering/LinkageClustering_1.html">Project Linkage clustering</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PR/Clustering/e_insensitive_linkage.html">Project <span class="math notranslate nohighlight">\( \epsilon \)</span> -insensitive Linkage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PR/Clustering/SOFM_Project.html">Project Title: Self-Organizing Feature Map (SOFM)</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../PR/Regression/Introduction_Regression.html">Regression</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="../PR/Regression/Regression_1.html">Linear Regression</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PR/Regression/NonLinearRegression.html">Non-linear Regression: The starting point</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PR/Regression/Linearization.html">Linearization</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PR/Regression/Kernel_for_Regression.html">Kernel method</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PR/Regression/EvaluationModelSelection.html">Project : Evaluation and Model Selection</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PR/Regression/Solution_for_Regression.html">Solution Method</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PR/Regression/TheoryRegression.html">Theoretical Aspects of Regression</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PR/Regression/ApplicationsPatternRecognition.html">Applications in Pattern Recognition</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../PR/Classification/PR_intro_Classification.html">Classification</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="../PR/Classification/SVDD.html">Support Vector Data Description (SVDD)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PR/Classification/SVM1.html">Support Vector Machine (SVM)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PR/Classification/Fisherclassifier.html">Fihser Classifier</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PR/Classification/KernelFisherDiscriminantAnalysis.html">Kernel Fisher Discriminant Analysis</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PR/Classification/DecisionTree1.html">Project Induction in Decision Trees</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../PR/BayesEstimation/BayesEstimation.html">Bayes Estimation</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="../PR/BayesEstimation/KDE_1.html">kernel-based density estimation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PR/BayesEstimation/MeanShift.html">Mean Shift Algorithm</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PR/BayesEstimation/ParametricDensityEstimation1.html">Parametric Density Estimation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PR/BayesEstimation/GMM.html">Gaussian Mixture Model</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../machine_learning.html">Machine Learning</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../ML/Regression/NonParamRegression.html">Regression Review</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ML/Regression/KernelRegression.html">Kernel Regression</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ML/Regression/GP_Regression.html">Gaussian Process</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ML/FeatureReduction/FR_Intro.html">Introduction of Feature Reduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ML/FeatureReduction/PCA.html">Principal Component Analysis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ML/FeatureReduction/Autoencoders1.html">Autoencoders</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../Supplementary1.html">Supplementary Documents</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../SupplementaryDocuments/EVD.html">Eigen Value Decomposition</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../SupplementaryDocuments/twin_svm.html">Twin SVM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../SupplementaryDocuments/Covariance1.html">Covariance</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="../CircuitElectronicAnalysis.html">Circuit and Electronics</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Introduction_CircuitElectronics.html">Introduction to Circuit and Electronics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BasicElements.html">Basic component</a></li>
+<li class="toctree-l3"><a class="reference internal" href="KVL_KCL.html">Voltage , Current</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NodalMeshAnalysis.html">Basic Nodal and Mesh Analysis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RC_RL_RLC.html">R-C, R-L circuits</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Diode_chapter.html">Diode</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DiodeApplication.html">Diode Application</a></li>
+
+
+<li class="toctree-l3"><a class="reference internal" href="BJT1.html">Bipolar junction transistor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="FET.html">Field Effect Transistor</a></li>
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">Operational Amplifier</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="../signal_processing.html">Signal Processing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../image_processing.html">Image Processing</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../PRLabProduction.html">Pattern Lab Production</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../../ProposalPhD_Develop.html">Proposal PhD Develope</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Students.html">Students Projects</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../StudentProjects/BsC/Teymoori/chat_with_doc.html">Author Information</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Contact_Me.html">Contact Me</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../About_Me.html">About Me</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/h-sadoghi/dr-sadoghi.git" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/h-sadoghi/dr-sadoghi.git/issues/new?title=Issue%20on%20page%20%2Fcourses/Circuit_Electronics/OpAmp.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/courses/Circuit_Electronics/OpAmp.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Operational Amplifier</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ac-equivalent-of-op-amp-circuit">AC equivalent of op-amp circuit:</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-op-amp">Basic Op-Amp</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#op-amp-ic-is-the-741-internal-circuit">Op-amp IC is the 741 internal circuit</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summing-amplifier">Summing amplifier</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#difference-amplifier">Difference amplifier</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#noninverting-amplifier">Noninverting Amplifier</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cascaded-stages">CASCADED STAGES</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#instrumentation-amplifier">Instrumentation amplifier</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#voltage-buffer">VOLTAGE BUFFER</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#voltage-controlled-current-source">Voltage-Controlled Current Source</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#current-controlled-voltage-source">Current-Controlled Voltage Source</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#current-controlled-current-source">Current-Controlled Current Source</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#active-filters">ACTIVE FILTERS</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#low-pass-filter">Low-Pass Filter</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-integrator-amplifier">The Integrator Amplifier</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solve-differential-equations-using-op-amps">Solve Differential Equations Using Op Amps</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="operational-amplifier">
+<h1>Operational Amplifier<a class="headerlink" href="#operational-amplifier" title="Link to this heading">#</a></h1>
+<p>The operational amplifier (op-amp), originating in the 1940s with vacuum tubes, performs mathematical operations like addition and subtraction. An op-amp is a high-gain differential amplifier characterized by its high input impedance and low output impedance. The differential amplifier circuit, a fundamental configuration in integrated circuits (ICs), is widely utilized due to its versatility. As illustrated in following Figure, this circuit features two distinct inputs and outputs, with the emitters connected together. While many differential amplifier circuits rely on dual voltage supplies, they can also function with a single supply, highlighting their adaptability in various applications.</p>
+<p><img alt="BasicDifferentialAmplifier" src="../../_images/BasicDifferentialAmplifier.PNG" /></p>
+<p>Ideal Op Amp rules state no current flows into either input terminal and there is no voltage difference between the inputs. Therefore, the input impedance of the differential amplifier must be High. As shown below with the equivalent circuit, <span class="math notranslate nohighlight">\( R_i \)</span> represents the input impedance in the equivalent circuit.</p>
+<section id="ac-equivalent-of-op-amp-circuit">
+<h2>AC equivalent of op-amp circuit:<a class="headerlink" href="#ac-equivalent-of-op-amp-circuit" title="Link to this heading">#</a></h2>
+<p><img alt="AC equivalent of op-amp circuit1" src="../../_images/Equivalent_OpAmp.png" /></p>
+<section id="basic-op-amp">
+<h3>Basic Op-Amp<a class="headerlink" href="#basic-op-amp" title="Link to this heading">#</a></h3>
+<p>The basic circuit connection using an op-amp is shown in  follwing Figure.</p>
+<ul class="simple">
+<li><p>An input signal <span class="math notranslate nohighlight">\( V_1 \)</span> is applied to the inverting input (minus input) of the op-amp through a resistor <span class="math notranslate nohighlight">\( R_1 \)</span>.</p></li>
+<li><p>The output of the op-amp is fed back to the same inverting input through a feedback resistor <span class="math notranslate nohighlight">\( R_f \)</span>.</p></li>
+<li><p>The non-inverting input (plus input) of the op-amp is connected to ground.</p></li>
+</ul>
+<p>For an inverting amplifier, KVL analysis gives:</p>
+<p><img alt="Inverting_OpAmp_1" src="../../_images/Inverting_OpAmp.PNG" /></p>
+<p>First, we solve with Ideal equivalent of op-amp:</p>
+<div class="math notranslate nohighlight">
+\[
+-v_{in} + R_1 i + R_f i + v_{out} = 0
+\]</div>
+<p>Rearranged to:</p>
+<div class="math notranslate nohighlight">
+\[
+v_{out} = v_{in} - (R_1 + R_f) i
+\]</div>
+<p>With:</p>
+<div class="math notranslate nohighlight">
+\[
+i = \frac{v_{in}}{R_1}
+\]</div>
+<p>Thus,</p>
+<div class="math notranslate nohighlight">
+\[
+v_{out} = -\frac{R_f}{R_1} v_{in}
+\]</div>
+<p>Second, we try with practical equivalent of op-amp:</p>
+<p><img alt="NonInverting_Preactical1" src="../../_images/Inverting_OpAmp_Non_ideal.PNG" /></p>
+<p>After solving, with <span class="math notranslate nohighlight">\( R_i \)</span> approaching infinity and <span class="math notranslate nohighlight">\( A_v \)</span> becoming large, we arrive at the same results again.</p>
+</section>
+<section id="op-amp-ic-is-the-741-internal-circuit">
+<h3>Op-amp IC is the 741 internal circuit<a class="headerlink" href="#op-amp-ic-is-the-741-internal-circuit" title="Link to this heading">#</a></h3>
+<p><img alt="OpAmp_741_Internal1" src="../../_images/OpAmp_741_Internal.PNG" /></p>
+</section>
+</section>
+<section id="summing-amplifier">
+<h2>Summing amplifier<a class="headerlink" href="#summing-amplifier" title="Link to this heading">#</a></h2>
+<p>This circuit is similar to the inverting amplifier. Proof:</p>
+<div class="math notranslate nohighlight">
+\[
+v_{\text{out}} = -\frac{R_f}{R} \cdot (v_1 + v_2 + v_3)
+\]</div>
+<p><img alt="SummingAmplifier_OpAmp1" src="../../_images/SummingAmplifier_OpAmp.PNG" /></p>
+</section>
+<section id="difference-amplifier">
+<h2>Difference amplifier<a class="headerlink" href="#difference-amplifier" title="Link to this heading">#</a></h2>
+<p>Proof:
+<span class="math notranslate nohighlight">\( v_\text{out} = v_2 −v_1 \)</span></p>
+<p><img alt="Difference amplifier1" src="../../_images/DifferenceAmplifier_OpAmp.PNG" /></p>
+</section>
+<section id="noninverting-amplifier">
+<h2>Noninverting Amplifier<a class="headerlink" href="#noninverting-amplifier" title="Link to this heading">#</a></h2>
+<p>Proof:</p>
+<div class="math notranslate nohighlight">
+\[
+v_{\text{out}} = 1 + \frac{R_f}{R_1} \cdot v_{\text{in}}
+\]</div>
+<p><img alt="NonInvertingAmplifier_OpAmp1" src="../../_images/NonInvertingAmplifier_OpAmp.PNG" /></p>
+</section>
+<section id="cascaded-stages">
+<h2>CASCADED STAGES<a class="headerlink" href="#cascaded-stages" title="Link to this heading">#</a></h2>
+<p>Proof:</p>
+<div class="math notranslate nohighlight">
+\[
+v_{\text{out}} = \frac{R_2}{R_1} \cdot \frac{R_f}{R} \cdot (v_1 + v_2)
+\]</div>
+<p><img alt="CascadeStage_OpAmp" src="../../_images/CascadeStage_OpAmp.PNG" /></p>
+</section>
+<section id="instrumentation-amplifier">
+<h2>Instrumentation amplifier<a class="headerlink" href="#instrumentation-amplifier" title="Link to this heading">#</a></h2>
+<p>Proof:</p>
+<div class="math notranslate nohighlight">
+\[
+v_{\text{out}} = \frac{R_4}{R_3} \cdot \frac{1 + \frac{R_2}{R_1}}{1 + \frac{R_4}{R_3}} \cdot v_+ - \frac{R_2}{R_1} \cdot v_-
+\]</div>
+<p>Given the relationships:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{R_4}{R_3} = \frac{R_2}{R_1} = K
+\]</div>
+<p>The output voltage <span class="math notranslate nohighlight">\( v_{\text{out}} \)</span> can be expressed as:</p>
+<div class="math notranslate nohighlight">
+\[
+v_{\text{out}} = K(v_+ - v_-) = K \cdot v_d
+\]</div>
+<p><img alt="InstrumentationAmplifier1" src="../../_images/InstrumentationAmplifier.PNG" /></p>
+</section>
+<section id="voltage-buffer">
+<h2>VOLTAGE BUFFER<a class="headerlink" href="#voltage-buffer" title="Link to this heading">#</a></h2>
+<p>A voltage buffer circuit provides a means of isolating an input signal from a load by using a stage having unity voltage gain, with no phase or polarity inversion, and acting as an ideal circuit with very high input impedance and low output impedance.</p>
+<p><img alt="BufferOpAmp_Circuit1" src="../../_images/Buffer_Opamp.png" /></p>
+</section>
+<section id="voltage-controlled-current-source">
+<h2>Voltage-Controlled Current Source<a class="headerlink" href="#voltage-controlled-current-source" title="Link to this heading">#</a></h2>
+<p>An ideal form of circuit providing an output current controlled by an input voltage is that of  following Figure. The output current is dependent on the input voltage.</p>
+<p><img alt="VoltageControlledCurrentSource1" src="../../_images/VoltageControlledCurrentSource.png" /></p>
+</section>
+<section id="current-controlled-voltage-source">
+<h2>Current-Controlled Voltage Source<a class="headerlink" href="#current-controlled-voltage-source" title="Link to this heading">#</a></h2>
+<p>An ideal form of a voltage source controlled by an input current is shown in  following Figure. The output voltage is dependent on the input current.</p>
+<p><img alt="CurrentControlledVoltageSource1" src="../../_images/CurrentControlledVoltageSource.png" /></p>
+</section>
+<section id="current-controlled-current-source">
+<h2>Current-Controlled Current Source<a class="headerlink" href="#current-controlled-current-source" title="Link to this heading">#</a></h2>
+<p>An ideal form of a circuit providing an output current dependent on an input current is shown in  following Figure. In this type of circuit, an output current is provided dependent on the
+input current.</p>
+<p><img alt="CurrentControlledCurrentSource1" src="../../_images/CurrentControlledCurrentSource.png" /></p>
+<div class="math notranslate nohighlight">
+\[
+I_o = I_1 + I_2 = I_1 + \frac{I_1 R_1}{R_2} = a_1 + \frac{R_1}{R_2} \cdot b I_1 = k I_1
+\]</div>
+</section>
+<section id="active-filters">
+<h2>ACTIVE FILTERS<a class="headerlink" href="#active-filters" title="Link to this heading">#</a></h2>
+<p>Active filters are widely used in electronic circuits, leveraging operational amplifiers (op-amps) to build filter circuits with enhanced performance. While passive filters can be constructed using only resistors and capacitors, active filters incorporate an amplifier to provide voltage amplification, signal isolation, and buffering.</p>
+<p>A low-pass filter is designed to allow signals with frequencies below a certain cutoff frequency, <span class="math notranslate nohighlight">\( f_{OH} \)</span>, to pass while attenuating signals above this threshold, as shown in Fig. a. Conversely, a high-pass filter allows signals above a cutoff frequency, <span class="math notranslate nohighlight">\( f_{OL} \)</span>, to pass, as idealized in Fig. b. A bandpass filter is configured to pass signals within a specific frequency range, bounded by two cutoff frequencies, as illustrated in Fig. c.</p>
+<p><img alt="LP_HP_BP" src="../../_images/LPF_HPF_BPF.PNG" /></p>
+<section id="low-pass-filter">
+<h3>Low-Pass Filter<a class="headerlink" href="#low-pass-filter" title="Link to this heading">#</a></h3>
+<p>A first-order, low-pass filter using a single resistor and capacitor as in  following Figure.
+<span class="math notranslate nohighlight">\( A_v = 1 + \frac{R_F}{R_G} \)</span></p>
+<p>at a cutoff frequency of</p>
+<p><span class="math notranslate nohighlight">\( f_{OH} = \frac{1}{2\pi R_1 C_1} \)</span></p>
+<p><img alt="First-orderlowpassactivefilter1" src="../../_images/First-orderlowpassactivefilter.png" /></p>
+</section>
+</section>
+<section id="the-integrator-amplifier">
+<h2>The Integrator Amplifier<a class="headerlink" href="#the-integrator-amplifier" title="Link to this heading">#</a></h2>
+<p><img alt="Integrator_with_OpAmp1" src="../../_images/Integrator_with_OpAmp.PNG" /></p>
+</section>
+<section id="solve-differential-equations-using-op-amps">
+<h2>Solve Differential Equations Using Op Amps<a class="headerlink" href="#solve-differential-equations-using-op-amps" title="Link to this heading">#</a></h2>
+<p><img alt="SolvingDifferentialEquation_OpAmp1" src="../../_images/SolvingDifferentialEquation_OpAmp.PNG" /></p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./courses\Circuit_Electronics"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="FET.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Field Effect Transistor</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../signal_processing.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Signal Processing</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ac-equivalent-of-op-amp-circuit">AC equivalent of op-amp circuit:</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-op-amp">Basic Op-Amp</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#op-amp-ic-is-the-741-internal-circuit">Op-amp IC is the 741 internal circuit</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summing-amplifier">Summing amplifier</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#difference-amplifier">Difference amplifier</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#noninverting-amplifier">Noninverting Amplifier</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cascaded-stages">CASCADED STAGES</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#instrumentation-amplifier">Instrumentation amplifier</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#voltage-buffer">VOLTAGE BUFFER</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#voltage-controlled-current-source">Voltage-Controlled Current Source</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#current-controlled-voltage-source">Current-Controlled Voltage Source</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#current-controlled-current-source">Current-Controlled Current Source</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#active-filters">ACTIVE FILTERS</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#low-pass-filter">Low-Pass Filter</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-integrator-amplifier">The Integrator Amplifier</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solve-differential-equations-using-op-amps">Solve Differential Equations Using Op Amps</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Dr.Hadi Sadoghi Yazdi
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024 Pattern Recognition Lab.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

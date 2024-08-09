@@ -1,0 +1,1713 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Diode &#8212; Dr.Hadi Sadoghi Yazdi</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=87e54e7c" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=3ee479438cf8b5e0d341"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'courses/Circuit_Electronics/Diode_chapter';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Diode Application" href="DiodeApplication.html" />
+    <link rel="prev" title="R-C, R-L circuits" href="RC_RL_RLC.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../../Home_Page.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/Hadi_Sadoghi_Yazdi.png" class="logo__image only-light" alt="Dr.Hadi Sadoghi Yazdi - Home"/>
+    <script>document.write(`<img src="../../_static/Hadi_Sadoghi_Yazdi.png" class="logo__image only-dark" alt="Dr.Hadi Sadoghi Yazdi - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../Home_Page.html">
+                    Welcome to my personal Website!
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../../Courses.html">Courses</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 has-children"><a class="reference internal" href="../pattern_recognition.html">Pattern Recognition</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../PR/Introduction/PR_intro.html">Introduction</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="../PR/Introduction/DataSet.html">Dataset</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PR/Introduction/Model.html">Model</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PR/Introduction/Cost.html">Cost_Function</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PR/Introduction/LearningRule.html">Learning_Rule</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3"><a class="reference internal" href="../PR/Visualization/PR_intro_Visualization.html">Visualization</a></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../PR/Clustering/PR_intro_Clustering.html">Clustering Concept</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="../PR/Clustering/Clustering_1.html">Clustering</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PR/Clustering/FCM_1.html">k-means and fuzzy-c-means clustering</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PR/Clustering/FCM_Saghi_Project.html">Complementary of FCM</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PR/Clustering/LinkageClustering_1.html">Project Linkage clustering</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PR/Clustering/e_insensitive_linkage.html">Project <span class="math notranslate nohighlight">\( \epsilon \)</span> -insensitive Linkage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PR/Clustering/SOFM_Project.html">Project Title: Self-Organizing Feature Map (SOFM)</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../PR/Regression/Introduction_Regression.html">Regression</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="../PR/Regression/Regression_1.html">Linear Regression</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PR/Regression/NonLinearRegression.html">Non-linear Regression: The starting point</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PR/Regression/Linearization.html">Linearization</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PR/Regression/Kernel_for_Regression.html">Kernel method</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PR/Regression/EvaluationModelSelection.html">Project : Evaluation and Model Selection</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PR/Regression/Solution_for_Regression.html">Solution Method</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PR/Regression/TheoryRegression.html">Theoretical Aspects of Regression</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PR/Regression/ApplicationsPatternRecognition.html">Applications in Pattern Recognition</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../PR/Classification/PR_intro_Classification.html">Classification</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="../PR/Classification/SVDD.html">Support Vector Data Description (SVDD)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PR/Classification/SVM1.html">Support Vector Machine (SVM)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PR/Classification/Fisherclassifier.html">Fihser Classifier</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PR/Classification/KernelFisherDiscriminantAnalysis.html">Kernel Fisher Discriminant Analysis</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PR/Classification/DecisionTree1.html">Project Induction in Decision Trees</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../PR/BayesEstimation/BayesEstimation.html">Bayes Estimation</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="../PR/BayesEstimation/KDE_1.html">kernel-based density estimation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PR/BayesEstimation/MeanShift.html">Mean Shift Algorithm</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PR/BayesEstimation/ParametricDensityEstimation1.html">Parametric Density Estimation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PR/BayesEstimation/GMM.html">Gaussian Mixture Model</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../machine_learning.html">Machine Learning</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../ML/Regression/NonParamRegression.html">Regression Review</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ML/Regression/KernelRegression.html">Kernel Regression</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ML/Regression/GP_Regression.html">Gaussian Process</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ML/FeatureReduction/FR_Intro.html">Introduction of Feature Reduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ML/FeatureReduction/PCA.html">Principal Component Analysis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ML/FeatureReduction/Autoencoders1.html">Autoencoders</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../Supplementary1.html">Supplementary Documents</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../SupplementaryDocuments/EVD.html">Eigen Value Decomposition</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../SupplementaryDocuments/twin_svm.html">Twin SVM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../SupplementaryDocuments/Covariance1.html">Covariance</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="../CircuitElectronicAnalysis.html">Circuit and Electronics</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Introduction_CircuitElectronics.html">Introduction to Circuit and Electronics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BasicElements.html">Basic component</a></li>
+<li class="toctree-l3"><a class="reference internal" href="KVL_KCL.html">Voltage , Current</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NodalMeshAnalysis.html">Basic Nodal and Mesh Analysis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RC_RL_RLC.html">R-C, R-L circuits</a></li>
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">Diode</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DiodeApplication.html">Diode Application</a></li>
+
+
+<li class="toctree-l3"><a class="reference internal" href="BJT1.html">Bipolar junction transistor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="FET.html">Field Effect Transistor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="OpAmp.html">Operational Amplifier</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="../signal_processing.html">Signal Processing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../image_processing.html">Image Processing</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../PRLabProduction.html">Pattern Lab Production</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../../ProposalPhD_Develop.html">Proposal PhD Develope</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Students.html">Students Projects</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../StudentProjects/BsC/Teymoori/chat_with_doc.html">Author Information</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Contact_Me.html">Contact Me</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../About_Me.html">About Me</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/h-sadoghi/dr-sadoghi.git" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/h-sadoghi/dr-sadoghi.git/issues/new?title=Issue%20on%20page%20%2Fcourses/Circuit_Electronics/Diode_chapter.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/courses/Circuit_Electronics/Diode_chapter.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Diode</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#covalent-bonding-of-the-silicon-atom">Covalent Bonding of the Silicon Atom</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#covalent-bonding-in-germanium">Covalent bonding in germanium</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#behavior-at-room-temperature"><strong>Behavior at Room Temperature</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#doping-semiconductors"><strong>Doping Semiconductors</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#extrinsic-semiconductors"><strong>Extrinsic Semiconductors</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#doping-with-phosphorus"><strong>Doping with Phosphorus</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#doping-with-boron"><strong>Doping with Boron</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#motion-of-electrons-and-holes"><strong>Motion of Electrons and Holes</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#energy-bands-in-semiconductor-materials">Energy Bands in Semiconductor Materials</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#n-type-and-p-type-materials">n-Type and p-Type Materials</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#combining-n-type-and-p-type-materials">Combining n-Type and p-Type Materials</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#behavior-at-the-p-n-junction"><strong>Behavior at the p-n Junction</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#depletion-region-and-forward-bias"><strong>Depletion Region and Forward Bias</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reverse-bias">Reverse Bias</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#iv-curve-of-the-silicon-p-n-junction-diode">IV curve of the silicon p-n junction diode</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#i-v-diode-using-pyspice">I-V Diode using Pyspice</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#diode-1n4148">Diode=1n4148</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#line-load-in-diode-circuits">Line Load in Diode Circuits</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#load-line"><strong>Load Line:</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#main-problem-in-diode-circuit-solving">Main problem in Diode circuit solving</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solved-values">Solved Values:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bias-1n4148">Bias 1n4148</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lookup-table">Lookup Table</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#good-results-for-1n4148">Good Results for 1N4148</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ac-or-dynamic-resistance">AC or Dynamic Resistance</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#calculation-of-dynamic-resistance">Calculation of Dynamic Resistance</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#research-problem-for-diode-analysis">Research Problem for Diode Analysis</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-module-for-lookup-table-of-diode">Learning Module for Lookup Table of Diode</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#algorithm">Algorithm</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#flowchart">Flowchart</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#research-module-for-analyzing-diode-data">Research Module for Analyzing Diode Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Algorithm</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Flowchart</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion-above-figure">Conclusion above figure</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#diode-equivalent-circuits">DIODE EQUIVALENT CIRCUITS</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-diode">Types of Diode</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zener-diode">Zener Diode</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-light-emitting-diode-led">The light-emitting diode (LED)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#homework-type-of-diode">Homework: Type of Diode</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="diode">
+<h1>Diode<a class="headerlink" href="#diode" title="Link to this heading">#</a></h1>
+<p>First remind from Atom and material</p>
+<section id="covalent-bonding-of-the-silicon-atom">
+<h2>Covalent Bonding of the Silicon Atom<a class="headerlink" href="#covalent-bonding-of-the-silicon-atom" title="Link to this heading">#</a></h2>
+<p>In silicon atoms, which have four valence electrons, covalent bonding occurs when each silicon atom shares its valence electrons with four neighboring atoms, forming a stable network. Each atom contributes four electrons, and by sharing with neighbors, a total of eight electrons are effectively involved in bonding, achieving stability through this interconnected structure.</p>
+<p><img alt="CovalentBound" src="../../_images/CovalentBoundSilicon.png" /></p>
+</section>
+<section id="covalent-bonding-in-germanium">
+<h2>Covalent bonding in germanium<a class="headerlink" href="#covalent-bonding-in-germanium" title="Link to this heading">#</a></h2>
+<p>In germanium, each atom has four valence electrons and forms four covalent bonds with neighboring atoms, sharing one electron per bond. This results in each atom sharing a total of eight electrons with its four neighbors. At absolute zero, germanium acts as a perfect insulator due to the lack of free electrons, as all valence electrons are tightly bound in covalent bonds.</p>
+<p><img alt="CovalentBound_Germanium" src="../../_images/CovalentBoundGermanium.png" /></p>
+<section id="behavior-at-room-temperature">
+<h3><strong>Behavior at Room Temperature</strong><a class="headerlink" href="#behavior-at-room-temperature" title="Link to this heading">#</a></h3>
+<p>At room temperature, some valence electrons gain enough thermal energy to break covalent bonds in the semiconductor. This process frees the electrons, making them available for conduction. The escape of an electron from a covalent bond creates a vacancy, known as a hole. Holes, which carry a positive charge, move in the opposite direction to electrons. The number of holes created is equal to the number of freed electrons, as a hole represents the absence of an electron.</p>
+</section>
+<section id="doping-semiconductors">
+<h3><strong>Doping Semiconductors</strong><a class="headerlink" href="#doping-semiconductors" title="Link to this heading">#</a></h3>
+<p>Doping modifies the electrical properties of semiconductors by introducing impurity atoms. By adding elements like phosphorus or boron to silicon, the material’s conductivity is adjusted. Phosphorus introduces extra electrons, creating n-type semiconductors, while boron creates holes, resulting in p-type semiconductors. These semiconductors are essential in devices like LEDs, solar cells, and transistors.</p>
+<p><img alt="P N Type" src="../../_images/P_Type_N_Type1.PNG" /></p>
+</section>
+<section id="extrinsic-semiconductors">
+<h3><strong>Extrinsic Semiconductors</strong><a class="headerlink" href="#extrinsic-semiconductors" title="Link to this heading">#</a></h3>
+<p>Extrinsic semiconductors result from doping pure semiconductors with impurities, altering their conductivity. This process categorizes semiconductors into n-type and p-type based on the type of dopant used. N-type semiconductors have excess electrons, while p-type semiconductors have holes in the valence band.</p>
+<p><img alt="DonorAcceptor" src="../../_images/Donor_Acceptor.PNG" /></p>
+</section>
+<section id="doping-with-phosphorus">
+<h3><strong>Doping with Phosphorus</strong><a class="headerlink" href="#doping-with-phosphorus" title="Link to this heading">#</a></h3>
+<p>Phosphorus doping introduces extra electrons into silicon, creating n-type semiconductors. Phosphorus atoms replace silicon atoms and form covalent bonds, with the extra electron becoming free to move, enhancing conductivity. This results in a crystal where the number of free electrons equals the positive charge of the stationary phosphorus atoms, ensuring overall electrical neutrality.</p>
+</section>
+<section id="doping-with-boron">
+<h3><strong>Doping with Boron</strong><a class="headerlink" href="#doping-with-boron" title="Link to this heading">#</a></h3>
+<p>Boron doping creates p-type semiconductors by introducing holes into silicon. Boron atoms, with fewer valence electrons than silicon, create vacancies or “holes” in the crystal structure. These holes act as positive charge carriers, and their movement through the material contributes to electrical conductivity.</p>
+<p><img alt="Boron_Phosphorus" src="../../_images/Dopped_Phosphorus_Boron.PNG" /></p>
+</section>
+<section id="motion-of-electrons-and-holes">
+<h3><strong>Motion of Electrons and Holes</strong><a class="headerlink" href="#motion-of-electrons-and-holes" title="Link to this heading">#</a></h3>
+<p>The motion of electrons and holes in a semiconductor is influenced by electric fields and thermal energy. Electrons and holes exhibit random thermal motion, known as diffusive flow, which is crucial for the behavior of p-n junctions. The average velocity of the carriers is no longer zero when an electric field <span class="math notranslate nohighlight">\( \epsilon \)</span> is applied to the semiconductor. This nonzero velocity is called the drift velocity. The drift velocity is superimposed on the thermal motion as illustrated in following Figure.</p>
+<p><img alt="ElectricField_Thermal" src="../../_images/ElectricField_thermal.PNG" /></p>
+</section>
+<section id="energy-bands-in-semiconductor-materials">
+<h3>Energy Bands in Semiconductor Materials<a class="headerlink" href="#energy-bands-in-semiconductor-materials" title="Link to this heading">#</a></h3>
+<p><strong>Band Theory:</strong> Electrons in a solid occupy energy bands. The two most important bands are the valence band (occupied by electrons) and the conduction band (where electrons can move freely).</p>
+</section>
+<section id="n-type-and-p-type-materials">
+<h3>n-Type and p-Type Materials<a class="headerlink" href="#n-type-and-p-type-materials" title="Link to this heading">#</a></h3>
+<p><strong>n-Type Semiconductor:</strong></p>
+<ul class="simple">
+<li><p><strong>Doping:</strong> N-type semiconductors are created by doping silicon with a Group 15 element (e.g., phosphorus). These elements have five valence electrons.</p></li>
+<li><p><strong>Extra Electrons:</strong> The extra electron from each dopant atom becomes a free carrier, increasing the material’s conductivity.</p></li>
+</ul>
+<p><strong>p-Type Semiconductor:</strong></p>
+<ul class="simple">
+<li><p><strong>Doping:</strong> P-type semiconductors are created by doping silicon with a Group 13 element (e.g., boron). These elements have three valence electrons.</p></li>
+<li><p><strong>Holes:</strong> The absence of an electron creates a “hole” that acts as a positive charge carrier. These holes can move through the lattice, increasing the material’s conductivity.</p></li>
+</ul>
+</section>
+<section id="combining-n-type-and-p-type-materials">
+<h3>Combining n-Type and p-Type Materials<a class="headerlink" href="#combining-n-type-and-p-type-materials" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Formation of a Diode:</strong> When n-type and p-type materials are joined, a p-n junction is formed. The junction creates a depletion region where electrons and holes recombine, leading to a built-in electric field.</p></li>
+<li><p><strong>Diode Behavior:</strong> This junction allows current to flow easily in one direction (forward-biased) while blocking it in the opposite direction (reverse-biased).</p></li>
+</ul>
+<p><img alt="PN_Diode_1" src="../../_images/PN_diode_1.PNG" /></p>
+</section>
+<section id="behavior-at-the-p-n-junction">
+<h3><strong>Behavior at the p-n Junction</strong><a class="headerlink" href="#behavior-at-the-p-n-junction" title="Link to this heading">#</a></h3>
+<p>When n-type and p-type silicon are joined, free electrons from the n-type side <strong>diffuse</strong> into the p-type side, and holes from the p-type side <strong>diffuse</strong> into the n-type side.</p>
+<p><strong>built-in electric field</strong>
+Due to their electric charge, this diffusion creates a built-in electric field at the junction. The field results from the positive charge left behind by diffusing electrons and the negative charge left by diffusing holes. This built-in electric field opposes further diffusion, establishing an equilibrium where the net flow of electrons and holes across the junction is zero. This electric field is crucial for the operation of diodes, transistors, and solar cells.</p>
+<p><img alt="diffuse_built-in electric field" src="../../_images/PN_diode_3.PNG" /></p>
+</section>
+<section id="depletion-region-and-forward-bias">
+<h3><strong>Depletion Region and Forward Bias</strong><a class="headerlink" href="#depletion-region-and-forward-bias" title="Link to this heading">#</a></h3>
+<p>The depletion region at the p-n junction is characterized by a lack of mobile charges, making it highly resistive and acting as a nearly perfect insulator. The resistance of this region can be modified by applying an external electric field. When a positive voltage is applied to the p-type side and a negative voltage to the n-type side (forward bias), the applied field reduces the depletion region’s resistance. At approximately 0.6 volts forward bias, the resistance becomes negligible, allowing current to flow with minimal obstruction.</p>
+<p><img alt="ForwardBias_PN_diode" src="../../_images/PN_diode_4.PNG" /></p>
+</section>
+<section id="reverse-bias">
+<h3>Reverse Bias<a class="headerlink" href="#reverse-bias" title="Link to this heading">#</a></h3>
+<p>When a negative voltage is applied to the p-type side and a positive voltage is applied to the n-type side, no current flows, or the current is exceptionally small. This configuration is known as “Reverse Biased” (see following Figure).</p>
+<p><img alt="ReverseBias" src="../../_images/ReverseBiase.PNG" /></p>
+</section>
+<section id="iv-curve-of-the-silicon-p-n-junction-diode">
+<h3>IV curve of the silicon p-n junction diode<a class="headerlink" href="#iv-curve-of-the-silicon-p-n-junction-diode" title="Link to this heading">#</a></h3>
+<p><img alt="IVCharactristic" src="../../_images/IVCharactristic.PNG" /></p>
+<p><strong>Equation:</strong></p>
+<div class="math notranslate nohighlight">
+\[
+  I_D = I_S \left( \exp\left(\frac{V_D}{\eta V_T}\right) - 1 \right)
+  \]</div>
+<p>where:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\( V_T  = \frac{k_B T}{q}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\( I_D \)</span> is the forward current (diode current).</p></li>
+<li><p><span class="math notranslate nohighlight">\( I_S \)</span> is the saturation current.</p></li>
+<li><p><span class="math notranslate nohighlight">\( q \)</span> is the charge of an electron (approximately <span class="math notranslate nohighlight">\( 1.602 \times 10^{-19} \)</span> Coulombs).</p></li>
+<li><p><span class="math notranslate nohighlight">\( V_D \)</span> is the forward voltage.</p></li>
+<li><p><span class="math notranslate nohighlight">\( \eta \)</span> is the ideality factor (typically between 1 and 2).</p></li>
+<li><p><span class="math notranslate nohighlight">\( k_B \)</span> is Boltzmann’s constant (approximately <span class="math notranslate nohighlight">\( 1.381 \times 10^{-23} \)</span> J/K).</p></li>
+<li><p><span class="math notranslate nohighlight">\( T \)</span> is the absolute temperature in Kelvin.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1"># Constants</span>
+<span class="n">I_S</span> <span class="o">=</span> <span class="mf">1e-9</span>  <span class="c1"># Saturation current (A)</span>
+<span class="n">q</span> <span class="o">=</span> <span class="mf">1.602e-19</span>  <span class="c1"># Charge of an electron (Coulombs)</span>
+<span class="n">k_B</span> <span class="o">=</span> <span class="mf">1.381e-23</span>  <span class="c1"># Boltzmann&#39;s constant (J/K)</span>
+<span class="n">T</span> <span class="o">=</span> <span class="mi">300</span>  <span class="c1"># Temperature in Kelvin</span>
+<span class="n">eta</span> <span class="o">=</span> <span class="mi">1</span>  <span class="c1"># Ideality factor</span>
+
+<span class="c1">#V_D1 = np.linspace(0.1, 0.2, 1000)  # Voltage range with detailed steps</span>
+<span class="n">V_D2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.001</span><span class="p">,</span> <span class="mf">0.75</span><span class="p">,</span> <span class="mi">5000</span><span class="p">)</span>   <span class="c1"># Voltage range with even more detailed steps</span>
+<span class="n">V_D3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.75</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>   <span class="c1"># Voltage range with detailed steps</span>
+
+<span class="c1"># Concatenate the voltage ranges</span>
+<span class="n">V_D</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">V_D2</span><span class="p">,</span> <span class="n">V_D3</span><span class="p">))</span>
+
+<span class="c1"># Diode current calculation</span>
+<span class="n">V_T</span> <span class="o">=</span> <span class="n">k_B</span> <span class="o">*</span> <span class="n">T</span> <span class="o">/</span> <span class="n">q</span>  <span class="c1"># Thermal voltage</span>
+<span class="n">I_D</span> <span class="o">=</span> <span class="n">I_S</span> <span class="o">*</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">V_D</span> <span class="o">/</span> <span class="p">(</span><span class="n">eta</span> <span class="o">*</span> <span class="n">V_T</span><span class="p">))</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="n">exp_V_D</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">V_D</span><span class="p">)</span>
+
+
+<span class="c1"># Plotting</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">V_D</span><span class="p">,</span> <span class="n">I_D</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Diode I-V Characteristics&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>  <span class="c1"># Use a logarithmic scale for the x-axis</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">yscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>  <span class="c1"># Use a logarithmic scale for the y-axis</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Forward Voltage (V_D) [V]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Diode Current (I_D) [A]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Diode I-V Characteristics&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/08812de447677360c0564806397c42962cc3b0d67bf48e3f885586f61ad165cc.png" src="../../_images/08812de447677360c0564806397c42962cc3b0d67bf48e3f885586f61ad165cc.png" />
+</div>
+</div>
+</section>
+<section id="i-v-diode-using-pyspice">
+<h3>I-V Diode using Pyspice<a class="headerlink" href="#i-v-diode-using-pyspice" title="Link to this heading">#</a></h3>
+<p>Small Signal model of Diode</p>
+<p><img alt="AC Small Signal Spice Model" src="../../_images/Example_SmallSignalDiodeModel1.PNG" /></p>
+<p>I-V charactristic of Ideal diode , real Diode and Spice model</p>
+<p><img alt="IV_Char_Real_Ideal_Spice" src="../../_images/IV_DiodeCharactristice_Real_Spice_Ideal.png" /></p>
+</section>
+<section id="diode-1n4148">
+<h3>Diode=1n4148<a class="headerlink" href="#diode-1n4148" title="Link to this heading">#</a></h3>
+<p>Include breakdown voltage and forward region</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="kn">import</span> <span class="nn">PySpice.Logging.Logging</span> <span class="k">as</span> <span class="nn">Logging</span>
+<span class="n">logger</span> <span class="o">=</span> <span class="n">Logging</span><span class="o">.</span><span class="n">setup_logging</span><span class="p">()</span>
+<span class="kn">from</span> <span class="nn">PySpice.Spice.Netlist</span> <span class="kn">import</span> <span class="n">Circuit</span>
+<span class="kn">from</span> <span class="nn">PySpice.Unit</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="c1"># Define sweep parameters</span>
+<span class="n">Vinput_start</span> <span class="o">=</span> <span class="o">-</span><span class="mi">120</span>
+<span class="n">Vinput_stop</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="n">Vinput_step</span> <span class="o">=</span> <span class="mf">0.001</span>
+
+<span class="c1"># Define the circuit</span>
+<span class="n">circuit</span> <span class="o">=</span> <span class="n">Circuit</span><span class="p">(</span><span class="s1">&#39;First Example Define diode&#39;</span><span class="p">)</span>
+
+<span class="c1"># Add a diode with specific parameters</span>
+<span class="n">circuit</span><span class="o">.</span><span class="n">D</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="s1">&#39;2&#39;</span><span class="p">,</span> <span class="n">circuit</span><span class="o">.</span><span class="n">gnd</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="s1">&#39;Diode&#39;</span><span class="p">)</span>
+
+<span class="n">circuit</span><span class="o">.</span><span class="n">model</span><span class="p">(</span><span class="s1">&#39;Diode&#39;</span><span class="p">,</span> <span class="s1">&#39;D&#39;</span><span class="p">,</span> <span class="n">IS</span><span class="o">=</span><span class="mf">4.352E-9</span><span class="p">,</span> <span class="n">BV</span> <span class="o">=</span> <span class="mi">110</span><span class="p">,</span> <span class="n">GMIN</span> <span class="o">=</span> <span class="mf">1E-12</span><span class="p">,</span>
+               <span class="n">N</span><span class="o">=</span><span class="mf">1.906</span><span class="p">,</span> <span class="n">IBV</span> <span class="o">=</span> <span class="mf">0.0001</span><span class="p">,</span> <span class="n">RS</span> <span class="o">=</span> <span class="mf">0.6458</span><span class="p">,</span>
+                 <span class="n">CJO</span> <span class="o">=</span> <span class="mf">7.048E-13</span><span class="p">,</span> <span class="n">VJ</span> <span class="o">=</span> <span class="mf">0.869</span><span class="p">,</span> <span class="n">M</span> <span class="o">=</span> <span class="mf">0.03</span><span class="p">,</span> <span class="n">FC</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="p">,</span> <span class="n">TT</span> <span class="o">=</span> <span class="mf">3.48E-9</span> 
+                   <span class="p">)</span>
+
+<span class="n">circuit</span><span class="o">.</span><span class="n">V</span><span class="p">(</span><span class="s1">&#39;input&#39;</span><span class="p">,</span> <span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="n">circuit</span><span class="o">.</span><span class="n">gnd</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">circuit</span><span class="o">.</span><span class="n">V</span><span class="p">(</span><span class="s1">&#39;meas&#39;</span><span class="p">,</span> <span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="s1">&#39;2&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="c1"># Create a simulator</span>
+<span class="n">simulator</span> <span class="o">=</span> <span class="n">circuit</span><span class="o">.</span><span class="n">simulator</span><span class="p">(</span><span class="n">temperature</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span> <span class="n">nominal_temperature</span><span class="o">=</span><span class="mi">25</span><span class="p">)</span>
+
+<span class="c1"># Perform a DC sweep analysis</span>
+<span class="n">analysis</span> <span class="o">=</span> <span class="n">simulator</span><span class="o">.</span><span class="n">dc</span><span class="p">(</span><span class="n">Vinput</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="n">Vinput_start</span><span class="p">,</span> <span class="n">Vinput_stop</span><span class="p">,</span> <span class="n">Vinput_step</span><span class="p">))</span>
+
+<span class="n">waveform</span> <span class="o">=</span> <span class="n">analysis</span><span class="p">[</span><span class="s1">&#39;2&#39;</span><span class="p">]</span>
+<span class="n">sweep_values1</span><span class="o">=</span><span class="n">analysis</span><span class="p">[</span><span class="s1">&#39;v-sweep&#39;</span><span class="p">]</span>
+<span class="n">InputCurrentMeasurement</span><span class="o">=</span><span class="n">analysis</span><span class="p">[</span><span class="s1">&#39;vmeas&#39;</span><span class="p">]</span>
+<span class="c1"># Assuming waveform.data provides the voltage values for node &#39;3&#39;</span>
+<span class="n">voltage_values</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">waveform</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xscale</span><span class="p">(</span><span class="s1">&#39;symlog&#39;</span><span class="p">,</span> <span class="n">linthresh</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">voltage_values</span><span class="p">,</span><span class="n">InputCurrentMeasurement</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Vinput (V)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Input current (A)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;DC Sweep Analysis for input Node current&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">4</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="ne">----&gt; </span><span class="mi">4</span> <span class="kn">import</span> <span class="nn">PySpice.Logging.Logging</span> <span class="k">as</span> <span class="nn">Logging</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">logger</span> <span class="o">=</span> <span class="n">Logging</span><span class="o">.</span><span class="n">setup_logging</span><span class="p">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="kn">from</span> <span class="nn">PySpice.Spice.Netlist</span> <span class="kn">import</span> <span class="n">Circuit</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;PySpice&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="line-load-in-diode-circuits">
+<h3>Line Load in Diode Circuits<a class="headerlink" href="#line-load-in-diode-circuits" title="Link to this heading">#</a></h3>
+<p><strong>Concept of Line Load:</strong></p>
+<ul class="simple">
+<li><p>The load line is a graphical representation of the relationship between the voltage across the diode and the current through it, as dictated by the resistor in series. It is derived from Ohm’s Law and Kirchhoff’s Voltage Law.</p></li>
+</ul>
+<p><strong>How It Works:</strong></p>
+<ul class="simple">
+<li><p><strong>Series Connection:</strong> In a simple series circuit with a diode and a resistor, the total voltage <span class="math notranslate nohighlight">\( V_{source} \)</span> is split between the diode and the resistor. The load line shows how the current through the resistor changes with the voltage drop across the diode.</p></li>
+<li><p><strong>Mathematical Relationship:</strong> The load line equation <span class="math notranslate nohighlight">\( I_R = \frac{V_{source} - V_D}{R} \)</span> is a straight line with slope <span class="math notranslate nohighlight">\(-\frac{1}{R}\)</span> and intersects the vertical axis at <span class="math notranslate nohighlight">\( \frac{V_{source}}{R} \)</span>.</p></li>
+</ul>
+<p><strong>Finding the Intersection:</strong></p>
+<ul>
+<li><p><strong>Diode I-V Curve:</strong> This curve represents the current through the diode as a function of the forward voltage. It’s described by the exponential equation:</p>
+<div class="math notranslate nohighlight">
+\[
+     I_D = I_S \left( e^{\frac{V_D}{\eta V_T}} - 1 \right)
+     \]</div>
+<p>where <span class="math notranslate nohighlight">\( I_S \)</span> is the saturation current, <span class="math notranslate nohighlight">\( \eta \)</span> is the ideality factor, and <span class="math notranslate nohighlight">\( V_T \)</span> is the thermal voltage.</p>
+</li>
+</ul>
+<p><strong>Intersection Point:</strong>
+With following code we find intersection:</p>
+<ul class="simple">
+<li><p><strong>Voltage <span class="math notranslate nohighlight">\( V_D \)</span>:</strong> 0.3590 V</p></li>
+<li><p><strong>Current <span class="math notranslate nohighlight">\( I_D \)</span>:</strong> 4.6410e-03 A (4.641 mA)</p></li>
+</ul>
+<p>This intersection represents the operating point of the diode when connected in series with a resistor and powered by a voltage source.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">fsolve</span>
+
+<span class="c1"># Constants</span>
+<span class="n">I_S</span> <span class="o">=</span> <span class="mf">4.352E-9</span>  <span class="c1"># Saturation current (A) for 1N4148</span>
+<span class="n">q</span> <span class="o">=</span> <span class="mf">1.602e-19</span>  <span class="c1"># Charge of an electron (Coulombs)</span>
+<span class="n">k_B</span> <span class="o">=</span> <span class="mf">1.381e-23</span>  <span class="c1"># Boltzmann&#39;s constant (J/K)</span>
+<span class="n">T</span> <span class="o">=</span> <span class="mi">300</span>  <span class="c1"># Temperature in Kelvin</span>
+<span class="n">eta</span> <span class="o">=</span> <span class="mf">1.906</span>  <span class="c1"># Ideality factor</span>
+<span class="n">R</span> <span class="o">=</span> <span class="mi">1000</span>  <span class="c1"># Resistor value (ohms)</span>
+<span class="n">V_source</span> <span class="o">=</span> <span class="mi">5</span>  <span class="c1"># Source voltage (V)</span>
+
+<span class="c1"># Thermal voltage</span>
+<span class="n">V_T</span> <span class="o">=</span> <span class="n">k_B</span> <span class="o">*</span> <span class="n">T</span> <span class="o">/</span> <span class="n">q</span>
+
+<span class="c1"># Define the function to solve</span>
+<span class="k">def</span> <span class="nf">diode_load_line</span><span class="p">(</span><span class="n">V_D</span><span class="p">):</span>
+    <span class="n">I_D</span> <span class="o">=</span> <span class="n">I_S</span> <span class="o">*</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">V_D</span> <span class="o">/</span> <span class="p">(</span><span class="n">eta</span> <span class="o">*</span> <span class="n">V_T</span><span class="p">))</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">I_R</span> <span class="o">=</span> <span class="p">(</span><span class="n">V_source</span> <span class="o">-</span> <span class="n">V_D</span><span class="p">)</span> <span class="o">/</span> <span class="n">R</span>
+    <span class="k">return</span> <span class="n">I_D</span> <span class="o">-</span> <span class="n">I_R</span>
+
+<span class="c1"># Initial guess for the voltage</span>
+<span class="n">initial_guess</span> <span class="o">=</span> <span class="mf">1.9</span>  <span class="c1"># Start with a guess close to the expected intersection</span>
+
+<span class="c1"># Solve for the intersection voltage</span>
+<span class="n">V_D_intersection</span><span class="p">,</span> <span class="n">info</span><span class="p">,</span> <span class="n">ier</span><span class="p">,</span> <span class="n">msg</span> <span class="o">=</span> <span class="n">fsolve</span><span class="p">(</span><span class="n">diode_load_line</span><span class="p">,</span> <span class="n">initial_guess</span><span class="p">,</span> <span class="n">full_output</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">V_D_intersection</span><span class="o">=</span><span class="n">V_D_intersection</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="c1"># Calculate the corresponding current</span>
+<span class="n">I_D_intersection</span> <span class="o">=</span> <span class="n">I_S</span> <span class="o">*</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">V_D_intersection</span> <span class="o">/</span> <span class="p">(</span><span class="n">eta</span> <span class="o">*</span> <span class="n">V_T</span><span class="p">))</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># Display results</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Intersection Voltage (V_D): </span><span class="si">{</span><span class="n">V_D_intersection</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2"> V&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Intersection Current (I_D): </span><span class="si">{</span><span class="n">I_D_intersection</span><span class="si">:</span><span class="s2">.4e</span><span class="si">}</span><span class="s2"> A&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Intersection Voltage (V_D): 0.6806 V
+Intersection Current (I_D): 4.3194e-03 A
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="load-line">
+<h3><strong>Load Line:</strong><a class="headerlink" href="#load-line" title="Link to this heading">#</a></h3>
+<p>The load line represents the relationship between the voltage across the diode and the current through it due to the resistor and source voltage. It is given by:</p>
+<div class="math notranslate nohighlight">
+\[
+I_R = \frac{V_{source} - V_D}{R}
+\]</div>
+<p>where <span class="math notranslate nohighlight">\( R \)</span> is the resistor value and <span class="math notranslate nohighlight">\( V_{source} \)</span> is the supply voltage.</p>
+<p><strong>Intersection Calculation:</strong> To find the intersection point, we solve the equation:</p>
+<div class="math notranslate nohighlight">
+\[
+I_S \left( e^{\frac{V_D}{\eta V_T}} - 1 \right) = \frac{V_{source} - V_D}{R}
+\]</div>
+<p>This involves numerical methods to find the voltage <span class="math notranslate nohighlight">\( V_D \)</span> where the diode current equals the resistor current.</p>
+<p><strong>Visualizing the Intersection:</strong>
+By plotting the diode I-V curve and the load line, and highlighting the intersection point, we can visually verify where the diode operates in the circuit. This point is where the diode’s current and voltage match the constraints imposed by the resistor and the power supply.</p>
+<p><strong>Role in Circuit Analysis:</strong></p>
+<ul class="simple">
+<li><p><strong>Operating Point:</strong> The intersection of the load line with the diode I-V curve indicates the operating point of the diode. This is where the diode is in equilibrium with the resistor and power supply.</p></li>
+<li><p><strong>Impact of Resistor and Source Voltage:</strong> Changes in resistor value <span class="math notranslate nohighlight">\( R \)</span> or source voltage <span class="math notranslate nohighlight">\( V_{source} \)</span> will shift the load line, affecting the intersection point and thus the operating point of the diode.</p></li>
+</ul>
+<p><strong>Graphical Analysis:</strong></p>
+<ul class="simple">
+<li><p><strong>Plotting:</strong> By plotting both the diode I-V curve and the load line, you can visually determine the operating point. This is useful for understanding how the diode will behave under different conditions and for designing circuits with specific operating points.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1"># Constants</span>
+<span class="n">I_S</span> <span class="o">=</span> <span class="mf">4.352E-9</span>  <span class="c1"># Saturation current (A) for 1N4148</span>
+<span class="n">q</span> <span class="o">=</span> <span class="mf">1.602e-19</span>  <span class="c1"># Charge of an electron (Coulombs)</span>
+<span class="n">k_B</span> <span class="o">=</span> <span class="mf">1.381e-23</span>  <span class="c1"># Boltzmann&#39;s constant (J/K)</span>
+<span class="n">T</span> <span class="o">=</span> <span class="mi">300</span>  <span class="c1"># Temperature in Kelvin</span>
+<span class="n">eta</span> <span class="o">=</span> <span class="mf">1.906</span>  <span class="c1"># Ideality factor</span>
+<span class="n">R</span> <span class="o">=</span> <span class="mi">1000</span>  <span class="c1"># Resistor value (ohms)</span>
+<span class="n">V_source</span> <span class="o">=</span> <span class="mi">5</span>  <span class="c1"># Source voltage (V)</span>
+
+<span class="c1"># Voltage range focused around the intersection</span>
+<span class="n">V_D</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.35</span><span class="p">,</span> <span class="mf">0.755</span><span class="p">,</span> <span class="mi">5000</span><span class="p">)</span>  <span class="c1"># Voltage range with detailed steps</span>
+
+<span class="c1"># Diode current calculation</span>
+<span class="n">V_T</span> <span class="o">=</span> <span class="n">k_B</span> <span class="o">*</span> <span class="n">T</span> <span class="o">/</span> <span class="n">q</span>  <span class="c1"># Thermal voltage</span>
+<span class="n">I_D</span> <span class="o">=</span> <span class="n">I_S</span> <span class="o">*</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">V_D</span> <span class="o">/</span> <span class="p">(</span><span class="n">eta</span> <span class="o">*</span> <span class="n">V_T</span><span class="p">))</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># Load line calculation</span>
+<span class="n">I_R</span> <span class="o">=</span> <span class="p">(</span><span class="n">V_source</span> <span class="o">-</span> <span class="n">V_D</span><span class="p">)</span> <span class="o">/</span> <span class="n">R</span>
+
+<span class="c1"># Intersection values</span>
+<span class="n">V_D_intersection</span> <span class="o">=</span> <span class="mf">0.6806</span>
+<span class="n">I_D_intersection</span> <span class="o">=</span> <span class="mf">4.3194e-03</span>
+
+<span class="c1"># Plotting</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">V_D</span><span class="p">,</span> <span class="n">I_D</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Diode I-V Characteristics&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">V_D</span><span class="p">,</span> <span class="n">I_R</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;Load Line (R=</span><span class="si">{</span><span class="n">R</span><span class="si">}</span><span class="s1"> Ω)&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">V_D_intersection</span><span class="p">,</span> <span class="n">I_D_intersection</span><span class="p">,</span> <span class="s1">&#39;go&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Intersection Point&#39;</span><span class="p">)</span>  <span class="c1"># Highlight intersection</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Forward Voltage (V_D) [V]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Current (I) [A]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Diode I-V Characteristics with Load Line&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/03db93307dc3b0ba7fd69756876f256a154ae72797450429c7c6441e39facc98.png" src="../../_images/03db93307dc3b0ba7fd69756876f256a154ae72797450429c7c6441e39facc98.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="main-problem-in-diode-circuit-solving">
+<h2>Main problem in Diode circuit solving<a class="headerlink" href="#main-problem-in-diode-circuit-solving" title="Link to this heading">#</a></h2>
+<p>Main problem is solving non-linear equation. Also Bias elements generally arise from peripheral constraints (such as the voltage source and resistance).</p>
+<span style="color: red; font-size: 1.5em; font-weight: bold;">
+The constraints do not allow the diode's operating point to occur at the desired  V_D and I_D, resulting in improper biasing.
+</span>
+<p>Another example show that,
+Given:</p>
+<ul class="simple">
+<li><p><strong><span class="math notranslate nohighlight">\( V_{source} = 5 \text{ V} \)</span></strong></p></li>
+<li><p><strong><span class="math notranslate nohighlight">\( R \approx 10 \text{k}\Omega \)</span></strong></p></li>
+<li><p>Diode characteristics:</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\( I_S = 4.352 \times 10^{-9} \text{ A} \)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\( \eta = 1.906 \)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\( V_T = 0.0258 \text{ V} \)</span></p></li>
+</ul>
+</li>
+</ul>
+<p>To find the diode’s operating point <span class="math notranslate nohighlight">\( V_D \)</span> and <span class="math notranslate nohighlight">\( I_D \)</span>, we follow:</p>
+<div class="math notranslate nohighlight">
+\[
+I_D = \frac{V_{source} - V_D}{R}= \frac{5 - V_D}{10,000}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+I_D = I_S \left( e^{\frac{V_D}{\eta V_T}} - 1 \right)
+\]</div>
+<p><strong>Substitute <span class="math notranslate nohighlight">\( I_D \)</span> into the diode equation:</strong></p>
+<div class="math notranslate nohighlight">
+\[
+\frac{5 - V_D}{10,000} = 4.352 \times 10^{-9} \left( e^{\frac{V_D}{1.906*0.0258}} - 1 \right)
+\]</div>
+<section id="solved-values">
+<h3>Solved Values:<a class="headerlink" href="#solved-values" title="Link to this heading">#</a></h3>
+<p>After running the above code, you would get:</p>
+<ul class="simple">
+<li><p><strong><span class="math notranslate nohighlight">\( V_D \approx 0.3 \text{ V} \)</span></strong></p></li>
+<li><p><strong><span class="math notranslate nohighlight">\( I_D \approx 0.5 \text{ mA} \)</span> or <span class="math notranslate nohighlight">\( 0.39 \text{ mA} \)</span></strong></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">fsolve</span>
+
+<span class="c1"># Constants</span>
+<span class="n">I_S</span> <span class="o">=</span> <span class="mf">4.352e-9</span>
+<span class="n">V_T</span> <span class="o">=</span> <span class="mf">0.0258</span>
+<span class="n">eta</span> <span class="o">=</span> <span class="mf">1.906</span>  <span class="c1"># Ideality factor</span>
+<span class="n">R</span> <span class="o">=</span> <span class="mi">10000</span>
+<span class="n">V_source</span> <span class="o">=</span> <span class="mi">5</span>
+
+<span class="c1"># Define the equation</span>
+<span class="k">def</span> <span class="nf">equation</span><span class="p">(</span><span class="n">V_D</span><span class="p">):</span>
+    <span class="n">I_D</span> <span class="o">=</span> <span class="p">(</span><span class="n">V_source</span> <span class="o">-</span> <span class="n">V_D</span><span class="p">)</span> <span class="o">/</span> <span class="n">R</span>
+    <span class="k">return</span> <span class="n">I_D</span> <span class="o">-</span> <span class="n">I_S</span> <span class="o">*</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">V_D</span> <span class="o">/</span><span class="p">(</span><span class="n">eta</span><span class="o">*</span><span class="n">V_T</span><span class="p">))</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># Initial guess for V_D</span>
+<span class="n">V_D_initial_guess</span> <span class="o">=</span> <span class="mi">2</span>
+
+<span class="c1"># Solve for V_D</span>
+<span class="n">V_D_solution</span> <span class="o">=</span> <span class="n">fsolve</span><span class="p">(</span><span class="n">equation</span><span class="p">,</span> <span class="n">V_D_initial_guess</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">I_D_solution</span> <span class="o">=</span> <span class="p">(</span><span class="n">V_source</span> <span class="o">-</span> <span class="n">V_D_solution</span><span class="p">)</span> <span class="o">/</span> <span class="n">R</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Diode Voltage (V_D): </span><span class="si">{</span><span class="n">V_D_solution</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2"> V&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Diode Current (I_D): </span><span class="si">{</span><span class="n">I_D_solution</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2"> A&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Diode Voltage (V_D): 0.5671 V
+Diode Current (I_D): 0.0004 A
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="bias-1n4148">
+<h3>Bias 1n4148<a class="headerlink" href="#bias-1n4148" title="Link to this heading">#</a></h3>
+<p>Following experiments show that</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">fsolve</span>
+
+<span class="c1"># Constants</span>
+<span class="n">I_S</span> <span class="o">=</span> <span class="mf">4.352e-9</span>  <span class="c1"># Saturation current (A) for 1N4148</span>
+<span class="n">V_T</span> <span class="o">=</span> <span class="mf">0.0258</span>  <span class="c1"># Thermal voltage (V) at room temperature</span>
+<span class="n">eta</span> <span class="o">=</span> <span class="mf">1.906</span>  <span class="c1"># Ideality factor</span>
+
+<span class="c1"># Function to calculate diode voltage and current</span>
+<span class="k">def</span> <span class="nf">solve_vd</span><span class="p">(</span><span class="n">V_source</span><span class="p">,</span> <span class="n">R</span><span class="p">):</span>
+    <span class="c1"># Define the diode equation for fsolve</span>
+    <span class="k">def</span> <span class="nf">diode_equation</span><span class="p">(</span><span class="n">V_D</span><span class="p">):</span>
+        <span class="n">I_D</span> <span class="o">=</span> <span class="p">(</span><span class="n">V_source</span> <span class="o">-</span> <span class="n">V_D</span><span class="p">)</span> <span class="o">/</span> <span class="n">R</span>
+        <span class="k">return</span> <span class="n">I_D</span> <span class="o">-</span> <span class="n">I_S</span> <span class="o">*</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">V_D</span> <span class="o">/</span> <span class="p">(</span><span class="n">eta</span> <span class="o">*</span> <span class="n">V_T</span><span class="p">))</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+    
+    <span class="c1"># Initial guess for V_D</span>
+    <span class="n">V_D_initial_guess</span> <span class="o">=</span> <span class="mi">2</span>
+    <span class="c1"># Solve for V_D</span>
+    <span class="n">V_D_solution</span> <span class="o">=</span> <span class="n">fsolve</span><span class="p">(</span><span class="n">diode_equation</span><span class="p">,</span> <span class="n">V_D_initial_guess</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">I_D_solution</span> <span class="o">=</span> <span class="p">(</span><span class="n">V_source</span> <span class="o">-</span> <span class="n">V_D_solution</span><span class="p">)</span> <span class="o">/</span> <span class="n">R</span>
+    <span class="k">return</span> <span class="n">V_D_solution</span><span class="p">,</span> <span class="n">I_D_solution</span>
+
+<span class="c1"># Expanded ranges for resistors and source voltages</span>
+<span class="n">resistors</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="n">num</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>  <span class="c1"># From 10 Ω to 100 kΩ</span>
+<span class="n">voltages</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="n">num</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>  <span class="c1"># From 1 V to 20 V</span>
+
+<span class="c1"># Generate the table</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="s1">&#39;R (Ω)&#39;</span><span class="si">:</span><span class="s2">&lt;15</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="s1">&#39;V_source (V)&#39;</span><span class="si">:</span><span class="s2">&lt;15</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="s1">&#39;I_D (mA)&#39;</span><span class="si">:</span><span class="s2">&lt;15</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="s1">&#39;V_D (V)&#39;</span><span class="si">:</span><span class="s2">&lt;15</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">R</span> <span class="ow">in</span> <span class="n">resistors</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">V_source</span> <span class="ow">in</span> <span class="n">voltages</span><span class="p">:</span>
+        <span class="n">V_D</span><span class="p">,</span> <span class="n">I_D</span> <span class="o">=</span> <span class="n">solve_vd</span><span class="p">(</span><span class="n">V_source</span><span class="p">,</span> <span class="n">R</span><span class="p">)</span>
+        <span class="c1"># Ensure V_D is at least 0.6V</span>
+        <span class="k">if</span> <span class="n">V_D</span> <span class="o">&gt;=</span> <span class="mf">0.5</span> <span class="ow">and</span> <span class="n">R</span> <span class="o">&gt;=</span> <span class="mi">100</span> <span class="p">:</span>
+            <span class="n">I_D_mA</span> <span class="o">=</span> <span class="n">I_D</span> <span class="o">*</span> <span class="mi">1000</span>  <span class="c1"># Convert current to mA</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">R</span><span class="si">:</span><span class="s2">&lt;15.2f</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">V_source</span><span class="si">:</span><span class="s2">&lt;15.2f</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">I_D_mA</span><span class="si">:</span><span class="s2">&lt;15.4f</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">V_D</span><span class="si">:</span><span class="s2">&lt;15.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>R (Ω)           V_source (V)    I_D (mA)        V_D (V)        
+215.44          1.00            1.7024          0.6332         
+215.44          3.11            11.0739         0.7253         
+215.44          5.22            20.7297         0.7561         
+215.44          7.33            30.4410         0.7750         
+215.44          9.44            40.1765         0.7887         
+215.44          11.56           49.9259         0.7994         
+215.44          13.67           59.6840         0.8081         
+215.44          15.78           69.4483         0.8156         
+215.44          17.89           79.2172         0.8221         
+215.44          20.00           88.9896         0.8278         
+1000.00         1.00            0.4340          0.5660         
+1000.00         3.11            2.4598          0.6513         
+1000.00         5.22            4.5408          0.6815         
+1000.00         7.33            6.6332          0.7001         
+1000.00         9.44            8.7308          0.7136         
+1000.00         11.56           10.8313         0.7242         
+1000.00         13.67           12.9337         0.7329         
+1000.00         15.78           15.0374         0.7403         
+1000.00         17.89           17.1421         0.7468         
+1000.00         20.00           19.2475         0.7525         
+4641.59         3.11            0.5459          0.5773         
+4641.59         5.22            0.9944          0.6068         
+4641.59         7.33            1.4452          0.6252         
+4641.59         9.44            1.8972          0.6385         
+4641.59         11.56           2.3497          0.6491         
+4641.59         13.67           2.8027          0.6577         
+4641.59         15.78           3.2559          0.6651         
+4641.59         17.89           3.7094          0.6715         
+4641.59         20.00           4.1630          0.6772         
+21544.35        3.11            0.1210          0.5032         
+21544.35        5.22            0.2177          0.5321         
+21544.35        7.33            0.3148          0.5502         
+21544.35        9.44            0.4122          0.5635         
+21544.35        11.56           0.5097          0.5739         
+21544.35        13.67           0.6073          0.5825         
+21544.35        15.78           0.7050          0.5899         
+21544.35        17.89           0.8027          0.5962         
+21544.35        20.00           0.9004          0.6019         
+100000.00       13.67           0.1316          0.5073         
+100000.00       15.78           0.1526          0.5146         
+100000.00       17.89           0.1737          0.5210         
+100000.00       20.00           0.1947          0.5266         
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="lookup-table">
+<h3>Lookup Table<a class="headerlink" href="#lookup-table" title="Link to this heading">#</a></h3>
+<p>Following program stored <em><strong>lookup table</strong></em> that you need untile end of Diode chapter and BJT transistor chapter [‘R (Ohm)’, ‘V_source (V)’, ‘I_D (mA)’, ‘V_D (V)’]</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">csv</span>
+<span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">fsolve</span>
+
+<span class="c1"># Constants</span>
+<span class="n">I_S</span> <span class="o">=</span> <span class="mf">4.352e-9</span>  <span class="c1"># Saturation current (A) for 1N4148</span>
+<span class="n">V_T</span> <span class="o">=</span> <span class="mf">0.0258</span>  <span class="c1"># Thermal voltage (V) at room temperature</span>
+<span class="n">eta</span> <span class="o">=</span> <span class="mf">1.906</span>  <span class="c1"># Ideality factor</span>
+
+<span class="c1"># Function to calculate diode voltage and current</span>
+<span class="k">def</span> <span class="nf">solve_vd</span><span class="p">(</span><span class="n">V_source</span><span class="p">,</span> <span class="n">R</span><span class="p">):</span>
+    <span class="c1"># Define the diode equation for fsolve</span>
+    <span class="k">def</span> <span class="nf">diode_equation</span><span class="p">(</span><span class="n">V_D</span><span class="p">):</span>
+        <span class="n">I_D</span> <span class="o">=</span> <span class="p">(</span><span class="n">V_source</span> <span class="o">-</span> <span class="n">V_D</span><span class="p">)</span> <span class="o">/</span> <span class="n">R</span>
+        <span class="k">return</span> <span class="n">I_D</span> <span class="o">-</span> <span class="n">I_S</span> <span class="o">*</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">V_D</span> <span class="o">/</span> <span class="p">(</span><span class="n">eta</span> <span class="o">*</span> <span class="n">V_T</span><span class="p">))</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+    
+    <span class="c1"># Initial guess for V_D</span>
+    <span class="n">V_D_initial_guess</span> <span class="o">=</span> <span class="mi">2</span>
+    <span class="c1"># Solve for V_D</span>
+    <span class="n">V_D_solution</span> <span class="o">=</span> <span class="n">fsolve</span><span class="p">(</span><span class="n">diode_equation</span><span class="p">,</span> <span class="n">V_D_initial_guess</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">I_D_solution</span> <span class="o">=</span> <span class="p">(</span><span class="n">V_source</span> <span class="o">-</span> <span class="n">V_D_solution</span><span class="p">)</span> <span class="o">/</span> <span class="n">R</span>
+    <span class="k">return</span> <span class="n">V_D_solution</span><span class="p">,</span> <span class="n">I_D_solution</span>
+
+<span class="c1"># Expanded ranges for resistors and source voltages</span>
+<span class="n">resistors</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="n">num</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>  <span class="c1"># From 10 Ω to 100 kΩ</span>
+<span class="n">voltages</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="n">num</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>  <span class="c1"># From 1 V to 20 V</span>
+
+<span class="c1"># Open a file to write the results</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;diode_lookup_table.csv&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">newline</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+    <span class="n">writer</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">writer</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+    <span class="c1"># Write the header</span>
+    <span class="n">writer</span><span class="o">.</span><span class="n">writerow</span><span class="p">([</span><span class="s1">&#39;R (Ohm)&#39;</span><span class="p">,</span> <span class="s1">&#39;V_source (V)&#39;</span><span class="p">,</span> <span class="s1">&#39;I_D (mA)&#39;</span><span class="p">,</span> <span class="s1">&#39;V_D (V)&#39;</span><span class="p">])</span>
+    
+    <span class="c1"># Calculate and write the data</span>
+    <span class="k">for</span> <span class="n">R</span> <span class="ow">in</span> <span class="n">resistors</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">V_source</span> <span class="ow">in</span> <span class="n">voltages</span><span class="p">:</span>
+            <span class="n">V_D</span><span class="p">,</span> <span class="n">I_D</span> <span class="o">=</span> <span class="n">solve_vd</span><span class="p">(</span><span class="n">V_source</span><span class="p">,</span> <span class="n">R</span><span class="p">)</span>
+            <span class="c1"># Ensure V_D is at least 0.6V</span>
+            <span class="k">if</span> <span class="n">V_D</span> <span class="o">&gt;=</span> <span class="mf">0.5</span> <span class="ow">and</span> <span class="n">R</span> <span class="o">&gt;=</span> <span class="mi">100</span><span class="p">:</span>
+                <span class="n">I_D_mA</span> <span class="o">=</span> <span class="n">I_D</span> <span class="o">*</span> <span class="mi">1000</span>  <span class="c1"># Convert current to mA</span>
+                <span class="n">writer</span><span class="o">.</span><span class="n">writerow</span><span class="p">([</span><span class="n">R</span><span class="p">,</span> <span class="n">V_source</span><span class="p">,</span> <span class="n">I_D_mA</span><span class="p">,</span> <span class="n">V_D</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="good-results-for-1n4148">
+<h3>Good Results for 1N4148<a class="headerlink" href="#good-results-for-1n4148" title="Link to this heading">#</a></h3>
+<p>If the source voltage is approximately 3V, we can use a 0.65V resistor at both ends with <span class="math notranslate nohighlight">\( R = 1000 \, \Omega \)</span>.<br />
+If the source voltage is approximately 1V, <span class="math notranslate nohighlight">\( V_D = 0.6332 \)</span> and <span class="math notranslate nohighlight">\( R = 215 \, \Omega \)</span>.</p>
+<p><strong>Note:</strong><br />
+<span style="color: red; font-size: 1.5em; font-weight: bold;">
+You cannot assume a diode voltage of 0.7V and then find a desired current to pass through it, or vice versa, assume a resistor and calculate the diode current. Instead, you must calculate based on the diode’s voltage or current and the source voltage or resistor value, which may be unknown and could be either the limiting resistor or the source voltage.
+</span></p>
+</section>
+</section>
+<section id="ac-or-dynamic-resistance">
+<h2>AC or Dynamic Resistance<a class="headerlink" href="#ac-or-dynamic-resistance" title="Link to this heading">#</a></h2>
+<p>Applying a sinusoidal input in series with a DC signal significantly alters the diode’s behavior.</p>
+<p><img alt="sinusoidal_series_DC" src="../../_images/DC_AC_Diode_R_Small.PNG" /></p>
+<p>The varying input causes the instantaneous operating point to fluctuate around the Q-point, leading to changes in current and voltage as illustrated in the following Figure.</p>
+<p><img alt="SmallSignalAmplification" src="../../_images/SmallSignalAmplification.PNG" /></p>
+<p>Without the varying signal, the operation point is fixed at the Q-point, which is derived from the quiescent state. A tangent line at the Q-point defines the small-signal resistance, which varies with the slope of the characteristic curve and denpend on DC voltage.</p>
+<p><img alt="QPoint_AC" src="../../_images/AC_Dynamic_Res.PNG" /></p>
+<p>As the slope steepens, the small-signal resistance decreases, making it lower in the vertical-rise region and higher at low current levels.</p>
+<section id="calculation-of-dynamic-resistance">
+<h3>Calculation of Dynamic Resistance<a class="headerlink" href="#calculation-of-dynamic-resistance" title="Link to this heading">#</a></h3>
+<p><strong>Diode Current Equation</strong>:
+The diode current <span class="math notranslate nohighlight">\( I_D \)</span> is given by the Shockley diode equation:</p>
+<div class="math notranslate nohighlight">
+\[
+   I_D = I_S \left( e^{\frac{V_D}{\eta V_T}} - 1 \right)
+   \]</div>
+<p>where:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\( I_S \)</span> is the saturation current.</p></li>
+<li><p><span class="math notranslate nohighlight">\( V_D \)</span> is the diode voltage.</p></li>
+<li><p><span class="math notranslate nohighlight">\( \eta \)</span> is the ideality factor.</p></li>
+<li><p><span class="math notranslate nohighlight">\( V_T \)</span> is the thermal voltage.</p></li>
+</ul>
+<p><strong>Derivative of Diode Current</strong>:
+To find the derivative of <span class="math notranslate nohighlight">\( I_D \)</span> with respect to <span class="math notranslate nohighlight">\( V_D \)</span>, use the chain rule:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial I_D}{\partial V_D} = I_S \cdot \frac{\partial}{\partial V_D} \left( e^{\frac{V_D}{\eta V_T}} - 1 \right)
+\]</div>
+<p><img alt="SlopeDiodeChar" src="courses/Circuit_Electronics/CircuitElectronicsImages/OperatingPoint_View_AC%20signal.PNG" /></p>
+<p>Since the derivative of <span class="math notranslate nohighlight">\( e^{\frac{V_D}{\eta V_T}} \)</span> with respect to <span class="math notranslate nohighlight">\( V_D \)</span> is:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial}{\partial V_D} \left( e^{\frac{V_D}{\eta V_T}} \right) = \frac{1}{n V_T} e^{\frac{V_D}{\eta V_T}}
+\]</div>
+<p>Therefore:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial I_D}{\partial V_D} = I_S \cdot \frac{1}{n V_T} e^{\frac{V_D}{\eta V_T}}
+\]</div>
+<p><strong>Small-Signal Resistance (<span class="math notranslate nohighlight">\( r_d \)</span>)</strong>:
+The small-signal resistance <span class="math notranslate nohighlight">\( r_d \)</span> is the reciprocal of the derivative:</p>
+<div class="math notranslate nohighlight">
+\[
+r_d = \frac{1}{\frac{\partial I_D}{\partial V_D}} = \frac{\eta V_T}{I_S e^{\frac{V_D}{\eta V_T}}}
+\]</div>
+<p>Simplify it using the diode current equation:</p>
+<div class="math notranslate nohighlight">
+\[
+r_d = \frac{\eta V_T}{I_D + I_S}
+\]</div>
+<p>For practical purposes where <span class="math notranslate nohighlight">\( I_D \gg I_S \)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+r_d \approx \frac{\eta V_T}{I_D}
+\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1"># Constants</span>
+<span class="n">I_S</span> <span class="o">=</span> <span class="mf">4.352e-9</span>  <span class="c1"># Saturation current (A) for 1N4148</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mf">1.906</span>  <span class="c1"># Ideality factor</span>
+<span class="n">V_T</span> <span class="o">=</span> <span class="mf">0.0258</span>  <span class="c1"># Thermal voltage (V) at room temperature</span>
+
+<span class="c1"># Operating point voltage</span>
+<span class="n">V_D</span> <span class="o">=</span> <span class="mf">0.6513</span>  <span class="c1"># Example operating point voltage (V)</span>
+
+<span class="c1"># Small-signal resistance calculation</span>
+<span class="k">def</span> <span class="nf">small_signal_resistance</span><span class="p">(</span><span class="n">V_D</span><span class="p">,</span> <span class="n">I_S</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">V_T</span><span class="p">):</span>
+    <span class="n">I_D</span> <span class="o">=</span> <span class="n">I_S</span> <span class="o">*</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">V_D</span> <span class="o">/</span> <span class="p">(</span><span class="n">n</span> <span class="o">*</span> <span class="n">V_T</span><span class="p">))</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">r_d</span> <span class="o">=</span> <span class="n">n</span> <span class="o">*</span> <span class="n">V_T</span> <span class="o">/</span> <span class="n">I_D</span>
+    <span class="k">return</span> <span class="n">r_d</span>
+
+<span class="c1"># Small sinusoidal input</span>
+<span class="n">omega</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="mi">1000</span>  <span class="c1"># Frequency of the sinusoidal signal (1 kHz)</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>  <span class="c1"># Time array (0 to 10 ms)</span>
+<span class="n">v_signal</span> <span class="o">=</span> <span class="mf">0.01</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">omega</span> <span class="o">*</span> <span class="n">t</span><span class="p">)</span>  <span class="c1"># Small sinusoidal signal (10 mV amplitude)</span>
+
+<span class="c1"># Calculate small-signal resistance at the operating point</span>
+<span class="n">r_d</span> <span class="o">=</span> <span class="n">small_signal_resistance</span><span class="p">(</span><span class="n">V_D</span><span class="p">,</span> <span class="n">I_S</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">V_T</span><span class="p">)</span>
+
+<span class="c1"># Calculate the diode current response to the small signal</span>
+<span class="c1"># Note: v_signal should be applied as an AC signal on top of V_D</span>
+<span class="n">I_D_response</span> <span class="o">=</span> <span class="n">I_S</span> <span class="o">*</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">((</span><span class="n">V_D</span> <span class="o">+</span> <span class="n">v_signal</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">n</span> <span class="o">*</span> <span class="n">V_T</span><span class="p">))</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># Plotting</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+
+<span class="c1"># Plot the small sinusoidal input</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">v_signal</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Small Sinusoidal Input&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time (s)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Voltage (V)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Small Sinusoidal Input&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+
+<span class="c1"># Plot the diode current response</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">I_D_response</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Diode Current Response&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time (s)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Current (A)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Diode Current Response to Small Signal&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/bd7ccc6214b99857f983a2b30443a8a3ae9d616684b32e79b9d644e1a37d2183.png" src="../../_images/bd7ccc6214b99857f983a2b30443a8a3ae9d616684b32e79b9d644e1a37d2183.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="research-problem-for-diode-analysis">
+<h2>Research Problem for Diode Analysis<a class="headerlink" href="#research-problem-for-diode-analysis" title="Link to this heading">#</a></h2>
+<p><strong>Objective</strong>: To investigate how to address each question and conduct research on diodes and BJTs, we need to follow the specified algorithm. Specifically, we aim to determine how the amplitude of the diode current changes with varying operating point voltages <span class="math notranslate nohighlight">\( V_D \)</span>. This involves analyzing the diode’s small-signal response to a sinusoidal input and comparing these findings with similar devices like BJTs to gain insights into their comparative behaviors and characteristics.</p>
+<section id="learning-module-for-lookup-table-of-diode">
+<h3>Learning Module for Lookup Table of Diode<a class="headerlink" href="#learning-module-for-lookup-table-of-diode" title="Link to this heading">#</a></h3>
+<p><strong>Objective</strong>: To generate a CSV file containing diode parameters for various resistor and source voltage values.</p>
+<section id="algorithm">
+<h4>Algorithm<a class="headerlink" href="#algorithm" title="Link to this heading">#</a></h4>
+<p><strong>Define Constants</strong></p>
+<ul class="simple">
+<li><p>Set values for:</p>
+<ul>
+<li><p>Saturation current <span class="math notranslate nohighlight">\( I_S \)</span></p></li>
+<li><p>Thermal voltage <span class="math notranslate nohighlight">\( V_T \)</span></p></li>
+<li><p>Ideality factor <span class="math notranslate nohighlight">\( \eta \)</span></p></li>
+</ul>
+</li>
+</ul>
+<p><strong>Compute Diode Parameters</strong></p>
+<ul class="simple">
+<li><p>For a range of resistors and source voltages:</p>
+<ul>
+<li><p>Compute diode voltage <span class="math notranslate nohighlight">\( V_D \)</span></p></li>
+<li><p>Compute diode current <span class="math notranslate nohighlight">\( I_D \)</span> using the diode equation</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>Save Data</strong></p>
+<ul class="simple">
+<li><p>Write the computed values of:</p>
+<ul>
+<li><p>Resistor <span class="math notranslate nohighlight">\( R \)</span></p></li>
+<li><p>Source voltage <span class="math notranslate nohighlight">\( V_{\text{source}} \)</span></p></li>
+<li><p>Diode current <span class="math notranslate nohighlight">\( I_D \)</span></p></li>
+<li><p>Diode voltage <span class="math notranslate nohighlight">\( V_D \)</span></p></li>
+</ul>
+</li>
+<li><p>Save the data to a CSV file named <code class="docutils literal notranslate"><span class="pre">diode_lookup_table.csv</span></code></p></li>
+</ul>
+</section>
+<section id="flowchart">
+<h4>Flowchart<a class="headerlink" href="#flowchart" title="Link to this heading">#</a></h4>
+<div class="highlight-plaintext notranslate"><div class="highlight"><pre><span></span>+-----------------------------+
+|          Start              |
++-----------------------------+
+              |
+              v
++-----------------------------+
+|     Define Constants        |
+|    - Set I_S, V_T, η        |
++-----------------------------+
+              |
+              v
++-----------------------------+
+| Compute Diode Parameters    |
+| - For each R and V_source:  |
+|   - Compute V_D and I_D     |
++-----------------------------+
+              |
+              v
++-----------------------------+
+| Save Data to CSV            |
+| - R, V_source, I_D, V_D     |
+|-File:diode_lookup_table.csv |
++-----------------------------+
+              |
+              v
++-----------------------------+
+|           End               |
++-----------------------------+
+</pre></div>
+</div>
+</section>
+</section>
+<section id="research-module-for-analyzing-diode-data">
+<h3>Research Module for Analyzing Diode Data<a class="headerlink" href="#research-module-for-analyzing-diode-data" title="Link to this heading">#</a></h3>
+<p><strong>Objective</strong>: To analyze the amplitude of the diode current as a function of the operating point voltage <span class="math notranslate nohighlight">\( V_D \)</span> and visualize this relationship.</p>
+<section id="id1">
+<h4>Algorithm<a class="headerlink" href="#id1" title="Link to this heading">#</a></h4>
+<p><strong>Read Data from CSV File</strong></p>
+<ul class="simple">
+<li><p>Open the CSV file <code class="docutils literal notranslate"><span class="pre">diode_lookup_table.csv</span></code></p></li>
+<li><p>Extract values of:</p>
+<ul>
+<li><p>Resistor <span class="math notranslate nohighlight">\( R \)</span></p></li>
+<li><p>Source voltage <span class="math notranslate nohighlight">\( V_{\text{source}} \)</span></p></li>
+<li><p>Diode voltage <span class="math notranslate nohighlight">\( V_D \)</span></p></li>
+</ul>
+</li>
+</ul>
+<p><strong>Calculate Small-Signal Resistance</strong></p>
+<ul class="simple">
+<li><p>For each entry:</p>
+<ul>
+<li><p>Calculate diode current <span class="math notranslate nohighlight">\( I_D \)</span> using the diode equation</p></li>
+<li><p>Compute the small-signal resistance <span class="math notranslate nohighlight">\( r_d \)</span> using the formula:</p></li>
+</ul>
+</li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+   r_d = \frac{\eta \cdot V_T}{I_D}
+   \]</div>
+<p><strong>Compute Amplitude of Diode Current</strong></p>
+<ul class="simple">
+<li><p>For each operating point:</p>
+<ul>
+<li><p>Generate a small sinusoidal signal <span class="math notranslate nohighlight">\( v_{\text{signal}} = 0.01 \cdot \sin(\omega \cdot t) \)</span></p></li>
+<li><p>Compute diode voltage response <span class="math notranslate nohighlight">\( v_{\text{diode}} = v_{\text{signal}} \cdot r_d \)</span></p></li>
+<li><p>Determine the amplitude of <span class="math notranslate nohighlight">\( v_{\text{diode}} \)</span></p></li>
+</ul>
+</li>
+</ul>
+<p><strong>Plot Results</strong></p>
+<ul class="simple">
+<li><p>Create a plot of the amplitude of the diode current versus the operating point voltage <span class="math notranslate nohighlight">\( V_D \)</span></p></li>
+</ul>
+</section>
+<section id="id2">
+<h4>Flowchart<a class="headerlink" href="#id2" title="Link to this heading">#</a></h4>
+<div class="highlight-plaintext notranslate"><div class="highlight"><pre><span></span>+-----------------------------+
+|          Start              |
++-----------------------------+
+              |
+              v
++-----------------------------+
+| Read Data from CSV          |
+| - Extract R, V_source, V_D  |
++-----------------------------+
+              |
+              v
++----------------------------+
+| Cal. Small Signal Res.     |
+| - For each entry:          |
+|   - Compute I_D            |
+|   - Compute r_d            |
++----------------------------+
+              |
+              v
++-----------------------------+
+| Comp. Amp.of Diode Current  |
+| - Generate v_signal         |
+| - Compute v_diode           |
+| - Determine amplitude       |
++-----------------------------+
+              |
+              v
++-----------------------------+
+| Plot Amplitude vs V_D       |
++-----------------------------+
+              |
+              v
++-----------------------------+
+|            End              |
++-----------------------------+
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">csv</span>
+
+<span class="c1"># Constants</span>
+<span class="n">I_S</span> <span class="o">=</span> <span class="mf">4.352e-9</span>  <span class="c1"># Saturation current (A) for 1N4148</span>
+<span class="n">V_T</span> <span class="o">=</span> <span class="mf">0.0258</span>  <span class="c1"># Thermal voltage (V) at room temperature</span>
+<span class="n">eta</span> <span class="o">=</span> <span class="mf">1.906</span>  <span class="c1"># Ideality factor</span>
+
+<span class="c1"># Read data from CSV</span>
+<span class="k">def</span> <span class="nf">read_data_from_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+    <span class="n">R_values</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">V_source_values</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">V_D_values</span> <span class="o">=</span> <span class="p">[]</span>
+    
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+        <span class="n">reader</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">DictReader</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">reader</span><span class="p">:</span>
+            <span class="n">R_values</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;R (Ohm)&#39;</span><span class="p">]))</span>
+            <span class="n">V_source_values</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;V_source (V)&#39;</span><span class="p">]))</span>
+            <span class="n">V_D_values</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;V_D (V)&#39;</span><span class="p">]))</span>
+    
+    <span class="k">return</span> <span class="n">R_values</span><span class="p">,</span> <span class="n">V_source_values</span><span class="p">,</span> <span class="n">V_D_values</span>
+
+<span class="c1"># Function to calculate small-signal resistance</span>
+<span class="k">def</span> <span class="nf">small_signal_resistance</span><span class="p">(</span><span class="n">V_D</span><span class="p">,</span> <span class="n">I_S</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">V_T</span><span class="p">):</span>
+    <span class="n">I_D</span> <span class="o">=</span> <span class="n">I_S</span> <span class="o">*</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">V_D</span> <span class="o">/</span> <span class="p">(</span><span class="n">n</span> <span class="o">*</span> <span class="n">V_T</span><span class="p">))</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">r_d</span> <span class="o">=</span> <span class="n">n</span> <span class="o">*</span> <span class="n">V_T</span> <span class="o">/</span> <span class="n">I_D</span>
+    <span class="k">return</span> <span class="n">r_d</span>
+
+<span class="c1"># Calculate amplitude of current for a sinusoidal input</span>
+<span class="k">def</span> <span class="nf">calculate_current_amplitude</span><span class="p">(</span><span class="n">V_D</span><span class="p">,</span> <span class="n">V_source</span><span class="p">,</span> <span class="n">R</span><span class="p">,</span> <span class="n">I_S</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">V_T</span><span class="p">):</span>
+    <span class="n">r_d</span> <span class="o">=</span> <span class="n">small_signal_resistance</span><span class="p">(</span><span class="n">V_D</span><span class="p">,</span> <span class="n">I_S</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">V_T</span><span class="p">)</span>
+    <span class="n">omega</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="mi">1000</span>  <span class="c1"># Frequency of the sinusoidal signal (1 kHz)</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>  <span class="c1"># Time array (0 to 10 ms)</span>
+    <span class="n">v_signal</span> <span class="o">=</span> <span class="mf">0.01</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">omega</span> <span class="o">*</span> <span class="n">t</span><span class="p">)</span>  <span class="c1"># Small sinusoidal signal (10 mV amplitude)</span>
+    
+    <span class="c1"># Diode voltage response</span>
+    <span class="n">current_diode</span> <span class="o">=</span> <span class="n">v_signal</span> <span class="o">/</span><span class="p">(</span><span class="n">r_d</span><span class="o">+</span><span class="n">R</span><span class="p">)</span> 
+    <span class="n">amplitude</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">current_diode</span><span class="p">))</span>  <span class="c1"># Amplitude of the response signal</span>
+    
+    <span class="k">return</span> <span class="n">amplitude</span>
+
+<span class="c1"># Load data from CSV file</span>
+<span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;diode_lookup_table.csv&#39;</span>
+<span class="n">R_values</span><span class="p">,</span> <span class="n">V_source_values</span><span class="p">,</span> <span class="n">V_D_values</span> <span class="o">=</span> <span class="n">read_data_from_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+
+<span class="c1"># Calculate current amplitude for each operating point</span>
+<span class="n">amplitudes</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">R</span><span class="p">,</span> <span class="n">V_source</span><span class="p">,</span> <span class="n">V_D</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">R_values</span><span class="p">,</span> <span class="n">V_source_values</span><span class="p">,</span> <span class="n">V_D_values</span><span class="p">):</span>
+    <span class="n">amplitude</span> <span class="o">=</span> <span class="n">calculate_current_amplitude</span><span class="p">(</span><span class="n">V_D</span><span class="p">,</span> <span class="n">V_source</span><span class="p">,</span> <span class="n">R</span><span class="p">,</span> <span class="n">I_S</span><span class="p">,</span> <span class="n">eta</span><span class="p">,</span> <span class="n">V_T</span><span class="p">)</span>
+    <span class="n">amplitudes</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">V_D</span><span class="p">,</span> <span class="n">amplitude</span><span class="p">))</span>
+
+<span class="c1"># Plotting</span>
+<span class="n">V_D_array</span><span class="p">,</span> <span class="n">amplitude_array</span> <span class="o">=</span> <span class="nb">zip</span><span class="p">(</span><span class="o">*</span><span class="n">amplitudes</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">V_D_array</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">amplitude_array</span><span class="p">)</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;+&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;None&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Operating Point Voltage V_D (V)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Amplitude of Diode Current (mA)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Amplitude of Diode Current vs. Operating Point Voltage&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/b20f41ffdec3229c2eb0bc84d8f36fe8d0cee4304980d7941f31be0c97ee2630.png" src="../../_images/b20f41ffdec3229c2eb0bc84d8f36fe8d0cee4304980d7941f31be0c97ee2630.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="conclusion-above-figure">
+<h3>Conclusion above figure<a class="headerlink" href="#conclusion-above-figure" title="Link to this heading">#</a></h3>
+<p>It is clear that as the operating point moves towards a higher diode voltage, the slope of the line increases, and the gain coefficient also increases. This is why the current amplitude quickly increases with a higher diode bias voltage.</p>
+</section>
+<section id="diode-equivalent-circuits">
+<h3>DIODE EQUIVALENT CIRCUITS<a class="headerlink" href="#diode-equivalent-circuits" title="Link to this heading">#</a></h3>
+<p><strong>Definition and Purpose:</strong>
+An equivalent circuit represents the terminal characteristics of a device or system in a specific operating region. This allows for the replacement of the device symbol with the equivalent circuit in a schematic without significantly affecting the system’s behavior.</p>
+<p><strong>Piecewise-Linear Equivalent Circuit:</strong>
+For diodes, the equivalent circuit can be approximated using straight-line segments. This piecewise-linear model provides a close approximation of the diode’s behavior, especially in the knee region, using average AC resistance for the “on” state and accounting for a threshold voltage.</p>
+<p><img alt="PieceWise-Linear" src="../../_images/EquivalentPieceWiseDiode.png" /></p>
+<p><strong>Simplified and Ideal Equivalent Circuits:</strong>
+The simplified equivalent circuit often ignores the small resistance of the diode (rav), showing that a forward-biased silicon diode typically has a 0.7 V drop. The ideal equivalent circuit further simplifies this by ignoring the 0.7 V drop, assuming the diode as ideal for practical purposes.</p>
+<p><img alt="SimplifiedDiode" src="../../_images/SimplifiedEquvalentDiode.PNG" /></p>
+<p><img alt="IdealDiode_1" src="../../_images/IdealDiode.PNG" /></p>
+</section>
+</section>
+<section id="types-of-diode">
+<h2>Types of Diode<a class="headerlink" href="#types-of-diode" title="Link to this heading">#</a></h2>
+<section id="zener-diode">
+<h3>Zener Diode<a class="headerlink" href="#zener-diode" title="Link to this heading">#</a></h3>
+<p>In the Zener region, the current direction is opposite to that of a forward-biased diode, and the curve’s slope indicates some resistance.</p>
+<p><img alt="ZenerSymbol" src="../../_images/Zener1.png" /></p>
+<p>This unique characteristic is utilized in Zener diodes, which conduct in the reverse direction compared to standard semiconductor diodes.</p>
+<p><img alt="ZenerCharact" src="../../_images/ZenerCharact.PNG" /></p>
+</section>
+<section id="the-light-emitting-diode-led">
+<h3>The light-emitting diode (LED)<a class="headerlink" href="#the-light-emitting-diode-led" title="Link to this heading">#</a></h3>
+<p>The light-emitting diode (LED) is a diode that emits visible or invisible (infrared) light when forward-biased. Unlike silicon and germanium diodes, which mostly dissipate energy as heat, LEDs made from materials like GaAs emit infrared light. LEDs have a wide range of applications, including security systems, industrial processing, and remote controls. The construction and materials of LEDs enable efficient light emission, with various compound semiconductors generating different wavelengths of light.</p>
+<p><img alt="LED_1" src="../../_images/LED_1.PNG" /></p>
+<p><strong>Various LED configurations:</strong></p>
+<ul class="simple">
+<li><p>seven-segment digital display</p></li>
+</ul>
+<p><img alt="SevenSeg" src="../../_images/7_Seg.png" /></p>
+<ul class="simple">
+<li><p>LED TV</p></li>
+</ul>
+<p><img alt="LED TV_1" src="../../_images/LED_TV.PNG" /></p>
+<ul class="simple">
+<li><p>Outdoor Sports Lighting</p></li>
+</ul>
+<p><img alt="Outdoor Sports Lighting_1" src="../../_images/Outdoor_Sport_Light.PNG" /></p>
+</section>
+</section>
+<section id="homework-type-of-diode">
+<h2>Homework: Type of Diode<a class="headerlink" href="#homework-type-of-diode" title="Link to this heading">#</a></h2>
+<p>Select one type of diode shown in the following figure (or choose another type) and complete the following tasks:</p>
+<ul class="simple">
+<li><p>Gather necessary information from an electronics and circuit perspective, and present it in a Jupyter Notebook (<code class="docutils literal notranslate"><span class="pre">.ipynb</span></code>) format.</p></li>
+<li><p>Solve one circuit problem involving the selected diode and deliver the solution in a Jupyter Notebook (<code class="docutils literal notranslate"><span class="pre">.ipynb</span></code>).</p></li>
+<li><p>Include the use of PySpice and Schemdraw in your solution.</p></li>
+</ul>
+<p><img alt="Tyes of Diode" src="../../_images/TypesDiode.PNG" /></p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./courses\Circuit_Electronics"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="RC_RL_RLC.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">R-C, R-L circuits</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="DiodeApplication.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Diode Application</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#covalent-bonding-of-the-silicon-atom">Covalent Bonding of the Silicon Atom</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#covalent-bonding-in-germanium">Covalent bonding in germanium</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#behavior-at-room-temperature"><strong>Behavior at Room Temperature</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#doping-semiconductors"><strong>Doping Semiconductors</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#extrinsic-semiconductors"><strong>Extrinsic Semiconductors</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#doping-with-phosphorus"><strong>Doping with Phosphorus</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#doping-with-boron"><strong>Doping with Boron</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#motion-of-electrons-and-holes"><strong>Motion of Electrons and Holes</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#energy-bands-in-semiconductor-materials">Energy Bands in Semiconductor Materials</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#n-type-and-p-type-materials">n-Type and p-Type Materials</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#combining-n-type-and-p-type-materials">Combining n-Type and p-Type Materials</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#behavior-at-the-p-n-junction"><strong>Behavior at the p-n Junction</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#depletion-region-and-forward-bias"><strong>Depletion Region and Forward Bias</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reverse-bias">Reverse Bias</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#iv-curve-of-the-silicon-p-n-junction-diode">IV curve of the silicon p-n junction diode</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#i-v-diode-using-pyspice">I-V Diode using Pyspice</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#diode-1n4148">Diode=1n4148</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#line-load-in-diode-circuits">Line Load in Diode Circuits</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#load-line"><strong>Load Line:</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#main-problem-in-diode-circuit-solving">Main problem in Diode circuit solving</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solved-values">Solved Values:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bias-1n4148">Bias 1n4148</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lookup-table">Lookup Table</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#good-results-for-1n4148">Good Results for 1N4148</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ac-or-dynamic-resistance">AC or Dynamic Resistance</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#calculation-of-dynamic-resistance">Calculation of Dynamic Resistance</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#research-problem-for-diode-analysis">Research Problem for Diode Analysis</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-module-for-lookup-table-of-diode">Learning Module for Lookup Table of Diode</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#algorithm">Algorithm</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#flowchart">Flowchart</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#research-module-for-analyzing-diode-data">Research Module for Analyzing Diode Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Algorithm</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Flowchart</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion-above-figure">Conclusion above figure</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#diode-equivalent-circuits">DIODE EQUIVALENT CIRCUITS</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-diode">Types of Diode</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zener-diode">Zener Diode</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-light-emitting-diode-led">The light-emitting diode (LED)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#homework-type-of-diode">Homework: Type of Diode</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Dr.Hadi Sadoghi Yazdi
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024 Pattern Recognition Lab.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

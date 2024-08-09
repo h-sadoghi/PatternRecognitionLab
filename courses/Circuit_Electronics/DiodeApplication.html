@@ -1,0 +1,1121 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Diode Application &#8212; Dr.Hadi Sadoghi Yazdi</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=87e54e7c" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=3ee479438cf8b5e0d341"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'courses/Circuit_Electronics/DiodeApplication';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Bipolar junction transistor" href="BJT1.html" />
+    <link rel="prev" title="Diode" href="Diode_chapter.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../../Home_Page.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/Hadi_Sadoghi_Yazdi.png" class="logo__image only-light" alt="Dr.Hadi Sadoghi Yazdi - Home"/>
+    <script>document.write(`<img src="../../_static/Hadi_Sadoghi_Yazdi.png" class="logo__image only-dark" alt="Dr.Hadi Sadoghi Yazdi - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../Home_Page.html">
+                    Welcome to my personal Website!
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../../Courses.html">Courses</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 has-children"><a class="reference internal" href="../pattern_recognition.html">Pattern Recognition</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../PR/Introduction/PR_intro.html">Introduction</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="../PR/Introduction/DataSet.html">Dataset</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PR/Introduction/Model.html">Model</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PR/Introduction/Cost.html">Cost_Function</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PR/Introduction/LearningRule.html">Learning_Rule</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3"><a class="reference internal" href="../PR/Visualization/PR_intro_Visualization.html">Visualization</a></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../PR/Clustering/PR_intro_Clustering.html">Clustering Concept</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="../PR/Clustering/Clustering_1.html">Clustering</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PR/Clustering/FCM_1.html">k-means and fuzzy-c-means clustering</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PR/Clustering/FCM_Saghi_Project.html">Complementary of FCM</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PR/Clustering/LinkageClustering_1.html">Project Linkage clustering</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PR/Clustering/e_insensitive_linkage.html">Project <span class="math notranslate nohighlight">\( \epsilon \)</span> -insensitive Linkage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PR/Clustering/SOFM_Project.html">Project Title: Self-Organizing Feature Map (SOFM)</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../PR/Regression/Introduction_Regression.html">Regression</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="../PR/Regression/Regression_1.html">Linear Regression</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PR/Regression/NonLinearRegression.html">Non-linear Regression: The starting point</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PR/Regression/Linearization.html">Linearization</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PR/Regression/Kernel_for_Regression.html">Kernel method</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PR/Regression/EvaluationModelSelection.html">Project : Evaluation and Model Selection</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PR/Regression/Solution_for_Regression.html">Solution Method</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PR/Regression/TheoryRegression.html">Theoretical Aspects of Regression</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PR/Regression/ApplicationsPatternRecognition.html">Applications in Pattern Recognition</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../PR/Classification/PR_intro_Classification.html">Classification</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="../PR/Classification/SVDD.html">Support Vector Data Description (SVDD)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PR/Classification/SVM1.html">Support Vector Machine (SVM)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PR/Classification/Fisherclassifier.html">Fihser Classifier</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PR/Classification/KernelFisherDiscriminantAnalysis.html">Kernel Fisher Discriminant Analysis</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PR/Classification/DecisionTree1.html">Project Induction in Decision Trees</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../PR/BayesEstimation/BayesEstimation.html">Bayes Estimation</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="../PR/BayesEstimation/KDE_1.html">kernel-based density estimation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PR/BayesEstimation/MeanShift.html">Mean Shift Algorithm</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PR/BayesEstimation/ParametricDensityEstimation1.html">Parametric Density Estimation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PR/BayesEstimation/GMM.html">Gaussian Mixture Model</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../machine_learning.html">Machine Learning</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../ML/Regression/NonParamRegression.html">Regression Review</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ML/Regression/KernelRegression.html">Kernel Regression</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ML/Regression/GP_Regression.html">Gaussian Process</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ML/FeatureReduction/FR_Intro.html">Introduction of Feature Reduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ML/FeatureReduction/PCA.html">Principal Component Analysis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ML/FeatureReduction/Autoencoders1.html">Autoencoders</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../Supplementary1.html">Supplementary Documents</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../SupplementaryDocuments/EVD.html">Eigen Value Decomposition</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../SupplementaryDocuments/twin_svm.html">Twin SVM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../SupplementaryDocuments/Covariance1.html">Covariance</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="../CircuitElectronicAnalysis.html">Circuit and Electronics</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Introduction_CircuitElectronics.html">Introduction to Circuit and Electronics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BasicElements.html">Basic component</a></li>
+<li class="toctree-l3"><a class="reference internal" href="KVL_KCL.html">Voltage , Current</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NodalMeshAnalysis.html">Basic Nodal and Mesh Analysis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RC_RL_RLC.html">R-C, R-L circuits</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Diode_chapter.html">Diode</a></li>
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">Diode Application</a></li>
+
+
+<li class="toctree-l3"><a class="reference internal" href="BJT1.html">Bipolar junction transistor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="FET.html">Field Effect Transistor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="OpAmp.html">Operational Amplifier</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="../signal_processing.html">Signal Processing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../image_processing.html">Image Processing</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../PRLabProduction.html">Pattern Lab Production</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../../ProposalPhD_Develop.html">Proposal PhD Develope</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Students.html">Students Projects</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../StudentProjects/BsC/Teymoori/chat_with_doc.html">Author Information</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Contact_Me.html">Contact Me</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../About_Me.html">About Me</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/h-sadoghi/dr-sadoghi.git" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/h-sadoghi/dr-sadoghi.git/issues/new?title=Issue%20on%20page%20%2Fcourses/Circuit_Electronics/DiodeApplication.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/courses/Circuit_Electronics/DiodeApplication.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Diode Application</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Diode Application</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#or-gate">OR Gate</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#and-gate">AND Gate</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#half-wave-rectifier">Half-Wave Rectifier</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#power-diode-rectifier">Power Diode Rectifier</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#full-wave-rectifier">Full-wave rectifier</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Full Wave Rectifier</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Power Diode Rectifier</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#full-wave-rectifier-with-smoothing-capacitor">Full Wave Rectifier with Smoothing Capacitor</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple-factor-of-a-half-wave-rectifier"><strong>Ripple Factor of a Half-Wave Rectifier</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#for-half-wave-rectifier">For Half Wave Rectifier</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#homework-calculate-ripple-factor-for-full-wave-rectifier-with-capacitor">Homework : Calculate ripple factor for Full Wave Rectifier with Capacitor</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regulators">Regulators</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-regulator">Linear regulator</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lm-series-integrated-circuits">LM-series integrated circuits</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#miniprogect-complete-linear-regulator-include">MiniProgect : Complete Linear regulator include:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#switchig-regulator">Switchig Regulator</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#buck-converter-topology">Buck converter topology</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-boost-converter">Simple boost converter</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#voltage-multiplier">Voltage multiplier</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#miniprojects-continue-voltage-multiplier">Miniprojects: Continue Voltage Multiplier</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diode-clippers">DIODE CLIPPERS</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#positive-clipper">Positive Clipper</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#negative-diode-clipper">Negative Diode Clipper</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#biased-positive-clipper">Biased Positive Clipper</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#positive-negative-cycle-bias-clipper">Positive &amp; Negative Cycle Bias Clipper</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zener-diode-clipper">Zener diode clipper</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#clampers">Clampers</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#positive-clamper-circuit">Positive Clamper Circuit</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#homework-think-about-positive-clamper-with-positive-vr-using-zener-diod">Homework: Think about Positive Clamper with Positive Vr using zener diod</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#negative-clamper">Negative clamper</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#protective-diode">Protective Diode</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#diode-protector-to-limit-the-emitterbase-voltage">Diode protector to limit the emitter–base voltage</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#diodes-can-be-used-to-limit-the-input-of-opamp-to-0-7v">Diodes can be used to limit the input of OPAMP to 0.7V</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#polarity-insurance">POLARITY INSURANCE</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#relay-with-diode-circuit">Relay with Diode Circuit</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#miniproject-choose-one-application-related-to-protective-diodes">Miniproject : Choose one application related to protective diodes</a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="diode-application">
+<h1>Diode Application<a class="headerlink" href="#diode-application" title="Link to this heading">#</a></h1>
+<section id="or-gate">
+<h2>OR Gate<a class="headerlink" href="#or-gate" title="Link to this heading">#</a></h2>
+<p>An OR Gate is a logic circuit with two or more binary inputs that produces a logic 1 (HIGH) output if at least one input is HIGH, and a logic 0 (LOW) output only if all inputs are LOW.</p>
+<div class="math notranslate nohighlight">
+\[
+\mathrm{Y = A+B \cdot \cdot \cdot }
+\]</div>
+<p><img alt="OR_Gate" src="../../_images/OR_Gate.PNG" /></p>
+<p><img alt="ORGateTruth_1" src="../../_images/ORGate_TruthTable.PNG" /></p>
+<p><img alt="ORGIF" src="../../_images/Animated_wired_OR_diode_logic.gif" /></p>
+</section>
+<section id="and-gate">
+<h2>AND Gate<a class="headerlink" href="#and-gate" title="Link to this heading">#</a></h2>
+<p><img alt="And_Gate" src="../../_images/AND_Gate.PNG" /></p>
+<p>for NAND Gate we have to use transistor and diode.</p>
+<p><img alt="NAND_Gate1" src="../../_images/NanD_RTL.PNG" /></p>
+</section>
+<section id="half-wave-rectifier">
+<h2>Half-Wave Rectifier<a class="headerlink" href="#half-wave-rectifier" title="Link to this heading">#</a></h2>
+<p>A half-wave rectifier converts AC to DC by blocking one half of the waveform, using a single diode, and is less efficient than a full-wave rectifier. A full-wave rectifier, such as the full bridge rectifier with four diodes, converts the entire waveform to DC, providing a smoother output.</p>
+<section id="power-diode-rectifier">
+<h3>Power Diode Rectifier<a class="headerlink" href="#power-diode-rectifier" title="Link to this heading">#</a></h3>
+<p>Power diodes can be used individually as below or connected together to produce a variety of rectifier circuits</p>
+<p><img alt="HWR_1" src="../../_images/HWR_WaveForm.png" /></p>
+<p>In many applications, we reduce the peak voltage using a transformer before applying it to a half-wave rectifier.</p>
+<p><img alt="HWR_Transformer" src="../../_images/HWR_Transformer1.PNG" /></p>
+<p><strong>During the positive half-cycle of the AC sine wave, the forward-biased diode allows current to flow, making the output voltage equal to the supply voltage minus the diode’s forward voltage. In the negative half-cycle, the reverse-biased diode blocks current, resulting in an output voltage of zero.</strong></p>
+<p>The DC side of the circuit is unidirectional, with the load resistor receiving an irregular voltage waveform comprising positive and zero volts. This voltage is equivalent to <span class="math notranslate nohighlight">\( 0.318 * V_\text{max} \)</span> or <span class="math notranslate nohighlight">\( 0.45 * V_\text{rms} \)</span> of the input sinusoidal waveform.</p>
+<p><strong>DC output value calculation</strong></p>
+<div class="math notranslate nohighlight">
+\[
+V_{\text{avg}} = \frac{1}{T} \int_{0}^{T} v(t) \, dt
+\]</div>
+<p>For a half-wave rectified sinusoidal waveform, we need to consider the average over one period, but since the waveform is rectified, it’s zero for half the period. Thus, we compute the average over the non-zero half-cycle and then use the formula for the full period.</p>
+<p>The waveform <span class="math notranslate nohighlight">\( v(t) = V_{\text{max}} \sin(\omega t) \)</span> for <span class="math notranslate nohighlight">\(0 \leq t &lt; T/2\)</span> and zero for <span class="math notranslate nohighlight">\( T/2 \leq t &lt; T \)</span>.</p>
+<p>The average value over the period is:</p>
+<div class="math notranslate nohighlight">
+\[
+V_{\text{avg}} = \frac{1}{T} \int_{0}^{T} v(t) \, dt
+\]</div>
+<p>Since <span class="math notranslate nohighlight">\( v(t) = V_{\text{max}} \sin(\omega t) \)</span> from <span class="math notranslate nohighlight">\(0\)</span> to <span class="math notranslate nohighlight">\(T/2\)</span> and <span class="math notranslate nohighlight">\(0\)</span> from <span class="math notranslate nohighlight">\(T/2\)</span> to <span class="math notranslate nohighlight">\(T\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+V_{\text{avg}} = \frac{1}{T} \left( \int_{0}^{T/2} V_{\text{max}} \sin(\omega t) \, dt \right)
+\]</div>
+<p>Compute the integral:</p>
+<div class="math notranslate nohighlight">
+\[
+\int_{0}^{T/2} V_{\text{max}} \sin(\omega t) \, dt = \frac{V_{\text{max}}}{\omega} \left[ -\cos(\omega t) \right]_{0}^{T/2}
+\]</div>
+<p>Substituting the limits:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{V_{\text{max}}}{\omega} \left[ -\cos\left(\frac{\omega T}{2}\right) + \cos(0) \right]
+\]</div>
+<p>Since <span class="math notranslate nohighlight">\(\cos\left(\frac{\omega T}{2}\right) = \cos(\pi) = -1\)</span> and <span class="math notranslate nohighlight">\(\cos(0) = 1\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{V_{\text{max}}}{\omega} \left[ -(-1) + 1 \right] = \frac{V_{\text{max}}}{\omega} \cdot 2
+\]</div>
+<p>Therefore:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{1}{T} \cdot \frac{V_{\text{max}} \cdot 2}{\omega}
+\]</div>
+<p>Since <span class="math notranslate nohighlight">\(\omega = \frac{2\pi}{T}\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{1}{T} \cdot \frac{2 V_{\text{max}} T}{2 \pi} = \frac{2 V_{\text{max}}}{2 \pi} = \frac{V_{\text{max}}}{\pi}
+\]</div>
+<p>So, the correct average value <span class="math notranslate nohighlight">\( V_{\text{avg}} \)</span> is:</p>
+<div class="math notranslate nohighlight">
+\[
+V_{\text{DC}} =V_{\text{avg}} = \frac{V_{\text{max}}}{\pi}=0.318V_{\text{max}}
+\]</div>
+<p>also we write
+<strong><span class="math notranslate nohighlight">\( V_{\text{rms}} \)</span> in terms of <span class="math notranslate nohighlight">\( V_{\text{max}} \)</span>:</strong></p>
+<div class="math notranslate nohighlight">
+\[
+V_{\text{rms}} = \frac{V_{\text{max}}}{\sqrt{2}}
+\]</div>
+<p>Express <span class="math notranslate nohighlight">\( V_{\text{max}} \)</span> in terms of <span class="math notranslate nohighlight">\( V_{\text{DC}} \)</span>:</p>
+<p>Given <span class="math notranslate nohighlight">\( V_{\text{DC}} = \frac{V_{\text{max}}}{\pi} \)</span>,</p>
+<div class="math notranslate nohighlight">
+\[
+V_{\text{max}} = \pi \times V_{\text{DC}}
+\]</div>
+<p>Substitute <span class="math notranslate nohighlight">\( V_{\text{max}} \)</span> into the <span class="math notranslate nohighlight">\( V_{\text{rms}} \)</span> formula:</p>
+<div class="math notranslate nohighlight">
+\[
+V_{\text{rms}} = \frac{\pi \times V_{\text{DC}}}{\sqrt{2}} \]</div>
+<p>Simplify the expression:</p>
+<div class="math notranslate nohighlight">
+\[
+V_{\text{rms}} = \pi \times \frac{V_{\text{DC}}}{\sqrt{2}}
+\]</div>
+<p>So,</p>
+<div class="math notranslate nohighlight">
+\[
+V_{\text{DC}} \approx 0.45 \times V_{\text{rms}}
+\]</div>
+<p>Reminder:
+To find  <span class="math notranslate nohighlight">\( V_{\text{rms}} \)</span> of the input sinusoidal signal over one period, and then relate it to <span class="math notranslate nohighlight">\( V_{\text{DC}} \)</span>, we should calculate the RMS value for the entire period of the input signal.</p>
+<p><strong>RMS value of the input sinusoidal signal:</strong></p>
+<p>The input sinusoidal signal <span class="math notranslate nohighlight">\( v(t) = V_{\text{max}} \sin(\omega t) \)</span> over one period <span class="math notranslate nohighlight">\( T \)</span> has the RMS value:</p>
+<div class="math notranslate nohighlight">
+\[
+V_{\text{rms}} = \sqrt{\frac{1}{T} \int_0^T \left(V_{\text{max}} \sin(\omega t)\right)^2 \, dt}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+V_{\text{rms}} = V_{\text{max}} \sqrt{\frac{1}{T} \int_0^T \sin^2(\omega t) \, dt}
+\]</div>
+<p>Using the identity <span class="math notranslate nohighlight">\( \sin^2(x) = \frac{1 - \cos(2x)}{2} \)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+\sin^2(\omega t) = \frac{1 - \cos(2\omega t)}{2}
+\]</div>
+<p>Thus,</p>
+<div class="math notranslate nohighlight">
+\[
+V_{\text{rms}} = V_{\text{max}} \sqrt{\frac{1}{T} \int_0^T \frac{1 - \cos(2\omega t)}{2} \, dt}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+V_{\text{rms}} = V_{\text{max}} \sqrt{\frac{1}{T} \cdot \frac{1}{2} \int_0^T (1 - \cos(2\omega t)) \, dt}
+\]</div>
+<p>The integral of <span class="math notranslate nohighlight">\( 1 \)</span> over <span class="math notranslate nohighlight">\( 0 \)</span> to <span class="math notranslate nohighlight">\( T \)</span> is <span class="math notranslate nohighlight">\( T \)</span>, and the integral of <span class="math notranslate nohighlight">\( \cos(2\omega t) \)</span> over one period <span class="math notranslate nohighlight">\( T \)</span> is zero:</p>
+<div class="math notranslate nohighlight">
+\[
+\int_0^T 1 \, dt = T
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\int_0^T \cos(2\omega t) \, dt = 0
+\]</div>
+<p>So,</p>
+<div class="math notranslate nohighlight">
+\[
+V_{\text{rms}} = \frac{V_{\text{max}}}{\sqrt{2}}
+\]</div>
+</section>
+</section>
+<section id="full-wave-rectifier">
+<h2>Full-wave rectifier<a class="headerlink" href="#full-wave-rectifier" title="Link to this heading">#</a></h2>
+<p><strong>Full Wave Rectifier</strong></p>
+<p>Power diodes can be connected to form a full wave rectifier, converting AC voltage into DC voltage for power supplies. This rectifier uses four diodes to convert both halves of each AC waveform cycle into a DC signal. While smoothing capacitors can reduce ripple for low-power applications, a full wave rectifier is more efficient for higher power needs, utilizing every half-cycle of the input voltage.</p>
+<p><img alt="BriedgePoleDiode_Rectfier_1" src="../../_images/BriedgePoleDiode_Rectfier.PNG" /></p>
+<p><strong>How its work</strong></p>
+<p><em>The Positive Half-cycle</em></p>
+<p><img alt="PositiveCycleBridge" src="../../_images/BridgePositiveHalfCycle.PNG" /></p>
+<p><em>The Negative Half-cycle</em></p>
+<p><img alt="NegativeBridge" src="../../_images/NegativeBridge.PNG" /></p>
+<p><strong>Advantages and Circuit Operation</strong></p>
+<p>A full wave rectifier produces a higher average DC output voltage with less ripple compared to a half wave rectifier, resulting in a smoother output waveform. Such as Half Wave Rectifier, can reach to:</p>
+</section>
+<section id="id1">
+<h2>Full Wave Rectifier<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<p>A full-wave rectifier converts the entire AC waveform into DC, providing a smoother and more efficient output compared to a half-wave rectifier. It utilizes four diodes to rectify both halves of the AC cycle, resulting in a higher average DC output with reduced ripple.</p>
+<section id="id2">
+<h3>Power Diode Rectifier<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<p>Power diodes can be configured into various rectifier circuits. A common design is the full-wave rectifier, using a center-tapped transformer and two diodes to handle both half-cycles of the input waveform. This configuration doubles the frequency of the output signal, resulting in a smoother DC output.</p>
+<p><strong>DC Output Value Calculation</strong></p>
+<p>For a full-wave rectifier, the average DC output voltage <span class="math notranslate nohighlight">\(V_{\text{DC}}\)</span> is given by:</p>
+<div class="math notranslate nohighlight">
+\[
+V_{\text{DC}} = \frac{2 V_{\text{max}}}{\pi}
+\]</div>
+<p>where <span class="math notranslate nohighlight">\( V_{\text{max}} \)</span> is the peak value of the AC signal. This result shows that the DC output voltage is higher and smoother compared to a half-wave rectifier.</p>
+<p>The circuit uses two diodes and a center-tapped transformer, allowing each diode to conduct during opposite half-cycles. This configuration doubles the output frequency, making the full wave rectifier 100% efficient. The consistent current direction through the load resistor during both half-cycles ensures a continuous DC output.</p>
+<p><img alt="FullWaveTransformer_1" src="../../_images/FullWaveTransformer.PNG" /></p>
+</section>
+</section>
+<section id="full-wave-rectifier-with-smoothing-capacitor">
+<h2>Full Wave Rectifier with Smoothing Capacitor<a class="headerlink" href="#full-wave-rectifier-with-smoothing-capacitor" title="Link to this heading">#</a></h2>
+<p>Capacitors smooth the full-wave rectifier output, reducing peak-to-peak ripple for a more stable voltage.</p>
+</section>
+<section id="ripple-factor-of-a-half-wave-rectifier">
+<h2><strong>Ripple Factor of a Half-Wave Rectifier</strong><a class="headerlink" href="#ripple-factor-of-a-half-wave-rectifier" title="Link to this heading">#</a></h2>
+<p>Ripple is the residual AC component in the output of a half-wave rectifier that causes the DC waveform to pulsate. The ripple factor <span class="math notranslate nohighlight">\( \gamma \)</span> quantifies this unwanted AC component and is obtained as:</p>
+<div class="math notranslate nohighlight">
+\[
+\gamma = \frac{\text{RMS value of the AC component}}{\text{DC component value}} = \frac{V_{r(\text{rms})}}{V_{dc}}.
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\gamma = \sqrt{\frac{V_{rms}^2}{V_{dc}^2} - 1}.
+\]</div>
+<p><strong>Proof:</strong>
+Here, <span class="math notranslate nohighlight">\( V_{r(\text{rms})} \)</span> represents the RMS value of the AC component, and <span class="math notranslate nohighlight">\( V_{dc} \)</span> is the DC component of the output.</p>
+<p>To determine <span class="math notranslate nohighlight">\( V_{r(\text{rms})} \)</span>, we start by expressing the output voltage of the half-wave rectifier as:</p>
+<div class="math notranslate nohighlight">
+\[
+V_o(t) = V_{ac} + V_{dc},
+\]</div>
+<p>where <span class="math notranslate nohighlight">\( V_{ac} \)</span> is the AC component remaining after rectification. The RMS value of the AC component can be calculated using:</p>
+<div class="math notranslate nohighlight">
+\[
+V_{r(\text{rms})} = \left( \frac{1}{T} \int_0^T V_{ac}^2 \, dt \right)^{1/2}.
+\]</div>
+<p>We can also write <span class="math notranslate nohighlight">\( V_{r(\text{rms})} \)</span> as:</p>
+<div class="math notranslate nohighlight">
+\[
+V_{r(\text{rms})}^2 = \frac{1}{T} \int_0^T (V_o - V_{dc})^2 \, dt.
+\]</div>
+<p>Expanding the square and integrating, we get:</p>
+<div class="math notranslate nohighlight">
+\[
+V_{r(\text{rms})}^2 = \frac{1}{T} \int_0^T (V_o^2 - 2V_o V_{dc} + V_{dc}^2) \, dt.
+\]</div>
+<p>This simplifies to:</p>
+<div class="math notranslate nohighlight">
+\[
+V_{r(\text{rms})}^2 = \frac{1}{T} \int_0^T V_o^2 \, dt - \frac{2V_{dc}}{T} \int_0^T V_o \, dt + V_{dc}^2.
+\]</div>
+<p>Since <span class="math notranslate nohighlight">\( \frac{1}{T} \int_0^T V_o \, dt = V_{dc} \)</span>, we have:</p>
+<div class="math notranslate nohighlight">
+\[
+V_{r(\text{rms})}^2 = V_{rms}^2 - V_{dc}^2,
+\]</div>
+<p>where <span class="math notranslate nohighlight">\( V_{rms} \)</span> is the RMS value of the entire voltage signal.</p>
+<p>Therefore, the ripple factor <span class="math notranslate nohighlight">\( \gamma \)</span> can be written as:</p>
+<div class="math notranslate nohighlight">
+\[
+\gamma = \sqrt{\frac{V_{rms}^2}{V_{dc}^2} - 1}.
+\]</div>
+<section id="for-half-wave-rectifier">
+<h3>For Half Wave Rectifier<a class="headerlink" href="#for-half-wave-rectifier" title="Link to this heading">#</a></h3>
+<p>Substituting the values for <span class="math notranslate nohighlight">\( V_{dc} \)</span> and <span class="math notranslate nohighlight">\( V_{rms} \)</span>, we find:</p>
+<div class="math notranslate nohighlight">
+\[
+\gamma = \sqrt{\frac{V_m^2 / 2 \cdot \pi}{V_m / \pi}^2 - 1} = \sqrt{\left(\frac{\pi}{2}\right)^2 - 1} \approx 1.21.
+\]</div>
+<p><strong>Ripple Factor of a Full-Wave Rectifier</strong></p>
+<p>The ripple factor (<span class="math notranslate nohighlight">\( \gamma \)</span>) for a full-wave rectifier is defined as:</p>
+<div class="math notranslate nohighlight">
+\[
+\gamma = \frac{V_{r(\text{rms})}}{V_{dc}} = \sqrt{\frac{V_{rms}^2}{V_{dc}^2} - 1},
+\]</div>
+<p>where <span class="math notranslate nohighlight">\( V_{r(\text{rms})} \)</span> is the RMS value of the AC component, and <span class="math notranslate nohighlight">\( V_{dc} \)</span> is the DC component. For a full-wave rectifier, the ripple factor simplifies to:</p>
+<div class="math notranslate nohighlight">
+\[
+\gamma = \sqrt{\left(\frac{\pi}{2\sqrt{2}}\right)^2 - 1} \approx 0.48.
+\]</div>
+</section>
+</section>
+</section>
+<section id="homework-calculate-ripple-factor-for-full-wave-rectifier-with-capacitor">
+<h1>Homework : Calculate ripple factor for Full Wave Rectifier with Capacitor<a class="headerlink" href="#homework-calculate-ripple-factor-for-full-wave-rectifier-with-capacitor" title="Link to this heading">#</a></h1>
+<section id="regulators">
+<h2>Regulators<a class="headerlink" href="#regulators" title="Link to this heading">#</a></h2>
+<p>After rectification, the DC output can be further stabilized using regulators, which are primarily of two types:</p>
+<ul class="simple">
+<li><p><strong>Linear Regulators:</strong> These provide a stable output voltage by using a linear pass element to drop excess voltage. They are simple and offer low noise but are less efficient, especially with large voltage drops.</p></li>
+<li><p><strong>Switching Regulators:</strong> These use high-frequency switching elements to convert input voltage to a desired output voltage with higher efficiency. They are more complex but provide better efficiency and can step up, step down, or invert the voltage.</p></li>
+</ul>
+<section id="linear-regulator">
+<h3>Linear regulator<a class="headerlink" href="#linear-regulator" title="Link to this heading">#</a></h3>
+<p>A simple transistor regulator maintains a relatively constant output voltage (Uout) despite changes in input voltage (Uin) and load resistance (RL), provided Uin exceeds Uout sufficiently and the transistor’s power capacity isn’t exceeded. The stabilizer’s output voltage equals the Zener diode voltage minus the transistor’s base-emitter voltage (UZ − UBE), with UBE typically around 0.7 V for silicon transistors. If Uout drops due to external factors, UBE increases, activating the transistor further to boost the load voltage. Rv supplies bias current to both the Zener diode and transistor, with its value affecting input voltage requirements and regulator efficiency. Lower Rv values increase diode power dissipation and worsen regulator performance.</p>
+<p><img alt="LinearRegulator_1_Schem" src="../../_images/LinearRegulator_1.PNG" /></p>
+<p><strong>Regulator with a differential amplifier</strong></p>
+<p>The stability of the output voltage can be enhanced by using a differential amplifier, such as an operational amplifier. It adjusts the transistor current based on input voltage discrepancies, allowing for an adjustable output voltage via a voltage divider.</p>
+<p><img alt="LinearRegulator_Schem_2" src="../../_images/LinearReg_2.PNG" /></p>
+</section>
+<section id="lm-series-integrated-circuits">
+<h3>LM-series integrated circuits<a class="headerlink" href="#lm-series-integrated-circuits" title="Link to this heading">#</a></h3>
+<p>Example of linear regulator is <strong>LM317</strong>:
+Adjustable 1.5 A positive voltage regulator (1.25 V-37 V)</p>
+<p><img alt="LM317_Regulator" src="../../_images/LM317_LinearRegulator.PNG" /></p>
+</section>
+</section>
+<section id="miniprogect-complete-linear-regulator-include">
+<h2>MiniProgect : Complete Linear regulator include:<a class="headerlink" href="#miniprogect-complete-linear-regulator-include" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Electronic perspective of LR</p></li>
+<li><p>Pyspice</p></li>
+</ul>
+</section>
+<section id="switchig-regulator">
+<h2>Switchig Regulator<a class="headerlink" href="#switchig-regulator" title="Link to this heading">#</a></h2>
+<p>A switching regulator (DC-DC converter) is a power supply that converts input DC voltage to a desired DC voltage with high efficiency. It achieves this by turning a switching element ON and OFF, supplying electricity only as needed, unlike less efficient linear regulators which dissipate excess energy as heat.</p>
+<p><img alt="SwitchingRegulator" src="../../_images/SwitchingRegulator_%21.PNG" /></p>
+<p>Switching regulators can create output voltages that are higher (step-up, boost), lower (step-down, buck), or have different polarity than the input voltage. They use a power switch (usually a Field Effect Transistor, FET), an inductor, and a diode, controlled by a feedback loop to maintain constant output. The components can be configured into various designs like step-down, step-up, or inverter circuits.</p>
+<section id="buck-converter-topology">
+<h3>Buck converter topology<a class="headerlink" href="#buck-converter-topology" title="Link to this heading">#</a></h3>
+<p><img alt="Buck converter topology_1" src="../../_images/BuckConverterTopology1.PNG" /></p>
+</section>
+<section id="simple-boost-converter">
+<h3>Simple boost converter<a class="headerlink" href="#simple-boost-converter" title="Link to this heading">#</a></h3>
+<p><img alt="Simple boost converter_1" src="../../_images/BoostConverterTopology_1_Schem.PNG" /></p>
+</section>
+</section>
+<section id="voltage-multiplier">
+<h2>Voltage multiplier<a class="headerlink" href="#voltage-multiplier" title="Link to this heading">#</a></h2>
+<p>A voltage multiplier is an electrical circuit that converts AC electrical power from a lower voltage to a higher DC voltage, typically using a network of capacitors and diodes. Voltage multipliers can be used to generate a few volts for electronic appliances, to millions of volts.</p>
+<p><strong>Example</strong>
+<span class="math notranslate nohighlight">\( V_o \)</span> of four times the peak of the AC input voltage <span class="math notranslate nohighlight">\( V_i \)</span></p>
+<p><img alt="MultiplierVoltage" src="../../_images/VoltageMultiplier_4Vmax_ACSignal.PNG" /></p>
+<section id="miniprojects-continue-voltage-multiplier">
+<h3>Miniprojects: Continue Voltage Multiplier<a class="headerlink" href="#miniprojects-continue-voltage-multiplier" title="Link to this heading">#</a></h3>
+</section>
+</section>
+<section id="diode-clippers">
+<h2>DIODE CLIPPERS<a class="headerlink" href="#diode-clippers" title="Link to this heading">#</a></h2>
+<p>Clippers are circuits designed to remove or “clip” portions of an input signal. They are used to limit the amplitude of a signal, preventing it from exceeding certain voltage levels. Clippers can be categorized into two main types:</p>
+<p><strong>Series and Parallel Clippers</strong></p>
+<p>Clippers are generally categorized into series and parallel (shunt) types. In a series clipper, the diode is placed in series with the load, while in a shunt clipper, the diode is positioned parallel to the load.</p>
+<section id="positive-clipper">
+<h3>Positive Clipper<a class="headerlink" href="#positive-clipper" title="Link to this heading">#</a></h3>
+<p><strong>Positive series Clipper</strong></p>
+<p>In a positive clipper, the positive half-cycles of the input voltage are removed. The diode in series with the load blocks the positive half-cycle, resulting in zero output voltage during this period.</p>
+<p><img alt="PositiveSeriesClipper" src="../../_images/PositiveClipper.PNG" /></p>
+<p><strong>Positive Shunt Clipper</strong></p>
+<p>In a positive shunt clipper, the diode is placed in parallel with the load. During the positive half-cycle, the diode is forward biased and conducts heavily, resulting in zero output voltage during this cycle. For the negative half-cycle, the diode is reverse biased, allowing the entire input voltage to appear across the load.</p>
+<p><img alt="PositiveShuntClipper" src="../../_images/PositiveClipping_Shunt.PNG" /></p>
+</section>
+<section id="negative-diode-clipper">
+<h3>Negative Diode Clipper<a class="headerlink" href="#negative-diode-clipper" title="Link to this heading">#</a></h3>
+<p>The negative clipping circuit is almost same as the positive clipping circuit, with diode is reconnected reversed polarity</p>
+<p><img alt="Negative_Clipper" src="../../_images/NegativeClipping_Series_Shunt.PNG" /></p>
+</section>
+<section id="biased-positive-clipper">
+<h3>Biased Positive Clipper<a class="headerlink" href="#biased-positive-clipper" title="Link to this heading">#</a></h3>
+<p>A reverse polarity biasing voltage is added in series with the diode to aid reverse biasing, requiring a higher voltage to forward bias the diode compared to an unbiased diode. This circuit limits any voltage below -0.7V plus the bias voltage.</p>
+<p><img alt="BiasedPositiveClipper_1" src="../../_images/BiasedPositiveClipper.PNG" /></p>
+</section>
+<section id="positive-negative-cycle-bias-clipper">
+<h3>Positive &amp; Negative Cycle Bias Clipper<a class="headerlink" href="#positive-negative-cycle-bias-clipper" title="Link to this heading">#</a></h3>
+<p>A clipping circuit that limits voltage in both positive and negative cycles uses diodes in a reverse parallel arrangement, where one diode conducts while the other remains open. The output waveform is limited to +0.7V during positive cycles and -0.7V during negative cycles. Variable voltage clippers can be created using variable voltage sources, with the bias voltage adjustable based on the application requirements.</p>
+<p><img alt="PosNegClipper" src="../../_images/PositiveNegativeClipper.PNG" /></p>
+</section>
+<section id="zener-diode-clipper">
+<h3>Zener diode clipper<a class="headerlink" href="#zener-diode-clipper" title="Link to this heading">#</a></h3>
+<p>A Zener diode clipper is designed to limit voltage accurately with minimal components, avoiding the need for biasing voltage required in traditional bias diode clippers. The Zener diode behaves like a normal diode when forward-biased, but conducts above its Zener voltage in reverse, necessitating a series resistor to prevent damage. It clips both cycles, limited by the forward voltage drop during negative cycles and conducting above Zener voltage during positive cycles.</p>
+<p><img alt="Positive cycle Zener diode_1" src="../../_images/PositivecycleZenerdiode.PNG" /></p>
+<p><strong>full-wave clipper based on two Zener diodes</strong></p>
+<p><img alt="FullWaveZenerClipping_1" src="../../_images/FullWaveZenerClipping.PNG" /></p>
+</section>
+</section>
+<section id="clampers">
+<h2>Clampers<a class="headerlink" href="#clampers" title="Link to this heading">#</a></h2>
+<p>The previous section explored diode configurations that clip signals. This section examines diode configurations that shift signals to different levels, focusing on clamper networks consisting of a diode, resistor, and capacitor. These networks shift the signal’s DC level without altering its shape, relying on a sufficiently large time constant to maintain the capacitor’s charge.</p>
+<p><strong>Types of Clampers:</strong></p>
+<ul class="simple">
+<li><p>Positive Clamper</p></li>
+<li><p>Negative Clamper</p></li>
+</ul>
+<section id="positive-clamper-circuit">
+<h3>Positive Clamper Circuit<a class="headerlink" href="#positive-clamper-circuit" title="Link to this heading">#</a></h3>
+<p>A clamping circuit restores the DC level of a signal and shifts the output signal to the positive portion of the input. During the negative half cycle, the capacitor charges to the peak value, and in the positive half cycle, the signal is positively clamped, resulting in an output that shifts according to the input changes.</p>
+<p><img alt="PositiveClamperCircuit1" src="../../_images/PositiveClamperCircuit.PNG" /></p>
+<p><em><strong>Positive Clamper with Positive Vr</strong></em>
+See below figure,</p>
+<p><img alt="Positive Clamper with Positive Vr_1" src="../../_images/PositiveClamperwithPositiveVr.PNG" /></p>
+</section>
+</section>
+</section>
+<section id="homework-think-about-positive-clamper-with-positive-vr-using-zener-diod">
+<h1>Homework: Think about Positive Clamper with Positive Vr using zener diod<a class="headerlink" href="#homework-think-about-positive-clamper-with-positive-vr-using-zener-diod" title="Link to this heading">#</a></h1>
+<ul class="simple">
+<li><p>Test with Pyspice</p></li>
+</ul>
+<section id="negative-clamper">
+<h2>Negative clamper<a class="headerlink" href="#negative-clamper" title="Link to this heading">#</a></h2>
+<p>During the positive half cycle of the input AC signal, the diode is forward biased, allowing current to charge the capacitor to the peak input voltage. During the negative half cycle, the diode is reverse biased, preventing current flow, and the stored charge in the capacitor combines with the input voltage to produce an output voltage of <span class="math notranslate nohighlight">\( -2V_m \)</span>, resulting in a downward-shifted signal.</p>
+<p><img alt="NegativeClamper_1" src="../../_images/Negativeclamper.PNG" /></p>
+<p><em><strong>Negative clamper with Bias</strong></em></p>
+<p>See following figures</p>
+<p><img alt="Negative clamper with Bias 1" src="../../_images/NegativeclamperwithBias_1.PNG" /></p>
+<p><img alt="Negative clamper with Bias 1" src="../../_images/NegativeclamperwithBias_2.PNG" /></p>
+</section>
+<section id="protective-diode">
+<h2>Protective Diode<a class="headerlink" href="#protective-diode" title="Link to this heading">#</a></h2>
+<section id="diode-protector-to-limit-the-emitterbase-voltage">
+<h3>Diode protector to limit the emitter–base voltage<a class="headerlink" href="#diode-protector-to-limit-the-emitterbase-voltage" title="Link to this heading">#</a></h3>
+<p><img alt="Diode protector1" src="../../_images/ProtectVBE_Trans_BJT_N.PNG" /></p>
+</section>
+<section id="diodes-can-be-used-to-limit-the-input-of-opamp-to-0-7v">
+<h3>Diodes can be used to limit the input of OPAMP to 0.7V<a class="headerlink" href="#diodes-can-be-used-to-limit-the-input-of-opamp-to-0-7v" title="Link to this heading">#</a></h3>
+<p><img alt="OpAmp_Protect_Input_1" src="../../_images/OpAmp_Protect_Input.PNG" /></p>
+</section>
+<section id="polarity-insurance">
+<h3>POLARITY INSURANCE<a class="headerlink" href="#polarity-insurance" title="Link to this heading">#</a></h3>
+<p><img alt="POLARITY INSURANCE 1" src="../../_images/POLARITYINSURANCE.PNG" /></p>
+</section>
+<section id="relay-with-diode-circuit">
+<h3>Relay with Diode Circuit<a class="headerlink" href="#relay-with-diode-circuit" title="Link to this heading">#</a></h3>
+<p>A relay circuit consists of three key components: switches, a relay coil, and a diode. The switches ensure reliable electrical contact without bounce, while the relay coil controls the switching between open and closed states. The diode provides transient voltage suppression, protecting the switching circuitry from voltage spikes caused by the relay’s activation and deactivation.</p>
+<p><img alt="Relay with Diode Circuit 1" src="../../_images/Basicrelaywithdiodecircuit.PNG" /></p>
+</section>
+</section>
+<section id="miniproject-choose-one-application-related-to-protective-diodes">
+<h2>Miniproject : Choose one application related to protective diodes<a class="headerlink" href="#miniproject-choose-one-application-related-to-protective-diodes" title="Link to this heading">#</a></h2>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./courses\Circuit_Electronics"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Diode_chapter.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Diode</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="BJT1.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Bipolar junction transistor</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Diode Application</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#or-gate">OR Gate</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#and-gate">AND Gate</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#half-wave-rectifier">Half-Wave Rectifier</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#power-diode-rectifier">Power Diode Rectifier</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#full-wave-rectifier">Full-wave rectifier</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Full Wave Rectifier</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Power Diode Rectifier</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#full-wave-rectifier-with-smoothing-capacitor">Full Wave Rectifier with Smoothing Capacitor</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple-factor-of-a-half-wave-rectifier"><strong>Ripple Factor of a Half-Wave Rectifier</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#for-half-wave-rectifier">For Half Wave Rectifier</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#homework-calculate-ripple-factor-for-full-wave-rectifier-with-capacitor">Homework : Calculate ripple factor for Full Wave Rectifier with Capacitor</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regulators">Regulators</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-regulator">Linear regulator</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lm-series-integrated-circuits">LM-series integrated circuits</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#miniprogect-complete-linear-regulator-include">MiniProgect : Complete Linear regulator include:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#switchig-regulator">Switchig Regulator</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#buck-converter-topology">Buck converter topology</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-boost-converter">Simple boost converter</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#voltage-multiplier">Voltage multiplier</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#miniprojects-continue-voltage-multiplier">Miniprojects: Continue Voltage Multiplier</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diode-clippers">DIODE CLIPPERS</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#positive-clipper">Positive Clipper</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#negative-diode-clipper">Negative Diode Clipper</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#biased-positive-clipper">Biased Positive Clipper</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#positive-negative-cycle-bias-clipper">Positive &amp; Negative Cycle Bias Clipper</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zener-diode-clipper">Zener diode clipper</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#clampers">Clampers</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#positive-clamper-circuit">Positive Clamper Circuit</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#homework-think-about-positive-clamper-with-positive-vr-using-zener-diod">Homework: Think about Positive Clamper with Positive Vr using zener diod</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#negative-clamper">Negative clamper</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#protective-diode">Protective Diode</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#diode-protector-to-limit-the-emitterbase-voltage">Diode protector to limit the emitter–base voltage</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#diodes-can-be-used-to-limit-the-input-of-opamp-to-0-7v">Diodes can be used to limit the input of OPAMP to 0.7V</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#polarity-insurance">POLARITY INSURANCE</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#relay-with-diode-circuit">Relay with Diode Circuit</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#miniproject-choose-one-application-related-to-protective-diodes">Miniproject : Choose one application related to protective diodes</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Dr.Hadi Sadoghi Yazdi
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024 Pattern Recognition Lab.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,1325 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Diode with Pyspice &#8212; Dr.Hadi Sadoghi Yazdi</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=87e54e7c" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=3ee479438cf8b5e0d341"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'courses/Circuit_Electronics/Example';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../../Home_Page.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/Hadi_Sadoghi_Yazdi.png" class="logo__image only-light" alt="Dr.Hadi Sadoghi Yazdi - Home"/>
+    <script>document.write(`<img src="../../_static/Hadi_Sadoghi_Yazdi.png" class="logo__image only-dark" alt="Dr.Hadi Sadoghi Yazdi - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../Home_Page.html">
+                    Welcome to my personal Website!
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Courses.html">Courses</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../pattern_recognition.html">Pattern Recognition</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../PR/Introduction/PR_intro.html">Introduction</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="../PR/Introduction/DataSet.html">Dataset</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PR/Introduction/Model.html">Model</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PR/Introduction/Cost.html">Cost_Function</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PR/Introduction/LearningRule.html">Learning_Rule</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3"><a class="reference internal" href="../PR/Visualization/PR_intro_Visualization.html">Visualization</a></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../PR/Clustering/PR_intro_Clustering.html">Clustering Concept</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="../PR/Clustering/Clustering_1.html">Clustering</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PR/Clustering/FCM_1.html">k-means and fuzzy-c-means clustering</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PR/Clustering/FCM_Saghi_Project.html">Complementary of FCM</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PR/Clustering/LinkageClustering_1.html">Project Linkage clustering</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PR/Clustering/e_insensitive_linkage.html">Project <span class="math notranslate nohighlight">\( \epsilon \)</span> -insensitive Linkage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PR/Clustering/SOFM_Project.html">Project Title: Self-Organizing Feature Map (SOFM)</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../PR/Regression/Introduction_Regression.html">Regression</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="../PR/Regression/Regression_1.html">Linear Regression</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PR/Regression/NonLinearRegression.html">Non-linear Regression: The starting point</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PR/Regression/Linearization.html">Linearization</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PR/Regression/Kernel_for_Regression.html">Kernel method</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PR/Regression/EvaluationModelSelection.html">Project : Evaluation and Model Selection</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PR/Regression/Solution_for_Regression.html">Solution Method</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PR/Regression/TheoryRegression.html">Theoretical Aspects of Regression</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PR/Regression/ApplicationsPatternRecognition.html">Applications in Pattern Recognition</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../PR/Classification/PR_intro_Classification.html">Classification</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="../PR/Classification/SVDD.html">Support Vector Data Description (SVDD)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PR/Classification/SVM1.html">Support Vector Machine (SVM)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PR/Classification/Fisherclassifier.html">Fihser Classifier</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PR/Classification/KernelFisherDiscriminantAnalysis.html">Kernel Fisher Discriminant Analysis</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PR/Classification/DecisionTree1.html">Project Induction in Decision Trees</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../PR/BayesEstimation/BayesEstimation.html">Bayes Estimation</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="../PR/BayesEstimation/KDE_1.html">kernel-based density estimation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PR/BayesEstimation/MeanShift.html">Mean Shift Algorithm</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PR/BayesEstimation/ParametricDensityEstimation1.html">Parametric Density Estimation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PR/BayesEstimation/GMM.html">Gaussian Mixture Model</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../machine_learning.html">Machine Learning</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../ML/Regression/NonParamRegression.html">Regression Review</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ML/Regression/KernelRegression.html">Kernel Regression</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ML/Regression/GP_Regression.html">Gaussian Process</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ML/FeatureReduction/FR_Intro.html">Introduction of Feature Reduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ML/FeatureReduction/PCA.html">Principal Component Analysis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ML/FeatureReduction/Autoencoders1.html">Autoencoders</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../Supplementary1.html">Supplementary Documents</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../SupplementaryDocuments/EVD.html">Eigen Value Decomposition</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../SupplementaryDocuments/twin_svm.html">Twin SVM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../SupplementaryDocuments/Covariance1.html">Covariance</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../CircuitElectronicAnalysis.html">Circuit and Electronics</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="Introduction_CircuitElectronics.html">Introduction to Circuit and Electronics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BasicElements.html">Basic component</a></li>
+<li class="toctree-l3"><a class="reference internal" href="KVL_KCL.html">Voltage , Current</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NodalMeshAnalysis.html">Basic Nodal and Mesh Analysis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RC_RL_RLC.html">R-C, R-L circuits</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Diode_chapter.html">Diode</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DiodeApplication.html">Diode Application</a></li>
+
+
+<li class="toctree-l3"><a class="reference internal" href="BJT1.html">Bipolar junction transistor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="FET.html">Field Effect Transistor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="OpAmp.html">Operational Amplifier</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="../signal_processing.html">Signal Processing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../image_processing.html">Image Processing</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../PRLabProduction.html">Pattern Lab Production</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../../ProposalPhD_Develop.html">Proposal PhD Develope</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Students.html">Students Projects</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../StudentProjects/BsC/Teymoori/chat_with_doc.html">Author Information</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Contact_Me.html">Contact Me</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../About_Me.html">About Me</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/h-sadoghi/dr-sadoghi.git" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/h-sadoghi/dr-sadoghi.git/issues/new?title=Issue%20on%20page%20%2Fcourses/Circuit_Electronics/Example.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/courses/Circuit_Electronics/Example.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Diode with Pyspice</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#i-v-charactristic-of-diode">I-V Charactristic of diode</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diode-1n4148">Diode=1n4148</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ac-small-signal-spice-model">AC Small Signal Spice Model</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#general-code-for-checking-dc-sweep-of-bjt-transistor">General code for checking DC sweep of BJT Transistor</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#electronic-laboratory-bjt-saturation-region">Electronic Laboratory: BJT Saturation Region</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#electronic-labratory-bjt-active-region">Electronic Labratory : BJT Active region</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="diode-with-pyspice">
+<h1>Diode with Pyspice<a class="headerlink" href="#diode-with-pyspice" title="Link to this heading">#</a></h1>
+<p>some good address:
+<a class="reference external" href="http://www.ece.mcgill.ca/~grober4/SPICE/SPICE_Decks/1st_Edition/chapter3/Chapter%203%20%20Diodes%20web%20version.html">http://www.ece.mcgill.ca/~grober4/SPICE/SPICE_Decks/1st_Edition/chapter3/Chapter 3  Diodes web version.html</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="kn">import</span> <span class="nn">PySpice.Logging.Logging</span> <span class="k">as</span> <span class="nn">Logging</span>
+<span class="n">logger</span> <span class="o">=</span> <span class="n">Logging</span><span class="o">.</span><span class="n">setup_logging</span><span class="p">()</span>
+<span class="kn">from</span> <span class="nn">PySpice.Spice.Netlist</span> <span class="kn">import</span> <span class="n">Circuit</span>
+
+
+<span class="n">circuit</span> <span class="o">=</span> <span class="n">Circuit</span><span class="p">(</span><span class="s1">&#39;First Example Define diode&#39;</span><span class="p">)</span>
+
+<span class="c1">## Example 1</span>
+<span class="n">circuit</span><span class="o">.</span><span class="n">D</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">,</span><span class="s1">&#39;3&#39;</span><span class="p">,</span> <span class="n">circuit</span><span class="o">.</span><span class="n">gnd</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="s1">&#39;Diode&#39;</span><span class="p">)</span>
+<span class="n">circuit</span><span class="o">.</span><span class="n">model</span><span class="p">(</span><span class="s1">&#39;Diode&#39;</span><span class="p">,</span> <span class="s1">&#39;D&#39;</span><span class="p">,</span> <span class="n">IS</span><span class="o">=</span><span class="mf">0.0000000001</span><span class="p">,</span> <span class="n">rs</span><span class="o">=</span><span class="mf">0.0341512</span><span class="p">,</span> <span class="n">nd</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">eg</span><span class="o">=</span><span class="mf">1.05743</span><span class="p">,</span> <span class="n">xti</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">bv</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">ibv</span><span class="o">=</span><span class="mf">5e-08</span><span class="p">,</span> <span class="n">cjo</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">vj</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span> <span class="n">m</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">fc</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">tt</span><span class="o">=</span><span class="mf">1e-07</span><span class="p">,</span> <span class="n">kf</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">af</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">PySpice.Logging.Logging</span> <span class="k">as</span> <span class="nn">Logging</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">logger</span> <span class="o">=</span> <span class="n">Logging</span><span class="o">.</span><span class="n">setup_logging</span><span class="p">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="kn">from</span> <span class="nn">PySpice.Spice.Netlist</span> <span class="kn">import</span> <span class="n">Circuit</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;PySpice&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+
+<span class="kn">import</span> <span class="nn">PySpice.Logging.Logging</span> <span class="k">as</span> <span class="nn">Logging</span>
+<span class="n">logger</span> <span class="o">=</span> <span class="n">Logging</span><span class="o">.</span><span class="n">setup_logging</span><span class="p">()</span>
+<span class="kn">from</span> <span class="nn">PySpice.Spice.Netlist</span> <span class="kn">import</span> <span class="n">Circuit</span>
+
+
+<span class="n">circuit</span> <span class="o">=</span> <span class="n">Circuit</span><span class="p">(</span><span class="s1">&#39;First Example Define diode&#39;</span><span class="p">)</span>
+
+<span class="c1">## Example 1</span>
+<span class="n">circuit</span><span class="o">.</span><span class="n">D</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">,</span><span class="s1">&#39;3&#39;</span><span class="p">,</span> <span class="n">circuit</span><span class="o">.</span><span class="n">gnd</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="s1">&#39;Diode&#39;</span><span class="p">)</span>
+<span class="n">circuit</span><span class="o">.</span><span class="n">model</span><span class="p">(</span><span class="s1">&#39;Diode&#39;</span><span class="p">,</span> <span class="s1">&#39;D&#39;</span><span class="p">,</span> <span class="n">IS</span><span class="o">=</span><span class="mf">0.0000000001</span><span class="p">,</span> <span class="n">rs</span><span class="o">=</span><span class="mf">0.0341512</span><span class="p">,</span> <span class="n">nd</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">eg</span><span class="o">=</span><span class="mf">1.05743</span><span class="p">,</span> <span class="n">xti</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">bv</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">ibv</span><span class="o">=</span><span class="mf">5e-08</span><span class="p">,</span> <span class="n">cjo</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">vj</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span> <span class="n">m</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">fc</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">tt</span><span class="o">=</span><span class="mf">1e-07</span><span class="p">,</span> <span class="n">kf</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">af</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">circuit</span><span class="o">.</span><span class="n">V</span><span class="p">(</span><span class="s1">&#39;input&#39;</span><span class="p">,</span> <span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="n">circuit</span><span class="o">.</span><span class="n">gnd</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">circuit</span><span class="o">.</span><span class="n">R</span><span class="p">(</span><span class="s1">&#39;s&#39;</span><span class="p">,</span> <span class="s1">&#39;2&#39;</span><span class="p">,</span> <span class="s1">&#39;3&#39;</span><span class="p">,</span> <span class="mf">.356</span><span class="p">)</span>
+<span class="n">circuit</span><span class="o">.</span><span class="n">R</span><span class="p">(</span><span class="s1">&#39;sh&#39;</span><span class="p">,</span> <span class="s1">&#39;3&#39;</span><span class="p">,</span> <span class="n">circuit</span><span class="o">.</span><span class="n">gnd</span><span class="p">,</span> <span class="mf">312.55</span><span class="p">)</span>
+<span class="n">circuit</span><span class="o">.</span><span class="n">I</span><span class="p">(</span><span class="s1">&#39;pv&#39;</span><span class="p">,</span><span class="s1">&#39;3&#39;</span><span class="p">,</span> <span class="n">circuit</span><span class="o">.</span><span class="n">gnd</span><span class="p">,</span> <span class="mf">8.17</span><span class="p">)</span>
+<span class="n">circuit</span><span class="o">.</span><span class="n">V</span><span class="p">(</span><span class="s1">&#39;meas&#39;</span><span class="p">,</span> <span class="s1">&#39;1&#39;</span><span class="p">,</span><span class="s1">&#39;2&#39;</span><span class="p">,</span> <span class="mi">0</span> <span class="p">)</span>
+<span class="n">simulator</span> <span class="o">=</span> <span class="n">circuit</span><span class="o">.</span><span class="n">simulator</span><span class="p">(</span><span class="n">temperature</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span> <span class="n">nominal_temperature</span><span class="o">=</span><span class="mi">25</span><span class="p">)</span>
+<span class="n">analysis</span> <span class="o">=</span> <span class="n">simulator</span><span class="o">.</span><span class="n">dc</span><span class="p">(</span><span class="n">Vinput</span> <span class="o">=</span> <span class="nb">slice</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">))</span>
+<span class="n">waveform</span> <span class="o">=</span> <span class="n">analysis</span><span class="o">.</span><span class="n">nodes</span><span class="p">[</span><span class="s1">&#39;3&#39;</span><span class="p">]</span>
+
+<span class="n">voltage_values</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">waveform</span><span class="p">)</span>
+<span class="n">sweep_values</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">voltage_values</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Vinput (V)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Voltage at Node 3 (V)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;DC Sweep Analysis for Node 3&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sweep_values</span> <span class="p">,</span> <span class="n">waveform</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/87750f257f48c224293efb2eaabeed3ea35afd0a9876847048a99e9e255c293d.png" src="../../_images/87750f257f48c224293efb2eaabeed3ea35afd0a9876847048a99e9e255c293d.png" />
+</div>
+</div>
+<p><img alt="Example_Code_1_Figure" src="../../_images/ExampleCode_1.PNG" /></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="kn">import</span> <span class="nn">PySpice.Logging.Logging</span> <span class="k">as</span> <span class="nn">Logging</span>
+<span class="n">logger</span> <span class="o">=</span> <span class="n">Logging</span><span class="o">.</span><span class="n">setup_logging</span><span class="p">()</span>
+<span class="kn">from</span> <span class="nn">PySpice.Spice.Netlist</span> <span class="kn">import</span> <span class="n">Circuit</span>
+<span class="kn">from</span> <span class="nn">PySpice.Unit</span> <span class="kn">import</span> <span class="c1">#</span>
+
+<span class="c1"># Define sweep parameters</span>
+<span class="n">Vinput_start</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">Vinput_stop</span> <span class="o">=</span> <span class="mi">60</span>
+<span class="n">Vinput_step</span> <span class="o">=</span> <span class="mf">0.01</span>
+
+<span class="c1"># Define the circuit</span>
+<span class="n">circuit</span> <span class="o">=</span> <span class="n">Circuit</span><span class="p">(</span><span class="s1">&#39;First Example Define diode&#39;</span><span class="p">)</span>
+
+<span class="c1"># Add a diode with specific parameters</span>
+<span class="n">circuit</span><span class="o">.</span><span class="n">D</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="s1">&#39;3&#39;</span><span class="p">,</span> <span class="n">circuit</span><span class="o">.</span><span class="n">gnd</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="s1">&#39;Diode&#39;</span><span class="p">)</span>
+<span class="n">circuit</span><span class="o">.</span><span class="n">model</span><span class="p">(</span><span class="s1">&#39;Diode&#39;</span><span class="p">,</span> <span class="s1">&#39;D&#39;</span><span class="p">,</span> <span class="n">IS</span><span class="o">=</span><span class="mf">0.0000000001</span><span class="p">,</span> <span class="n">rs</span><span class="o">=</span><span class="mf">0.0341512</span><span class="p">,</span> <span class="n">nd</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">eg</span><span class="o">=</span><span class="mf">1.05743</span><span class="p">,</span> <span class="n">xti</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">bv</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">ibv</span><span class="o">=</span><span class="mf">5e-08</span><span class="p">,</span> <span class="n">cjo</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">vj</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span> <span class="n">m</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">fc</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">tt</span><span class="o">=</span><span class="mf">1e-07</span><span class="p">,</span> <span class="n">kf</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">af</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># Add voltage source, resistors, and current source</span>
+<span class="n">circuit</span><span class="o">.</span><span class="n">V</span><span class="p">(</span><span class="s1">&#39;input&#39;</span><span class="p">,</span> <span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="n">circuit</span><span class="o">.</span><span class="n">gnd</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">circuit</span><span class="o">.</span><span class="n">R</span><span class="p">(</span><span class="s1">&#39;s&#39;</span><span class="p">,</span> <span class="s1">&#39;2&#39;</span><span class="p">,</span> <span class="s1">&#39;3&#39;</span><span class="p">,</span> <span class="mf">0.356</span><span class="p">)</span>
+<span class="n">circuit</span><span class="o">.</span><span class="n">R</span><span class="p">(</span><span class="s1">&#39;sh&#39;</span><span class="p">,</span> <span class="s1">&#39;3&#39;</span><span class="p">,</span> <span class="n">circuit</span><span class="o">.</span><span class="n">gnd</span><span class="p">,</span> <span class="mf">312.55</span><span class="p">)</span>
+<span class="n">circuit</span><span class="o">.</span><span class="n">I</span><span class="p">(</span><span class="s1">&#39;pv&#39;</span><span class="p">,</span> <span class="s1">&#39;3&#39;</span><span class="p">,</span> <span class="n">circuit</span><span class="o">.</span><span class="n">gnd</span><span class="p">,</span> <span class="mf">8.17</span><span class="p">)</span>
+<span class="n">circuit</span><span class="o">.</span><span class="n">V</span><span class="p">(</span><span class="s1">&#39;meas&#39;</span><span class="p">,</span> <span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="s1">&#39;2&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+<span class="c1"># Create a simulator</span>
+<span class="n">simulator</span> <span class="o">=</span> <span class="n">circuit</span><span class="o">.</span><span class="n">simulator</span><span class="p">(</span><span class="n">temperature</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span> <span class="n">nominal_temperature</span><span class="o">=</span><span class="mi">25</span><span class="p">)</span>
+
+<span class="c1"># Perform a DC sweep analysis</span>
+<span class="n">analysis</span> <span class="o">=</span> <span class="n">simulator</span><span class="o">.</span><span class="n">dc</span><span class="p">(</span><span class="n">Vinput</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="n">Vinput_start</span><span class="p">,</span> <span class="n">Vinput_stop</span><span class="p">,</span> <span class="n">Vinput_step</span><span class="p">))</span>
+
+<span class="c1"># Extract the data for node &#39;3&#39;</span>
+<span class="n">waveform</span> <span class="o">=</span> <span class="n">analysis</span><span class="p">[</span><span class="s1">&#39;3&#39;</span><span class="p">]</span>
+<span class="n">sweep_values1</span><span class="o">=</span><span class="n">analysis</span><span class="p">[</span><span class="s1">&#39;v-sweep&#39;</span><span class="p">]</span>
+<span class="n">InputCurrentMeasurement</span><span class="o">=</span><span class="n">analysis</span><span class="p">[</span><span class="s1">&#39;vmeas&#39;</span><span class="p">]</span>
+<span class="c1"># Assuming waveform.data provides the voltage values for node &#39;3&#39;</span>
+<span class="n">voltage_values</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">waveform</span><span class="p">)</span>
+
+
+<span class="c1"># Plot the results</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sweep_values1</span><span class="p">,</span> <span class="n">voltage_values</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Vinput (V)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Voltage at Node 3 (V)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;DC Sweep Analysis for Node 3&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sweep_values1</span><span class="p">,</span><span class="n">InputCurrentMeasurement</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Vinput (V)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Input current (A)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;DC Sweep Analysis for input Node current&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">analysis</span><span class="o">.</span><span class="n">nodes</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/7be2e8bf21f45f8818c19cbc655e041f9697caefe2c60ef6c858cb21a10f79a7.png" src="../../_images/7be2e8bf21f45f8818c19cbc655e041f9697caefe2c60ef6c858cb21a10f79a7.png" />
+<img alt="../../_images/87aca72f4c2e452fbc4ff384fa090a1d2756fffb9e29e9551e6cfcf2c810b29e.png" src="../../_images/87aca72f4c2e452fbc4ff384fa090a1d2756fffb9e29e9551e6cfcf2c810b29e.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;2&#39;: WaveForm 2 [0.000e+00 1.000e-02 2.000e-02 ... 5.998e+01 5.999e+01 6.000e+01]@V, &#39;1&#39;: WaveForm 1 [0.000e+00 1.000e-02 2.000e-02 ... 5.998e+01 5.999e+01 6.000e+01]@V, &#39;3&#39;: WaveForm 3 [-2.90521091 -2.89522229 -2.88523367 ...  5.65147621  5.65235561
+  5.65323501]@V, &#39;v-sweep&#39;: WaveForm v-sweep [0.000e+00 1.000e-02 2.000e-02 ... 5.998e+01 5.999e+01 6.000e+01]@V}
+</pre></div>
+</div>
+</div>
+</div>
+<section id="i-v-charactristic-of-diode">
+<h2>I-V Charactristic of diode<a class="headerlink" href="#i-v-charactristic-of-diode" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="kn">import</span> <span class="nn">PySpice.Logging.Logging</span> <span class="k">as</span> <span class="nn">Logging</span>
+<span class="n">logger</span> <span class="o">=</span> <span class="n">Logging</span><span class="o">.</span><span class="n">setup_logging</span><span class="p">()</span>
+<span class="kn">from</span> <span class="nn">PySpice.Spice.Netlist</span> <span class="kn">import</span> <span class="n">Circuit</span>
+<span class="kn">from</span> <span class="nn">PySpice.Unit</span> <span class="kn">import</span> <span class="c1">#</span>
+
+<span class="c1"># Define sweep parameters</span>
+<span class="n">Vinput_start</span> <span class="o">=</span> <span class="o">-</span><span class="mi">2</span>
+<span class="n">Vinput_stop</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">Vinput_step</span> <span class="o">=</span> <span class="mf">0.001</span>
+
+<span class="c1"># Define the circuit</span>
+<span class="n">circuit</span> <span class="o">=</span> <span class="n">Circuit</span><span class="p">(</span><span class="s1">&#39;First Example Define diode&#39;</span><span class="p">)</span>
+
+<span class="c1"># Add a diode with specific parameters</span>
+<span class="n">circuit</span><span class="o">.</span><span class="n">D</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="s1">&#39;2&#39;</span><span class="p">,</span> <span class="n">circuit</span><span class="o">.</span><span class="n">gnd</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="s1">&#39;Diode&#39;</span><span class="p">)</span>
+<span class="n">circuit</span><span class="o">.</span><span class="n">model</span><span class="p">(</span><span class="s1">&#39;Diode&#39;</span><span class="p">,</span> <span class="s1">&#39;D&#39;</span><span class="p">,</span> <span class="n">IS</span><span class="o">=</span><span class="mf">0.0000000001</span><span class="p">,</span> <span class="n">rs</span><span class="o">=</span><span class="mf">0.0341512</span><span class="p">,</span> <span class="n">N</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> 
+              <span class="n">eg</span><span class="o">=</span><span class="mf">1.05743</span><span class="p">,</span> <span class="n">xti</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">bv</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">ibv</span><span class="o">=</span><span class="mf">5e-08</span><span class="p">,</span> <span class="n">cjo</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">vj</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span>
+                <span class="n">m</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">fc</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">tt</span><span class="o">=</span><span class="mf">1e-07</span><span class="p">,</span> <span class="n">kf</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">af</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">circuit</span><span class="o">.</span><span class="n">V</span><span class="p">(</span><span class="s1">&#39;input&#39;</span><span class="p">,</span> <span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="n">circuit</span><span class="o">.</span><span class="n">gnd</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">circuit</span><span class="o">.</span><span class="n">V</span><span class="p">(</span><span class="s1">&#39;meas&#39;</span><span class="p">,</span> <span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="s1">&#39;2&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="c1"># Create a simulator</span>
+<span class="n">simulator</span> <span class="o">=</span> <span class="n">circuit</span><span class="o">.</span><span class="n">simulator</span><span class="p">(</span><span class="n">temperature</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span> <span class="n">nominal_temperature</span><span class="o">=</span><span class="mi">25</span><span class="p">)</span>
+
+<span class="c1"># Perform a DC sweep analysis</span>
+<span class="n">analysis</span> <span class="o">=</span> <span class="n">simulator</span><span class="o">.</span><span class="n">dc</span><span class="p">(</span><span class="n">Vinput</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="n">Vinput_start</span><span class="p">,</span> <span class="n">Vinput_stop</span><span class="p">,</span> <span class="n">Vinput_step</span><span class="p">))</span>
+
+<span class="n">waveform</span> <span class="o">=</span> <span class="n">analysis</span><span class="p">[</span><span class="s1">&#39;2&#39;</span><span class="p">]</span>
+<span class="n">sweep_values1</span><span class="o">=</span><span class="n">analysis</span><span class="p">[</span><span class="s1">&#39;v-sweep&#39;</span><span class="p">]</span>
+<span class="n">InputCurrentMeasurement</span><span class="o">=</span><span class="n">analysis</span><span class="p">[</span><span class="s1">&#39;vmeas&#39;</span><span class="p">]</span>
+<span class="c1"># Assuming waveform.data provides the voltage values for node &#39;3&#39;</span>
+<span class="n">voltage_values</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">waveform</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">voltage_values</span><span class="p">,</span><span class="n">InputCurrentMeasurement</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Vinput (V)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Input current (A)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;DC Sweep Analysis for input Node current&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/25af07bf4392f89941f08a6d15bfb6d7e3a65982f7888c808dfaf103950ddca4.png" src="../../_images/25af07bf4392f89941f08a6d15bfb6d7e3a65982f7888c808dfaf103950ddca4.png" />
+</div>
+</div>
+</section>
+<section id="diode-1n4148">
+<h2>Diode=1n4148<a class="headerlink" href="#diode-1n4148" title="Link to this heading">#</a></h2>
+<p>Include breakdown voltage and forward region</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="kn">import</span> <span class="nn">PySpice.Logging.Logging</span> <span class="k">as</span> <span class="nn">Logging</span>
+<span class="n">logger</span> <span class="o">=</span> <span class="n">Logging</span><span class="o">.</span><span class="n">setup_logging</span><span class="p">()</span>
+<span class="kn">from</span> <span class="nn">PySpice.Spice.Netlist</span> <span class="kn">import</span> <span class="n">Circuit</span>
+<span class="kn">from</span> <span class="nn">PySpice.Unit</span> <span class="kn">import</span> <span class="c1">#</span>
+
+<span class="c1"># Define sweep parameters</span>
+<span class="n">Vinput_start</span> <span class="o">=</span> <span class="o">-</span><span class="mi">120</span>
+<span class="n">Vinput_stop</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="n">Vinput_step</span> <span class="o">=</span> <span class="mf">0.001</span>
+
+<span class="c1"># Define the circuit</span>
+<span class="n">circuit</span> <span class="o">=</span> <span class="n">Circuit</span><span class="p">(</span><span class="s1">&#39;First Example Define diode&#39;</span><span class="p">)</span>
+
+<span class="c1"># Add a diode with specific parameters</span>
+<span class="n">circuit</span><span class="o">.</span><span class="n">D</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="s1">&#39;2&#39;</span><span class="p">,</span> <span class="n">circuit</span><span class="o">.</span><span class="n">gnd</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="s1">&#39;Diode&#39;</span><span class="p">)</span>
+
+<span class="n">circuit</span><span class="o">.</span><span class="n">model</span><span class="p">(</span><span class="s1">&#39;Diode&#39;</span><span class="p">,</span> <span class="s1">&#39;D&#39;</span><span class="p">,</span> <span class="n">IS</span><span class="o">=</span><span class="mf">4.352E-9</span><span class="p">,</span> <span class="n">BV</span> <span class="o">=</span> <span class="mi">110</span><span class="p">,</span> <span class="n">GMIN</span> <span class="o">=</span> <span class="mf">1E-12</span><span class="p">,</span>
+               <span class="n">N</span><span class="o">=</span><span class="mf">1.906</span><span class="p">,</span> <span class="n">IBV</span> <span class="o">=</span> <span class="mf">0.0001</span><span class="p">,</span> <span class="n">RS</span> <span class="o">=</span> <span class="mf">0.6458</span><span class="p">,</span>
+                 <span class="n">CJO</span> <span class="o">=</span> <span class="mf">7.048E-13</span><span class="p">,</span> <span class="n">VJ</span> <span class="o">=</span> <span class="mf">0.869</span><span class="p">,</span> <span class="n">M</span> <span class="o">=</span> <span class="mf">0.03</span><span class="p">,</span> <span class="n">FC</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="p">,</span> <span class="n">TT</span> <span class="o">=</span> <span class="mf">3.48E-9</span> 
+                   <span class="p">)</span>
+
+<span class="n">circuit</span><span class="o">.</span><span class="n">V</span><span class="p">(</span><span class="s1">&#39;input&#39;</span><span class="p">,</span> <span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="n">circuit</span><span class="o">.</span><span class="n">gnd</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">circuit</span><span class="o">.</span><span class="n">V</span><span class="p">(</span><span class="s1">&#39;meas&#39;</span><span class="p">,</span> <span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="s1">&#39;2&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="c1"># Create a simulator</span>
+<span class="n">simulator</span> <span class="o">=</span> <span class="n">circuit</span><span class="o">.</span><span class="n">simulator</span><span class="p">(</span><span class="n">temperature</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span> <span class="n">nominal_temperature</span><span class="o">=</span><span class="mi">25</span><span class="p">)</span>
+
+<span class="c1"># Perform a DC sweep analysis</span>
+<span class="n">analysis</span> <span class="o">=</span> <span class="n">simulator</span><span class="o">.</span><span class="n">dc</span><span class="p">(</span><span class="n">Vinput</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="n">Vinput_start</span><span class="p">,</span> <span class="n">Vinput_stop</span><span class="p">,</span> <span class="n">Vinput_step</span><span class="p">))</span>
+
+<span class="n">waveform</span> <span class="o">=</span> <span class="n">analysis</span><span class="p">[</span><span class="s1">&#39;2&#39;</span><span class="p">]</span>
+<span class="n">sweep_values1</span><span class="o">=</span><span class="n">analysis</span><span class="p">[</span><span class="s1">&#39;v-sweep&#39;</span><span class="p">]</span>
+<span class="n">InputCurrentMeasurement</span><span class="o">=</span><span class="n">analysis</span><span class="p">[</span><span class="s1">&#39;vmeas&#39;</span><span class="p">]</span>
+<span class="c1"># Assuming waveform.data provides the voltage values for node &#39;3&#39;</span>
+<span class="n">voltage_values</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">waveform</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xscale</span><span class="p">(</span><span class="s1">&#39;symlog&#39;</span><span class="p">,</span> <span class="n">linthresh</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">voltage_values</span><span class="p">,</span><span class="n">InputCurrentMeasurement</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Vinput (V)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Input current (A)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;DC Sweep Analysis for input Node current&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/5589eba2e9358c1219f108e67e45fddfb62b2d2de8a865be9f0ad2adf4343e4a.png" src="../../_images/5589eba2e9358c1219f108e67e45fddfb62b2d2de8a865be9f0ad2adf4343e4a.png" />
+</div>
+</div>
+</section>
+<section id="ac-small-signal-spice-model">
+<h2>AC Small Signal Spice Model<a class="headerlink" href="#ac-small-signal-spice-model" title="Link to this heading">#</a></h2>
+<p><img alt="AC Small Signal Spice Model" src="../../_images/Example_SmallSignalDiodeModel1.PNG" /></p>
+<p><img alt="IV_Char_Real_Ideal_Spice" src="../../_images/IV_DiodeCharactristice_Real_Spice_Ideal.png" /></p>
+<section id="general-code-for-checking-dc-sweep-of-bjt-transistor">
+<h3>General code for checking DC sweep of BJT Transistor<a class="headerlink" href="#general-code-for-checking-dc-sweep-of-bjt-transistor" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="kn">import</span> <span class="nn">PySpice.Logging.Logging</span> <span class="k">as</span> <span class="nn">Logging</span>
+<span class="n">logger</span> <span class="o">=</span> <span class="n">Logging</span><span class="o">.</span><span class="n">setup_logging</span><span class="p">()</span>
+<span class="kn">from</span> <span class="nn">PySpice.Spice.Netlist</span> <span class="kn">import</span> <span class="n">Circuit</span>
+<span class="kn">from</span> <span class="nn">PySpice.Unit</span> <span class="kn">import</span> <span class="c1">#</span>
+
+<span class="c1"># Define sweep parameters</span>
+<span class="n">Vinput_start</span> <span class="o">=</span> <span class="o">-</span><span class="mi">10</span>
+<span class="n">Vinput_stop</span> <span class="o">=</span> <span class="mi">30</span>
+<span class="n">Vinput_step</span> <span class="o">=</span> <span class="mf">0.001</span>
+
+<span class="c1"># Define the circuit</span>
+<span class="n">circuit</span> <span class="o">=</span> <span class="n">Circuit</span><span class="p">(</span><span class="s1">&#39;IV_2n2222&#39;</span><span class="p">)</span>
+
+<span class="n">circuit</span><span class="o">.</span><span class="n">BJT</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="s1">&#39;collector&#39;</span><span class="p">,</span> <span class="s1">&#39;base&#39;</span><span class="p">,</span> <span class="n">circuit</span><span class="o">.</span><span class="n">gnd</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="s1">&#39;2n2222a&#39;</span><span class="p">)</span>
+
+<span class="c1"># .MODEL 2n2222a npn</span>
+<span class="n">circuit</span><span class="o">.</span><span class="n">model</span><span class="p">(</span><span class="s1">&#39;2n2222a&#39;</span><span class="p">,</span> <span class="s1">&#39;BJT&#39;</span><span class="p">,</span> <span class="n">IS</span><span class="o">=</span><span class="mf">3.88184e-14</span><span class="p">,</span> <span class="n">BF</span><span class="o">=</span><span class="mf">929.846</span><span class="p">,</span> <span class="n">NF</span><span class="o">=</span><span class="mf">1.10496</span><span class="p">,</span> <span class="n">VAF</span><span class="o">=</span><span class="mf">16.5003</span><span class="p">,</span>
+<span class="n">IKF</span><span class="o">=</span><span class="mf">0.019539</span><span class="p">,</span> <span class="n">ISE</span><span class="o">=</span><span class="mf">1.0168e-11</span><span class="p">,</span> <span class="n">NE</span><span class="o">=</span><span class="mf">1.94752</span><span class="p">,</span> <span class="n">BR</span><span class="o">=</span><span class="mf">48.4545</span><span class="p">,</span>
+<span class="n">NR</span><span class="o">=</span><span class="mf">1.07004</span><span class="p">,</span> <span class="n">VAR</span><span class="o">=</span><span class="mf">40.538</span><span class="p">,</span> <span class="n">IKR</span><span class="o">=</span><span class="mf">0.19539</span><span class="p">,</span> <span class="n">ISC</span><span class="o">=</span><span class="mf">1.0168e-11</span><span class="p">,</span>
+<span class="n">NC</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">RB</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">IRB</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">RBM</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span>
+<span class="n">RE</span><span class="o">=</span><span class="mf">0.0001</span><span class="p">,</span> <span class="n">RC</span><span class="o">=</span><span class="mf">0.426673</span><span class="p">,</span> <span class="n">XTB</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">XTI</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+<span class="n">EG</span><span class="o">=</span><span class="mf">1.05</span><span class="p">,</span> <span class="n">CJE</span><span class="o">=</span><span class="mf">2.23677e-11</span><span class="p">,</span> <span class="n">VJE</span><span class="o">=</span><span class="mf">0.582701</span><span class="p">,</span> <span class="n">MJE</span><span class="o">=</span><span class="mf">0.63466</span><span class="p">,</span>
+<span class="n">TF</span><span class="o">=</span><span class="mf">4.06711e-10</span><span class="p">,</span> <span class="n">XTF</span><span class="o">=</span><span class="mf">3.92912</span><span class="p">,</span> <span class="n">VTF</span><span class="o">=</span><span class="mf">17712.6</span><span class="p">,</span> <span class="n">ITF</span><span class="o">=</span><span class="mf">0.4334</span><span class="p">,</span>
+<span class="n">CJC</span><span class="o">=</span><span class="mf">2.23943e-11</span><span class="p">,</span> <span class="n">VJC</span><span class="o">=</span><span class="mf">0.576146</span><span class="p">,</span> <span class="n">MJC</span><span class="o">=</span><span class="mf">0.632796</span><span class="p">,</span> <span class="n">XCJC</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+<span class="n">FC</span><span class="o">=</span><span class="mf">0.170253</span><span class="p">,</span> <span class="n">CJS</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">VJS</span><span class="o">=</span><span class="mf">0.75</span><span class="p">,</span> <span class="n">MJS</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
+<span class="n">TR</span><span class="o">=</span><span class="mf">1e-07</span><span class="p">,</span> <span class="n">PTF</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">KF</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">AF</span><span class="o">=</span><span class="mi">1</span>
+                   <span class="p">)</span>
+
+
+<span class="n">circuit</span><span class="o">.</span><span class="n">V</span><span class="p">(</span><span class="s1">&#39;input&#39;</span><span class="p">,</span> <span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="n">circuit</span><span class="o">.</span><span class="n">gnd</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">circuit</span><span class="o">.</span><span class="n">V</span><span class="p">(</span><span class="s1">&#39;measin&#39;</span><span class="p">,</span> <span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="s1">&#39;base&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">circuit</span><span class="o">.</span><span class="n">V</span><span class="p">(</span><span class="s1">&#39;output&#39;</span><span class="p">,</span> <span class="s1">&#39;3&#39;</span><span class="p">,</span> <span class="n">circuit</span><span class="o">.</span><span class="n">gnd</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">circuit</span><span class="o">.</span><span class="n">V</span><span class="p">(</span><span class="s1">&#39;measout&#39;</span><span class="p">,</span> <span class="s1">&#39;3&#39;</span><span class="p">,</span> <span class="s1">&#39;collector&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+<span class="c1"># Create a simulator</span>
+<span class="n">simulator</span> <span class="o">=</span> <span class="n">circuit</span><span class="o">.</span><span class="n">simulator</span><span class="p">(</span><span class="n">temperature</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span> <span class="n">nominal_temperature</span><span class="o">=</span><span class="mi">25</span><span class="p">)</span>
+
+<span class="c1"># Perform a DC sweep analysis</span>
+<span class="n">analysis</span> <span class="o">=</span> <span class="n">simulator</span><span class="o">.</span><span class="n">dc</span><span class="p">(</span><span class="n">Vinput</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="n">Vinput_start</span><span class="p">,</span> <span class="n">Vinput_stop</span><span class="p">,</span> <span class="n">Vinput_step</span><span class="p">))</span>
+<span class="n">analysis1</span> <span class="o">=</span> <span class="n">simulator</span><span class="o">.</span><span class="n">dc</span><span class="p">(</span><span class="n">Voutput</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="n">Vinput_start</span><span class="p">,</span> <span class="n">Vinput_stop</span><span class="p">,</span> <span class="n">Vinput_step</span><span class="p">))</span>
+
+
+<span class="n">waveform</span> <span class="o">=</span> <span class="n">analysis</span><span class="p">[</span><span class="s1">&#39;base&#39;</span><span class="p">]</span>
+<span class="n">waveform1</span> <span class="o">=</span> <span class="n">analysis1</span><span class="p">[</span><span class="s1">&#39;collector&#39;</span><span class="p">]</span>
+<span class="c1">#sweep_values=analysis[&#39;v-sweep&#39;]</span>
+<span class="n">InputCurrentMeasurement</span><span class="o">=</span><span class="n">analysis</span><span class="p">[</span><span class="s1">&#39;vmeasin&#39;</span><span class="p">]</span>
+<span class="n">InputCurrentMeasurement1</span><span class="o">=</span><span class="n">analysis</span><span class="p">[</span><span class="s1">&#39;vmeasout&#39;</span><span class="p">]</span>
+
+
+<span class="c1"># Assuming waveform.data provides the voltage values for node &#39;3&#39;</span>
+<span class="n">voltage_values_base</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">waveform</span><span class="p">)</span>
+<span class="n">voltage_values_collector</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">waveform1</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xscale</span><span class="p">(</span><span class="s1">&#39;symlog&#39;</span><span class="p">,</span> <span class="n">linthresh</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">voltage_values_base</span><span class="p">,</span><span class="n">InputCurrentMeasurement</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Vbase (V)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Base current (A)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;DC Sweep Analysis for Input-Charactristic npn&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xscale</span><span class="p">(</span><span class="s1">&#39;symlog&#39;</span><span class="p">,</span> <span class="n">linthresh</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">voltage_values_collector</span><span class="p">,</span><span class="n">InputCurrentMeasurement1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Vcollector (V)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Collector current (A)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;DC Sweep Analysis for Output-Charactristic npn&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/dccd68dbbd58c95d40e2354605bfb103bd2f9f825fa8d41fc55802f63f9aca77.png" src="../../_images/dccd68dbbd58c95d40e2354605bfb103bd2f9f825fa8d41fc55802f63f9aca77.png" />
+<img alt="../../_images/4b5becaef5b4bc90b1c40374e41a30e9c22234324bc71dae2f410e2943a944f6.png" src="../../_images/4b5becaef5b4bc90b1c40374e41a30e9c22234324bc71dae2f410e2943a944f6.png" />
+</div>
+</div>
+</section>
+<section id="electronic-laboratory-bjt-saturation-region">
+<h3>Electronic Laboratory: BJT Saturation Region<a class="headerlink" href="#electronic-laboratory-bjt-saturation-region" title="Link to this heading">#</a></h3>
+<p>To obtain the saturation region, we need to bias the input diode (BE) at voltages below 0.6V and use a small VCE.</p>
+<p>First, let’s determine how to obtain the output characteristics of a transistor. Follow these steps:</p>
+<ul class="simple">
+<li><p>##Set Up the Circuit:## Configure your transistor circuit with the base, collector, and emitter. Ensure you have a method to vary the base current.</p></li>
+<li><p>##Perform DC Analysis:## For each base current, conduct a DC analysis by sweeping the collector voltage and recording the collector current.</p></li>
+<li><p>##Save and Plot Results:## Save the results for each base current and plot the collector current versus collector voltage.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="kn">import</span> <span class="nn">PySpice.Logging.Logging</span> <span class="k">as</span> <span class="nn">Logging</span>
+<span class="n">logger</span> <span class="o">=</span> <span class="n">Logging</span><span class="o">.</span><span class="n">setup_logging</span><span class="p">()</span>
+<span class="kn">from</span> <span class="nn">PySpice.Spice.Netlist</span> <span class="kn">import</span> <span class="n">Circuit</span>
+<span class="kn">from</span> <span class="nn">PySpice.Unit</span> <span class="kn">import</span> <span class="c1">#</span>
+
+
+
+
+<span class="n">circuit</span> <span class="o">=</span> <span class="n">Circuit</span><span class="p">(</span><span class="s1">&#39;IV_2n2222&#39;</span><span class="p">)</span>
+
+<span class="n">circuit</span><span class="o">.</span><span class="n">BJT</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="s1">&#39;collector&#39;</span><span class="p">,</span> <span class="s1">&#39;base&#39;</span><span class="p">,</span> <span class="n">circuit</span><span class="o">.</span><span class="n">gnd</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="s1">&#39;2n2222a&#39;</span><span class="p">)</span>
+
+<span class="c1"># .MODEL 2n2222a npn</span>
+<span class="n">circuit</span><span class="o">.</span><span class="n">model</span><span class="p">(</span><span class="s1">&#39;2n2222a&#39;</span><span class="p">,</span> <span class="s1">&#39;BJT&#39;</span><span class="p">,</span> <span class="n">IS</span><span class="o">=</span><span class="mf">3.88184e-14</span><span class="p">,</span> <span class="n">BF</span><span class="o">=</span><span class="mf">929.846</span><span class="p">,</span> <span class="n">NF</span><span class="o">=</span><span class="mf">1.10496</span><span class="p">,</span> <span class="n">VAF</span><span class="o">=</span><span class="mf">16.5003</span><span class="p">,</span>
+<span class="n">IKF</span><span class="o">=</span><span class="mf">0.019539</span><span class="p">,</span> <span class="n">ISE</span><span class="o">=</span><span class="mf">1.0168e-11</span><span class="p">,</span> <span class="n">NE</span><span class="o">=</span><span class="mf">1.94752</span><span class="p">,</span> <span class="n">BR</span><span class="o">=</span><span class="mf">48.4545</span><span class="p">,</span>
+<span class="n">NR</span><span class="o">=</span><span class="mf">1.07004</span><span class="p">,</span> <span class="n">VAR</span><span class="o">=</span><span class="mf">40.538</span><span class="p">,</span> <span class="n">IKR</span><span class="o">=</span><span class="mf">0.19539</span><span class="p">,</span> <span class="n">ISC</span><span class="o">=</span><span class="mf">1.0168e-11</span><span class="p">,</span>
+<span class="n">NC</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">RB</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">IRB</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">RBM</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span>
+<span class="n">RE</span><span class="o">=</span><span class="mf">0.0001</span><span class="p">,</span> <span class="n">RC</span><span class="o">=</span><span class="mf">0.426673</span><span class="p">,</span> <span class="n">XTB</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">XTI</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+<span class="n">EG</span><span class="o">=</span><span class="mf">1.05</span><span class="p">,</span> <span class="n">CJE</span><span class="o">=</span><span class="mf">2.23677e-11</span><span class="p">,</span> <span class="n">VJE</span><span class="o">=</span><span class="mf">0.582701</span><span class="p">,</span> <span class="n">MJE</span><span class="o">=</span><span class="mf">0.63466</span><span class="p">,</span>
+<span class="n">TF</span><span class="o">=</span><span class="mf">4.06711e-10</span><span class="p">,</span> <span class="n">XTF</span><span class="o">=</span><span class="mf">3.92912</span><span class="p">,</span> <span class="n">VTF</span><span class="o">=</span><span class="mf">17712.6</span><span class="p">,</span> <span class="n">ITF</span><span class="o">=</span><span class="mf">0.4334</span><span class="p">,</span>
+<span class="n">CJC</span><span class="o">=</span><span class="mf">2.23943e-11</span><span class="p">,</span> <span class="n">VJC</span><span class="o">=</span><span class="mf">0.576146</span><span class="p">,</span> <span class="n">MJC</span><span class="o">=</span><span class="mf">0.632796</span><span class="p">,</span> <span class="n">XCJC</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+<span class="n">FC</span><span class="o">=</span><span class="mf">0.170253</span><span class="p">,</span> <span class="n">CJS</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">VJS</span><span class="o">=</span><span class="mf">0.75</span><span class="p">,</span> <span class="n">MJS</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
+<span class="n">TR</span><span class="o">=</span><span class="mf">1e-07</span><span class="p">,</span> <span class="n">PTF</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">KF</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">AF</span><span class="o">=</span><span class="mi">1</span>
+                   <span class="p">)</span>
+
+<span class="c1"># Define sweep parameters</span>
+<span class="n">VAF</span><span class="o">=</span><span class="mf">16.5003</span>
+<span class="n">Vinput_start</span> <span class="o">=</span> <span class="mf">0.0</span>
+<span class="n">Vinput_stop</span> <span class="o">=</span> <span class="n">VAF</span><span class="c1">#0.004</span>
+<span class="n">Vinput_step</span> <span class="o">=</span> <span class="mf">0.0001</span>
+
+
+<span class="n">circuit</span><span class="o">.</span><span class="n">V</span><span class="p">(</span><span class="s1">&#39;measin&#39;</span><span class="p">,</span> <span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="s1">&#39;base&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">circuit</span><span class="o">.</span><span class="n">V</span><span class="p">(</span><span class="s1">&#39;output&#39;</span><span class="p">,</span> <span class="s1">&#39;3&#39;</span><span class="p">,</span> <span class="n">circuit</span><span class="o">.</span><span class="n">gnd</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">circuit</span><span class="o">.</span><span class="n">V</span><span class="p">(</span><span class="s1">&#39;measout&#39;</span><span class="p">,</span> <span class="s1">&#39;3&#39;</span><span class="p">,</span> <span class="s1">&#39;collector&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">Vbase</span><span class="o">=</span><span class="n">circuit</span><span class="o">.</span><span class="n">V</span><span class="p">(</span><span class="s1">&#39;input&#39;</span><span class="p">,</span> <span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="n">circuit</span><span class="o">.</span><span class="n">gnd</span><span class="p">,</span> <span class="mf">0.45</span><span class="p">)</span>
+
+
+<span class="c1"># Base voltage values to iterate through</span>
+<span class="c1"># Generate base voltages with exponential steps for the first part and linear steps for the second part</span>
+<span class="c1"># exp_start = 0.01</span>
+<span class="c1"># exp_stop = 0.41</span>
+<span class="n">lin_start</span> <span class="o">=</span> <span class="mf">0.01</span>
+<span class="n">lin_stop</span> <span class="o">=</span> <span class="mf">0.45</span>
+
+<span class="c1"># Number of steps</span>
+<span class="c1">#exp_steps = 20</span>
+<span class="n">lin_steps</span> <span class="o">=</span> <span class="mi">10</span>
+
+<span class="c1"># Exponential part</span>
+<span class="c1">#exp_base_voltages = np.geomspace(exp_start, exp_stop, num=exp_steps)</span>
+
+<span class="c1"># Linear part</span>
+<span class="n">lin_base_voltages</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">lin_start</span><span class="p">,</span> <span class="n">lin_stop</span><span class="p">,</span> <span class="n">num</span><span class="o">=</span><span class="n">lin_steps</span><span class="p">)</span>
+
+<span class="c1"># Combine both parts</span>
+<span class="c1">#base_voltages = np.concatenate((exp_base_voltages, lin_base_voltages))</span>
+<span class="n">base_voltages</span> <span class="o">=</span> <span class="n">lin_base_voltages</span>
+
+
+<span class="c1">#base_voltages = np.linspace(0.1, 0.5, num=20)  # Adjust &#39;num&#39; as needed</span>
+
+<span class="c1"># Store results for plotting</span>
+<span class="n">collector_voltages</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">collector_currents</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">labels</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="c1"># Loop through base voltage values</span>
+<span class="k">for</span> <span class="n">Vbase_value</span> <span class="ow">in</span> <span class="n">base_voltages</span><span class="p">:</span>
+    <span class="n">Vbase</span><span class="o">.</span><span class="n">dc_value</span> <span class="o">=</span> <span class="n">Vbase_value</span>
+    <span class="n">simulator</span> <span class="o">=</span> <span class="n">circuit</span><span class="o">.</span><span class="n">simulator</span><span class="p">(</span><span class="n">temperature</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span> <span class="n">nominal_temperature</span><span class="o">=</span><span class="mi">25</span><span class="p">)</span>
+    <span class="n">analysis</span> <span class="o">=</span> <span class="n">simulator</span><span class="o">.</span><span class="n">dc</span><span class="p">(</span><span class="n">Voutput</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="n">Vinput_start</span><span class="p">,</span> <span class="n">Vinput_stop</span><span class="p">,</span> <span class="n">Vinput_step</span><span class="p">))</span>
+    <span class="n">waveform</span> <span class="o">=</span> <span class="n">analysis</span><span class="p">[</span><span class="s1">&#39;collector&#39;</span><span class="p">]</span>
+    <span class="n">InputCurrentMeasurement</span> <span class="o">=</span> <span class="n">analysis</span><span class="p">[</span><span class="s1">&#39;vmeasout&#39;</span><span class="p">]</span>
+    
+    <span class="c1"># Store results</span>
+    <span class="n">collector_voltages</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">waveform</span><span class="p">))</span>
+    <span class="n">collector_currents</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">InputCurrentMeasurement</span> <span class="c1"># 1000)  # Convert to mA</span>
+    <span class="n">labels</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">Vbase_value</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>  <span class="c1"># Format to two decimal places for clarity</span>
+
+
+<span class="c1"># Plot the results</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xscale</span><span class="p">(</span><span class="s1">&#39;symlog&#39;</span><span class="p">,</span> <span class="n">linthresh</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">yscale</span><span class="p">(</span><span class="s1">&#39;symlog&#39;</span><span class="p">,</span> <span class="n">linthresh</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">base_voltages</span><span class="p">)):</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">collector_voltages</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">collector_currents</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="n">labels</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="c1"># Annotate each curve with its label</span>
+    <span class="n">midpoint_index</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">collector_voltages</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">//</span> <span class="mi">2</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="n">labels</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="n">collector_voltages</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">midpoint_index</span><span class="p">],</span> <span class="n">collector_currents</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">midpoint_index</span><span class="p">]),</span> 
+                 <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="n">textcoords</span><span class="o">=</span><span class="s1">&#39;offset points&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">9</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Vcollector (V)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Collector current (mA)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;DC Sweep Analysis for Output-Characteristics of NPN Transistor&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="c1">#plt.legend()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/5293af78dd8f0519d4016ec7c64193af2e16dffd7006bf36ac5c6d99f8c53682.png" src="../../_images/5293af78dd8f0519d4016ec7c64193af2e16dffd7006bf36ac5c6d99f8c53682.png" />
+</div>
+</div>
+</section>
+<section id="electronic-labratory-bjt-active-region">
+<h3>Electronic Labratory : BJT Active region<a class="headerlink" href="#electronic-labratory-bjt-active-region" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="kn">import</span> <span class="nn">PySpice.Logging.Logging</span> <span class="k">as</span> <span class="nn">Logging</span>
+<span class="n">logger</span> <span class="o">=</span> <span class="n">Logging</span><span class="o">.</span><span class="n">setup_logging</span><span class="p">()</span>
+<span class="kn">from</span> <span class="nn">PySpice.Spice.Netlist</span> <span class="kn">import</span> <span class="n">Circuit</span>
+<span class="kn">from</span> <span class="nn">PySpice.Unit</span> <span class="kn">import</span> <span class="c1">#</span>
+
+
+
+
+<span class="n">circuit</span> <span class="o">=</span> <span class="n">Circuit</span><span class="p">(</span><span class="s1">&#39;IV_2n2222&#39;</span><span class="p">)</span>
+
+<span class="n">circuit</span><span class="o">.</span><span class="n">BJT</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="s1">&#39;collector&#39;</span><span class="p">,</span> <span class="s1">&#39;base&#39;</span><span class="p">,</span> <span class="n">circuit</span><span class="o">.</span><span class="n">gnd</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="s1">&#39;2n2222a&#39;</span><span class="p">)</span>
+
+<span class="c1"># .MODEL 2n2222a npn</span>
+<span class="n">circuit</span><span class="o">.</span><span class="n">model</span><span class="p">(</span><span class="s1">&#39;2n2222a&#39;</span><span class="p">,</span> <span class="s1">&#39;BJT&#39;</span><span class="p">,</span> <span class="n">IS</span><span class="o">=</span><span class="mf">3.88184e-14</span><span class="p">,</span> <span class="n">BF</span><span class="o">=</span><span class="mf">929.846</span><span class="p">,</span> <span class="n">NF</span><span class="o">=</span><span class="mf">1.10496</span><span class="p">,</span> <span class="n">VAF</span><span class="o">=</span><span class="mf">16.5003</span><span class="p">,</span>
+<span class="n">IKF</span><span class="o">=</span><span class="mf">0.019539</span><span class="p">,</span> <span class="n">ISE</span><span class="o">=</span><span class="mf">1.0168e-11</span><span class="p">,</span> <span class="n">NE</span><span class="o">=</span><span class="mf">1.94752</span><span class="p">,</span> <span class="n">BR</span><span class="o">=</span><span class="mf">48.4545</span><span class="p">,</span>
+<span class="n">NR</span><span class="o">=</span><span class="mf">1.07004</span><span class="p">,</span> <span class="n">VAR</span><span class="o">=</span><span class="mf">40.538</span><span class="p">,</span> <span class="n">IKR</span><span class="o">=</span><span class="mf">0.19539</span><span class="p">,</span> <span class="n">ISC</span><span class="o">=</span><span class="mf">1.0168e-11</span><span class="p">,</span>
+<span class="n">NC</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">RB</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">IRB</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">RBM</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span>
+<span class="n">RE</span><span class="o">=</span><span class="mf">0.0001</span><span class="p">,</span> <span class="n">RC</span><span class="o">=</span><span class="mf">0.426673</span><span class="p">,</span> <span class="n">XTB</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">XTI</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+<span class="n">EG</span><span class="o">=</span><span class="mf">1.05</span><span class="p">,</span> <span class="n">CJE</span><span class="o">=</span><span class="mf">2.23677e-11</span><span class="p">,</span> <span class="n">VJE</span><span class="o">=</span><span class="mf">0.582701</span><span class="p">,</span> <span class="n">MJE</span><span class="o">=</span><span class="mf">0.63466</span><span class="p">,</span>
+<span class="n">TF</span><span class="o">=</span><span class="mf">4.06711e-10</span><span class="p">,</span> <span class="n">XTF</span><span class="o">=</span><span class="mf">3.92912</span><span class="p">,</span> <span class="n">VTF</span><span class="o">=</span><span class="mf">17712.6</span><span class="p">,</span> <span class="n">ITF</span><span class="o">=</span><span class="mf">0.4334</span><span class="p">,</span>
+<span class="n">CJC</span><span class="o">=</span><span class="mf">2.23943e-11</span><span class="p">,</span> <span class="n">VJC</span><span class="o">=</span><span class="mf">0.576146</span><span class="p">,</span> <span class="n">MJC</span><span class="o">=</span><span class="mf">0.632796</span><span class="p">,</span> <span class="n">XCJC</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+<span class="n">FC</span><span class="o">=</span><span class="mf">0.170253</span><span class="p">,</span> <span class="n">CJS</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">VJS</span><span class="o">=</span><span class="mf">0.75</span><span class="p">,</span> <span class="n">MJS</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
+<span class="n">TR</span><span class="o">=</span><span class="mf">1e-07</span><span class="p">,</span> <span class="n">PTF</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">KF</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">AF</span><span class="o">=</span><span class="mi">1</span>
+                   <span class="p">)</span>
+
+<span class="c1"># Define sweep parameters</span>
+<span class="n">VAF</span><span class="o">=</span><span class="mf">16.5003</span>
+<span class="n">Vinput_start</span> <span class="o">=</span> <span class="mf">0.01</span>
+<span class="n">Vinput_stop</span> <span class="o">=</span> <span class="n">VAF</span><span class="c1">#0.5</span>
+<span class="n">Vinput_step</span> <span class="o">=</span> <span class="mf">0.0001</span>
+
+
+<span class="n">circuit</span><span class="o">.</span><span class="n">V</span><span class="p">(</span><span class="s1">&#39;measin&#39;</span><span class="p">,</span> <span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="s1">&#39;base&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">circuit</span><span class="o">.</span><span class="n">V</span><span class="p">(</span><span class="s1">&#39;output&#39;</span><span class="p">,</span> <span class="s1">&#39;3&#39;</span><span class="p">,</span> <span class="n">circuit</span><span class="o">.</span><span class="n">gnd</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">circuit</span><span class="o">.</span><span class="n">V</span><span class="p">(</span><span class="s1">&#39;measout&#39;</span><span class="p">,</span> <span class="s1">&#39;3&#39;</span><span class="p">,</span> <span class="s1">&#39;collector&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">Vbase</span><span class="o">=</span><span class="n">circuit</span><span class="o">.</span><span class="n">V</span><span class="p">(</span><span class="s1">&#39;input&#39;</span><span class="p">,</span> <span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="n">circuit</span><span class="o">.</span><span class="n">gnd</span><span class="p">,</span> <span class="mf">0.45</span><span class="p">)</span>
+
+
+<span class="c1"># Base voltage values to iterate through</span>
+<span class="c1"># Generate base voltages with exponential steps for the first part and linear steps for the second part</span>
+<span class="c1"># exp_start = 0.01</span>
+<span class="c1"># exp_stop = 0.41</span>
+<span class="n">lin_start</span> <span class="o">=</span> <span class="mf">0.01</span>
+<span class="n">lin_stop</span> <span class="o">=</span> <span class="mf">0.45</span>
+
+<span class="c1"># Number of steps</span>
+<span class="c1">#exp_steps = 20</span>
+<span class="n">lin_steps</span> <span class="o">=</span> <span class="mi">10</span>
+
+<span class="c1"># Exponential part</span>
+<span class="c1">#exp_base_voltages = np.geomspace(exp_start, exp_stop, num=exp_steps)</span>
+
+<span class="c1"># Linear part</span>
+<span class="n">lin_base_voltages</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">lin_start</span><span class="p">,</span> <span class="n">lin_stop</span><span class="p">,</span> <span class="n">num</span><span class="o">=</span><span class="n">lin_steps</span><span class="p">)</span>
+
+<span class="c1"># Combine both parts</span>
+<span class="c1">#base_voltages = np.concatenate((exp_base_voltages, lin_base_voltages))</span>
+<span class="n">base_voltages</span> <span class="o">=</span> <span class="n">lin_base_voltages</span>
+
+
+<span class="c1">#base_voltages = np.linspace(0.1, 0.5, num=20)  # Adjust &#39;num&#39; as needed</span>
+
+<span class="c1"># Store results for plotting</span>
+<span class="n">collector_voltages</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">collector_currents</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">labels</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="c1"># Loop through base voltage values</span>
+<span class="k">for</span> <span class="n">Vbase_value</span> <span class="ow">in</span> <span class="n">base_voltages</span><span class="p">:</span>
+    <span class="n">Vbase</span><span class="o">.</span><span class="n">dc_value</span> <span class="o">=</span> <span class="n">Vbase_value</span>
+    <span class="n">simulator</span> <span class="o">=</span> <span class="n">circuit</span><span class="o">.</span><span class="n">simulator</span><span class="p">(</span><span class="n">temperature</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span> <span class="n">nominal_temperature</span><span class="o">=</span><span class="mi">25</span><span class="p">)</span>
+    <span class="n">analysis</span> <span class="o">=</span> <span class="n">simulator</span><span class="o">.</span><span class="n">dc</span><span class="p">(</span><span class="n">Voutput</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="n">Vinput_start</span><span class="p">,</span> <span class="n">Vinput_stop</span><span class="p">,</span> <span class="n">Vinput_step</span><span class="p">))</span>
+    <span class="n">waveform</span> <span class="o">=</span> <span class="n">analysis</span><span class="p">[</span><span class="s1">&#39;collector&#39;</span><span class="p">]</span>
+    <span class="n">InputCurrentMeasurement</span> <span class="o">=</span> <span class="n">analysis</span><span class="p">[</span><span class="s1">&#39;vmeasout&#39;</span><span class="p">]</span>
+    
+    <span class="c1"># Store results</span>
+    <span class="n">collector_voltages</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">waveform</span><span class="p">))</span>
+    <span class="n">collector_currents</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">InputCurrentMeasurement</span> <span class="c1"># 1000)  # Convert to mA</span>
+    <span class="n">labels</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">Vbase_value</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>  <span class="c1"># Format to two decimal places for clarity</span>
+
+
+<span class="c1"># Plot the results</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xscale</span><span class="p">(</span><span class="s1">&#39;symlog&#39;</span><span class="p">,</span> <span class="n">linthresh</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">yscale</span><span class="p">(</span><span class="s1">&#39;symlog&#39;</span><span class="p">,</span> <span class="n">linthresh</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">base_voltages</span><span class="p">)):</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">collector_voltages</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">collector_currents</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="n">labels</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="c1"># Annotate each curve with its label</span>
+    <span class="n">midpoint_index</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">collector_voltages</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">//</span> <span class="mi">2</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="n">labels</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="n">collector_voltages</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">midpoint_index</span><span class="p">],</span> <span class="n">collector_currents</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">midpoint_index</span><span class="p">]),</span> 
+                 <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="n">textcoords</span><span class="o">=</span><span class="s1">&#39;offset points&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">9</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Vcollector (V)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Collector current (mA)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;DC Sweep Analysis for Output-Characteristics of NPN Transistor&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="c1">#plt.legend()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/26925377a6f3fa5653d1df0ca7c7da9ec468ec4c5db6a299d2ae1ad97e882d74.png" src="../../_images/26925377a6f3fa5653d1df0ca7c7da9ec468ec4c5db6a299d2ae1ad97e882d74.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">PySpice.Logging.Logging</span> <span class="k">as</span> <span class="nn">Logging</span>
+<span class="n">logger</span> <span class="o">=</span> <span class="n">Logging</span><span class="o">.</span><span class="n">setup_logging</span><span class="p">()</span>
+
+
+<span class="kn">from</span> <span class="nn">PySpice.Spice.Netlist</span> <span class="kn">import</span> <span class="n">Circuit</span><span class="p">,</span> <span class="n">SubCircuit</span><span class="p">,</span> <span class="n">SubCircuitFactory</span>
+<span class="kn">from</span> <span class="nn">PySpice.Unit</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="k">class</span> <span class="nc">ParallelResistor2</span><span class="p">(</span><span class="n">SubCircuit</span><span class="p">):</span>
+    <span class="n">__nodes__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;n1&#39;</span><span class="p">,</span> <span class="s1">&#39;n2&#39;</span><span class="p">)</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">R1</span><span class="o">=</span><span class="mi">1</span><span class="nd">@u_Ω</span><span class="p">,</span> <span class="n">R2</span><span class="o">=</span><span class="mi">2</span><span class="nd">@u_Ω</span><span class="p">):</span>
+        <span class="n">SubCircuit</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">__nodes__</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">R</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;n1&#39;</span><span class="p">,</span> <span class="s1">&#39;n2&#39;</span><span class="p">,</span> <span class="n">R1</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">R</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;n1&#39;</span><span class="p">,</span> <span class="s1">&#39;n2&#39;</span><span class="p">,</span> <span class="n">R2</span><span class="p">)</span>
+
+<span class="n">circuit</span> <span class="o">=</span> <span class="n">Circuit</span><span class="p">(</span><span class="s1">&#39;Test&#39;</span><span class="p">)</span>
+<span class="n">circuit</span><span class="o">.</span><span class="n">subcircuit</span><span class="p">(</span><span class="n">ParallelResistor2</span><span class="p">(</span><span class="s1">&#39;pr1&#39;</span><span class="p">,</span> <span class="n">R2</span><span class="o">=</span><span class="mi">2</span><span class="nd">@u_Ω</span><span class="p">))</span>
+<span class="n">circuit</span><span class="o">.</span><span class="n">X</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="s1">&#39;pr1&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">circuit</span><span class="o">.</span><span class="n">gnd</span><span class="p">)</span>
+<span class="n">circuit</span><span class="o">.</span><span class="n">subcircuit</span><span class="p">(</span><span class="n">ParallelResistor2</span><span class="p">(</span><span class="s1">&#39;pr2&#39;</span><span class="p">,</span> <span class="n">R2</span><span class="o">=</span><span class="mi">3</span><span class="nd">@u_Ω</span><span class="p">))</span>
+<span class="n">circuit</span><span class="o">.</span><span class="n">X</span><span class="p">(</span><span class="s1">&#39;2&#39;</span><span class="p">,</span> <span class="s1">&#39;pr2&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">circuit</span><span class="o">.</span><span class="n">gnd</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">circuit</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>.title Test
+.subckt pr1 n1 n2
+R1 n1 n2 1Ohm
+R2 n1 n2 2Ohm
+.ends pr1
+
+.subckt pr2 n1 n2
+R1 n1 n2 1Ohm
+R2 n1 n2 3Ohm
+.ends pr2
+X1 1 0 pr1
+X2 1 0 pr2
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">PySpice.Logging.Logging</span> <span class="k">as</span> <span class="nn">Logging</span>
+<span class="n">logger</span> <span class="o">=</span> <span class="n">Logging</span><span class="o">.</span><span class="n">setup_logging</span><span class="p">()</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+
+<span class="kn">from</span> <span class="nn">PySpice.Spice.Netlist</span> <span class="kn">import</span> <span class="n">Circuit</span><span class="p">,</span> <span class="n">SubCircuit</span><span class="p">,</span> <span class="n">SubCircuitFactory</span>
+<span class="kn">from</span> <span class="nn">PySpice.Unit</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="c1">################</span>
+
+<span class="kn">from</span> <span class="nn">PySpice.Probe.Plot</span> <span class="kn">import</span> <span class="n">plot</span>
+<span class="kn">from</span> <span class="nn">PySpice.Spice.Library</span> <span class="kn">import</span> <span class="n">SpiceLibrary</span>
+<span class="kn">from</span> <span class="nn">PySpice.Spice.Netlist</span> <span class="kn">import</span> <span class="n">Circuit</span><span class="p">,</span> <span class="n">SubCircuit</span>
+<span class="kn">from</span> <span class="nn">PySpice.Unit</span> <span class="kn">import</span> <span class="o">*</span>
+
+     
+<span class="c1">#&#39;noninvertinginput&#39;, &#39;invertinginput&#39;, &#39;positivepowersupply&#39;, &#39;negativepowersupply&#39;, &#39;output&#39;)</span>
+<span class="c1">#1   2  99  50  28</span>
+<span class="k">class</span> <span class="nc">LM741</span><span class="p">(</span><span class="n">SubCircuit</span><span class="p">):</span>
+    <span class="n">__nodes__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;n1&#39;</span><span class="p">,</span> <span class="s1">&#39;n2&#39;</span><span class="p">,</span> <span class="s1">&#39;n99&#39;</span><span class="p">,</span> <span class="s1">&#39;n50&#39;</span><span class="p">,</span> <span class="s1">&#39;n28&#39;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="n">SubCircuit</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">__nodes__</span><span class="p">)</span>
+
+        <span class="c1"># Input Stage</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">I</span><span class="p">(</span><span class="s1">&#39;OS&#39;</span><span class="p">,</span> <span class="s1">&#39;n2&#39;</span><span class="p">,</span> <span class="s1">&#39;n1&#39;</span><span class="p">,</span> <span class="mi">20</span><span class="nd">@u_nA</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">R</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;n1&#39;</span><span class="p">,</span> <span class="s1">&#39;n3&#39;</span><span class="p">,</span> <span class="mi">250</span><span class="nd">@u_kΩ</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">R</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;n3&#39;</span><span class="p">,</span> <span class="s1">&#39;n2&#39;</span><span class="p">,</span> <span class="mi">250</span><span class="nd">@u_kΩ</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">I</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;n4&#39;</span><span class="p">,</span> <span class="s1">&#39;n50&#39;</span><span class="p">,</span> <span class="mi">100</span><span class="nd">@u_uA</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">R</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;n5&#39;</span><span class="p">,</span> <span class="s1">&#39;n99&#39;</span><span class="p">,</span> <span class="mi">517</span><span class="nd">@u_Ω</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">R</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="s1">&#39;n6&#39;</span><span class="p">,</span> <span class="s1">&#39;n99&#39;</span><span class="p">,</span> <span class="mi">517</span><span class="nd">@u_Ω</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Q</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;n5&#39;</span><span class="p">,</span> <span class="s1">&#39;n2&#39;</span><span class="p">,</span> <span class="s1">&#39;n4&#39;</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="s1">&#39;QX&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Q</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;n6&#39;</span><span class="p">,</span> <span class="s1">&#39;n7&#39;</span><span class="p">,</span> <span class="s1">&#39;n4&#39;</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="s1">&#39;QX&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">C</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="s1">&#39;n5&#39;</span><span class="p">,</span> <span class="s1">&#39;n6&#39;</span><span class="p">,</span> <span class="mf">60.3614</span><span class="nd">@u_pF</span><span class="p">)</span>
+
+        <span class="c1"># Common Mode Effect</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">I</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;n99&#39;</span><span class="p">,</span> <span class="s1">&#39;n50&#39;</span><span class="p">,</span> <span class="mf">1.6</span><span class="nd">@u_mA</span><span class="p">)</span>
+        <span class="c1"># Use a behavioral voltage source to model the polynomial relationship</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">B</span><span class="p">(</span><span class="s1">&#39;OS&#39;</span><span class="p">,</span> <span class="s1">&#39;n7&#39;</span><span class="p">,</span> <span class="s1">&#39;n1&#39;</span><span class="p">,</span> <span class="n">voltage_expression</span><span class="o">=</span><span class="s1">&#39;1e-3 * (V(16) - V(49)) + 1&#39;</span><span class="p">)</span>
+
+        <span class="c1">#self.V(&#39;OS&#39;, &#39;n7&#39;, &#39;n1&#39;, model=&#39;POLY&#39;, parameters=(1, 16, 49, 1e-3, 1))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">R</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="s1">&#39;n99&#39;</span><span class="p">,</span> <span class="s1">&#39;n49&#39;</span><span class="p">,</span> <span class="mi">40</span><span class="nd">@u_kΩ</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">R</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="s1">&#39;n49&#39;</span><span class="p">,</span> <span class="s1">&#39;n50&#39;</span><span class="p">,</span> <span class="mi">40</span><span class="nd">@u_kΩ</span><span class="p">)</span>
+
+        <span class="c1"># Output Voltage Limiting</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">V</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;n99&#39;</span><span class="p">,</span> <span class="s1">&#39;n8&#39;</span><span class="p">,</span> <span class="mf">1.63</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">D</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;n9&#39;</span><span class="p">,</span> <span class="s1">&#39;n8&#39;</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="s1">&#39;DX&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">D</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;n10&#39;</span><span class="p">,</span> <span class="s1">&#39;n9&#39;</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="s1">&#39;DX&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">V</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;n10&#39;</span><span class="p">,</span> <span class="s1">&#39;n50&#39;</span><span class="p">,</span> <span class="mf">1.63</span><span class="p">)</span>
+
+        <span class="c1"># Second Stage</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">E</span><span class="p">(</span><span class="s1">&#39;H&#39;</span><span class="p">,</span> <span class="s1">&#39;n99&#39;</span><span class="p">,</span> <span class="s1">&#39;n98&#39;</span><span class="p">,</span> <span class="s1">&#39;n99&#39;</span><span class="p">,</span> <span class="s1">&#39;n49&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">G</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;n98&#39;</span><span class="p">,</span> <span class="s1">&#39;n9&#39;</span><span class="p">,</span> <span class="s1">&#39;n5&#39;</span><span class="p">,</span> <span class="s1">&#39;n6&#39;</span><span class="p">,</span> <span class="mf">2.1e-3</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">R</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;n98&#39;</span><span class="p">,</span> <span class="s1">&#39;n9&#39;</span><span class="p">,</span> <span class="mf">95.493</span><span class="nd">@u_MΩ</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">C</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;n98&#39;</span><span class="p">,</span> <span class="s1">&#39;n9&#39;</span><span class="p">,</span> <span class="mf">333.33</span><span class="nd">@u_pF</span><span class="p">)</span>
+
+        <span class="c1"># Pole Stage</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">G</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;n98&#39;</span><span class="p">,</span> <span class="s1">&#39;n15&#39;</span><span class="p">,</span> <span class="s1">&#39;n9&#39;</span><span class="p">,</span> <span class="s1">&#39;n49&#39;</span><span class="p">,</span> <span class="mf">1e-6</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">R</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="s1">&#39;n98&#39;</span><span class="p">,</span> <span class="s1">&#39;n15&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="nd">@u_MΩ</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">C</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;n98&#39;</span><span class="p">,</span> <span class="s1">&#39;n15&#39;</span><span class="p">,</span> <span class="mf">5.3052</span><span class="nd">@u_fF</span><span class="p">)</span>
+
+        <span class="c1"># Common-Mode Zero Stage</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">G</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="s1">&#39;n98&#39;</span><span class="p">,</span> <span class="s1">&#39;n16&#39;</span><span class="p">,</span> <span class="s1">&#39;n3&#39;</span><span class="p">,</span> <span class="s1">&#39;n49&#39;</span><span class="p">,</span> <span class="mf">3.1623e-8</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">L</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;n98&#39;</span><span class="p">,</span> <span class="s1">&#39;n17&#39;</span><span class="p">,</span> <span class="mf">530.5</span><span class="nd">@u_mH</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">R</span><span class="p">(</span><span class="mi">13</span><span class="p">,</span> <span class="s1">&#39;n17&#39;</span><span class="p">,</span> <span class="s1">&#39;n16&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="nd">@u_kΩ</span><span class="p">)</span>
+
+        <span class="c1"># Output Stage</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">F</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="s1">&#39;n50&#39;</span><span class="p">,</span> <span class="s1">&#39;n99&#39;</span><span class="p">,</span> <span class="s1">&#39;POLY&#39;</span><span class="p">,</span> <span class="s1">&#39;V6&#39;</span><span class="p">,</span> <span class="mi">450</span><span class="nd">@u_uA</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">E</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;n99&#39;</span><span class="p">,</span> <span class="s1">&#39;n23&#39;</span><span class="p">,</span> <span class="s1">&#39;n99&#39;</span><span class="p">,</span> <span class="s1">&#39;n15&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">R</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="s1">&#39;n24&#39;</span><span class="p">,</span> <span class="s1">&#39;n23&#39;</span><span class="p">,</span> <span class="mi">25</span><span class="nd">@u_Ω</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">D</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;n26&#39;</span><span class="p">,</span> <span class="s1">&#39;n24&#39;</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="s1">&#39;DX&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">V</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="s1">&#39;n26&#39;</span><span class="p">,</span> <span class="s1">&#39;n22&#39;</span><span class="p">,</span> <span class="mf">0.65</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">R</span><span class="p">(</span><span class="mi">17</span><span class="p">,</span> <span class="s1">&#39;n23&#39;</span><span class="p">,</span> <span class="s1">&#39;n25&#39;</span><span class="p">,</span> <span class="mi">25</span><span class="nd">@u_Ω</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">D</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="s1">&#39;n25&#39;</span><span class="p">,</span> <span class="s1">&#39;n27&#39;</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="s1">&#39;DX&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">V</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="s1">&#39;n22&#39;</span><span class="p">,</span> <span class="s1">&#39;n27&#39;</span><span class="p">,</span> <span class="mf">0.65</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">V</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;n22&#39;</span><span class="p">,</span> <span class="s1">&#39;n21&#39;</span><span class="p">,</span> <span class="mf">0.18</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">D</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="s1">&#39;n21&#39;</span><span class="p">,</span> <span class="s1">&#39;n15&#39;</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="s1">&#39;DX&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">V</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="s1">&#39;n20&#39;</span><span class="p">,</span> <span class="s1">&#39;n22&#39;</span><span class="p">,</span> <span class="mf">0.18</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">D</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;n15&#39;</span><span class="p">,</span> <span class="s1">&#39;n20&#39;</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="s1">&#39;DX&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">L</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;n22&#39;</span><span class="p">,</span> <span class="s1">&#39;n28&#39;</span><span class="p">,</span> <span class="mi">100</span><span class="nd">@u_pH</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">RL</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;n22&#39;</span><span class="p">,</span> <span class="s1">&#39;n28&#39;</span><span class="p">,</span> <span class="mi">100</span><span class="nd">@u_kΩ</span><span class="p">)</span>
+
+<span class="c1">################</span>
+
+<span class="c1"># Example usage in a circuit</span>
+<span class="n">circuit</span> <span class="o">=</span> <span class="n">Circuit</span><span class="p">(</span><span class="s1">&#39;LM741 Test Circuit&#39;</span><span class="p">)</span>
+<span class="n">circuit</span><span class="o">.</span><span class="n">V</span><span class="p">(</span><span class="s1">&#39;PositivePole&#39;</span><span class="p">,</span> <span class="s1">&#39;3&#39;</span><span class="p">,</span> <span class="n">circuit</span><span class="o">.</span><span class="n">gnd</span><span class="p">,</span> <span class="mi">12</span><span class="p">)</span>
+<span class="n">circuit</span><span class="o">.</span><span class="n">V</span><span class="p">(</span><span class="s1">&#39;NegtivePole&#39;</span><span class="p">,</span> <span class="s1">&#39;4&#39;</span><span class="p">,</span> <span class="n">circuit</span><span class="o">.</span><span class="n">gnd</span><span class="p">,</span> <span class="o">-</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">circuit</span><span class="o">.</span><span class="n">V</span><span class="p">(</span><span class="s1">&#39;Inverting&#39;</span><span class="p">,</span> <span class="s1">&#39;2&#39;</span><span class="p">,</span> <span class="n">circuit</span><span class="o">.</span><span class="n">gnd</span><span class="p">,</span> <span class="mf">1E-12</span><span class="p">)</span>
+<span class="n">circuit</span><span class="o">.</span><span class="n">R</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="n">circuit</span><span class="o">.</span><span class="n">gnd</span><span class="p">,</span> <span class="mi">2</span><span class="nd">@u_kΩ</span><span class="p">)</span>
+
+<span class="c1"># Instantiate and connect the LM741 subcircuit</span>
+<span class="n">circuit</span><span class="o">.</span><span class="n">X</span><span class="p">(</span><span class="s1">&#39;LM741&#39;</span><span class="p">,</span> <span class="s1">&#39;LM741&#39;</span><span class="p">,</span> <span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="s1">&#39;2&#39;</span><span class="p">,</span> <span class="s1">&#39;3&#39;</span><span class="p">,</span> <span class="s1">&#39;4&#39;</span><span class="p">,</span> <span class="s1">&#39;5&#39;</span><span class="p">)</span>
+
+<span class="n">simulator</span> <span class="o">=</span> <span class="n">circuit</span><span class="o">.</span><span class="n">simulator</span><span class="p">(</span><span class="n">temperature</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span> <span class="n">nominal_temperature</span><span class="o">=</span><span class="mi">25</span><span class="p">)</span>
+<span class="c1">#analysis = simulator.operating_point()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./courses\Circuit_Electronics"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#i-v-charactristic-of-diode">I-V Charactristic of diode</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diode-1n4148">Diode=1n4148</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ac-small-signal-spice-model">AC Small Signal Spice Model</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#general-code-for-checking-dc-sweep-of-bjt-transistor">General code for checking DC sweep of BJT Transistor</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#electronic-laboratory-bjt-saturation-region">Electronic Laboratory: BJT Saturation Region</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#electronic-labratory-bjt-active-region">Electronic Labratory : BJT Active region</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Dr.Hadi Sadoghi Yazdi
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024 Pattern Recognition Lab.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
